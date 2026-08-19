@@ -9,6 +9,7 @@ export const styles = sx.create({
     borderWidth: "var(--stroke-100)",
     cursor: "pointer",
     display: "inline-flex",
+    flexShrink: 0,
     fontFamily: "var(--font-family)",
     fontSize: "var(--font-size-200)",
     fontWeight: "var(--font-weight-400)",
@@ -21,6 +22,7 @@ export const styles = sx.create({
     letterSpacing: "var(--letter-spacing-200)",
     transition:
       "background-color var(--speed-200) ease, border-color var(--speed-200) ease, color var(--speed-200) ease",
+    whiteSpace: "nowrap",
     ":focus-visible": {
       outlineColor: "var(--form-focus-border)",
       outlineOffset: "var(--stroke-100)",

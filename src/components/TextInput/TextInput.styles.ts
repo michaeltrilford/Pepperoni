@@ -141,6 +141,7 @@ export const styles = sx.create({
   outsideSlot: {
     alignItems: "stretch",
     display: "flex",
+    flexShrink: 0,
     minHeight: "inherit",
   },
   hasBefore: {
