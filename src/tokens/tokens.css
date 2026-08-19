@@ -1,0 +1,217 @@
+/**
+ * Semantic theme mappings.
+ * Primitive values are defined in brand.css.
+ */
+
+:where(html) {
+  /* Form */
+  --form-radius-small: var(--radius-100);
+  --form-radius-medium: var(--radius-200);
+  --form-radius-large: var(--radius-300);
+
+  /* ================================================================================================== */
+  /* Components                                                                                         */
+  /* ================================================================================================== */
+
+  /* Icon */
+  --icon-size-small: 2rem;
+  --icon-size-medium: 2.4rem;
+  --icon-size-large: 3.2rem;
+
+  /* Badge */
+  --badge-radius-small: var(--radius-400);
+  --badge-radius-medium: var(--radius-500);
+  --badge-radius-large: var(--radius-600);
+  --badge-height-small: 2rem;
+  --badge-height-medium: 2.4rem;
+  --badge-height-large: 3.2rem;
+  --badge-padding-inline-small: var(--space-100);
+  --badge-padding-inline-medium: var(--space-200);
+  --badge-padding-inline-large: var(--space-300);
+
+  /* Table */
+  --table-background: var(--transparent);
+  --table-header-background: var(--transparent);
+  --table-cell-padding-small-block: var(--space-300);
+  --table-cell-padding-small-inline: var(--space-400);
+  --table-cell-padding-medium-block: var(--space-400);
+  --table-cell-padding-medium-inline: var(--space-500);
+  --table-cell-padding-large-block: var(--space-500);
+  --table-cell-padding-large-inline: var(--space-600);
+}
+
+:where(html, html[data-theme="light"]) {
+  /* Surface */
+  --surface: var(--grey-100);
+  --surface-100: var(--surface-tone-100);
+  --surface-200: var(--surface-tone-200);
+  --surface-300: var(--surface-tone-300);
+
+  /* Border */
+  --border-color: var(--grey-300);
+
+  /* Heading */
+  --heading-color: var(--grey-900);
+
+  /* Text */
+  --text-color: var(--grey-800);
+  --text-color-secondary: var(--grey-400);
+  --text-color-positive: var(--green-600);
+  --text-color-warning: var(--orange-600);
+  --text-color-attention: var(--red-600);
+
+  /* Form */
+  --form-background: var(--white);
+  --form-focus-border: var(--pepperoni-700);
+  --form-placeholder-text-color: var(--grey-400);
+  --form-disabled-background: var(--grey-200);
+  --form-disabled-text-color: var(--grey-400);
+  --form-default-border: var(--grey-300);
+  --form-default-text-color: var(--grey-800);
+  --form-success-border: var(--green-600);
+  --form-success-text-color: var(--green-600);
+  --form-warning-border: var(--orange-600);
+  --form-warning-text-color: var(--orange-600);
+  --form-error-border: var(--red-600);
+  --form-error-text-color: var(--red-600);
+
+  /* Button */
+  --button-primary-background: var(--pepperoni-800);
+  --button-primary-hover-background: var(--pepperoni-900);
+  --button-primary-text-color: var(--white);
+  --button-secondary-border: var(--grey-300);
+  --button-secondary-hover-background: var(--grey-100);
+  --button-tertiary-hover-background: var(--grey-100);
+
+  /* Badge */
+  --badge-background: var(--grey-200);
+
+  /* ================================================================================================== */
+  /* Components                                                                                         */
+  /* ================================================================================================== */
+
+  /* Table */
+  --table-row-hover-background: var(--grey-100);
+
+  /* Card effects */
+  --card-border-color: var(--grey-200);
+  --card-lift-100-highlight: var(--white-opacity-90);
+  --card-lift-100-shadow: var(--black-opacity-10);
+  --card-lift-200-highlight: var(--white-opacity-90);
+  --card-lift-200-shadow: var(--black-opacity-10);
+  --card-lift-300-highlight: var(--white-opacity-90);
+  --card-lift-300-shadow: var(--black-opacity-10);
+  --card-depth-100-highlight: var(--white-opacity-90);
+  --card-depth-100-shadow: var(--black-opacity-10);
+  --card-depth-200-highlight: var(--white-opacity-90);
+  --card-depth-200-shadow: var(--black-opacity-10);
+  --card-depth-300-highlight: var(--white-opacity-90);
+  --card-depth-300-shadow: var(--black-opacity-10);
+  --surface-text-color-100: var(--grey-800);
+  --surface-text-secondary-100: var(--grey-400);
+  --surface-text-color-200: var(--grey-800);
+  --surface-text-secondary-200: var(--grey-600);
+  --surface-text-color-300: var(--grey-800);
+  --surface-text-secondary-300: var(--grey-600);
+}
+
+:where(html[data-theme="dark"]) {
+  /* Surface */
+  --surface: var(--grey-1000);
+  --surface-100: var(--surface-tone-800);
+  --surface-200: var(--surface-tone-700);
+  --surface-300: var(--surface-tone-600);
+
+  /* Border */
+  --border-color: var(--grey-600);
+
+  /* Heading */
+  --heading-color: var(--white);
+
+  /* Text */
+  --text-color: var(--grey-100);
+  --text-color-secondary: var(--grey-300);
+  --text-color-positive: var(--green-400);
+  --text-color-warning: var(--orange-400);
+  --text-color-attention: var(--red-400);
+
+  /* Form */
+  --form-background: var(--grey-900);
+  --form-focus-border: var(--pepperoni-500);
+  --form-placeholder-text-color: var(--grey-400);
+  --form-disabled-background: var(--grey-800);
+  --form-disabled-text-color: var(--grey-400);
+  --form-default-border: var(--grey-600);
+
+  --form-success-border: var(--green-400);
+  --form-success-text-color: var(--green-400);
+  --form-warning-border: var(--orange-400);
+  --form-warning-text-color: var(--orange-400);
+  --form-error-border: var(--red-400);
+  --form-error-text-color: var(--red-400);
+
+  /* Button */
+  --button-primary-background: var(--pepperoni-500);
+  --button-primary-hover-background: var(--pepperoni-400);
+  --button-primary-text-color: var(--black);
+  --button-secondary-border: var(--grey-600);
+  --button-secondary-hover-background: var(--grey-800);
+  --button-tertiary-hover-background: var(--grey-800);
+
+  /* Badge */
+  --badge-background: var(--grey-800);
+
+  /* ================================================================================================== */
+  /* Components                                                                                         */
+  /* ================================================================================================== */
+
+  /* Table */
+  --table-row-hover-background: var(--grey-800);
+
+  /* Card effects */
+  --card-border-color: var(--grey-700);
+  --card-lift-100-highlight: var(--white-opacity-10);
+  --card-lift-100-shadow: var(--black-opacity-50);
+  --card-lift-200-highlight: var(--white-opacity-10);
+  --card-lift-200-shadow: var(--black-opacity-50);
+  --card-lift-300-highlight: var(--white-opacity-10);
+  --card-lift-300-shadow: var(--black-opacity-50);
+  --card-depth-100-highlight: var(--white-opacity-10);
+  --card-depth-100-shadow: var(--black-opacity-50);
+  --card-depth-200-highlight: var(--white-opacity-10);
+  --card-depth-200-shadow: var(--black-opacity-50);
+  --card-depth-300-highlight: var(--white-opacity-10);
+  --card-depth-300-shadow: var(--black-opacity-50);
+  --surface-text-color-100: var(--grey-100);
+  --surface-text-secondary-100: var(--grey-300);
+  --surface-text-color-200: var(--grey-100);
+  --surface-text-secondary-200: var(--grey-300);
+  --surface-text-color-300: var(--grey-100);
+  --surface-text-secondary-300: var(--grey-300);
+}
+
+:where(html) {
+  --table-border-color: var(--border-color);
+  --badge-text-color: var(--text-color);
+  --icon-color: var(--text-color);
+  --form-default-text-color: var(--text-color);
+  --button-secondary-text-color: var(--text-color);
+  --button-tertiary-text-color: var(--text-color);
+  --table-text-color: var(--text-color);
+  --table-header-text-color: var(--heading-color);
+  --card-effect-lift-100:
+    0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-100-highlight),
+    inset 0 -1px 0 var(--card-lift-100-highlight), 0 var(--stroke-200) 4px var(--card-lift-100-shadow);
+  --card-effect-lift-200:
+    0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-200-highlight),
+    inset 0 -1px 0 var(--card-lift-200-highlight), 0 var(--stroke-200) 6px var(--card-lift-200-shadow);
+  --card-effect-lift-300:
+    0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-300-highlight),
+    inset 0 -1px 0 var(--card-lift-300-highlight), 0 var(--stroke-200) 8px var(--card-lift-300-shadow);
+  --card-effect-depth-100:
+    0 var(--stroke-100) 0 var(--card-depth-100-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-100-shadow);
+  --card-effect-depth-200:
+    0 var(--stroke-100) 0 var(--card-depth-200-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-200-shadow);
+  --card-effect-depth-300:
+    0 var(--stroke-100) 0 var(--card-depth-300-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-300-shadow);
+}

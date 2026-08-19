@@ -1,0 +1,4426 @@
+{
+  "schemaVersion": "1.0.0",
+  "components": [
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Badge/Badge.tsx",
+      "description": "Compact label used to identify a status, category, or count.",
+      "displayName": "Badge",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "Controls the badge typography, height, and inline padding.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Badge/Badge.types.ts",
+            "name": "BadgeProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Badge/Badge.types.ts",
+              "name": "BadgeProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BadgeSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Badge",
+        "description": "Badge presents a compact status, category, or count using token-based sizing and theme-aware colours.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Badge for a short, non-interactive status, category, or count.",
+            "Match its size to the surrounding component.",
+            "Use another component when people need to take an action."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Do not rely on badge colour alone to communicate meaning.",
+            "Include the status, category, or count in visible text whenever possible."
+          ],
+          "engineerList": [
+            "Keep badge text available to assistive technology.",
+            "Do not use Badge as the only source of meaning.",
+            "Add an accessible name only when visible text is incomplete.",
+            "Use a live region only for changes that need announcing."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: Theme-aware background and radius.",
+            "Label: Short status or category text."
+          ]
+        },
+        "variants": {
+          "items": []
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "small",
+              "title": "Small",
+              "description": "Shows the compact Badge size."
+            },
+            {
+              "key": "medium",
+              "title": "Medium",
+              "description": "Shows the default medium Badge size."
+            },
+            {
+              "key": "large",
+              "title": "Large",
+              "description": "Shows the larger Badge size."
+            },
+            {
+              "key": "text-input-slot",
+              "title": "TextInput slot",
+              "description": "Shows the explicit compact slot spacing and matched sizing required when Badge appears inside TextInput.",
+              "source": "<TextInput\n  label=\"Payment status\"\n  insideAfter={<TextInput.InsideSlot density=\"compact\"><Badge>Paid</Badge></TextInput.InsideSlot>}\n/>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Badge can be composed with form controls and content. TextInput requires an explicit compact InsideSlot wrapper.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "TextInput",
+              "link": ""
+            },
+            {
+              "name": "Text",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Badge is non-interactive and sizes to its content."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Keep badge labels concise."
+          ]
+        }
+      },
+      "api": {
+        "name": "Badge",
+        "element": "span",
+        "inherits": "HTMLAttributes<HTMLSpanElement>",
+        "props": {
+          "size": {
+            "type": "S | M | L",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls badge height, typography, padding, and radius."
+          },
+          "role": {
+            "type": "AriaRole",
+            "control": "text",
+            "description": "Adds semantics such as status when the badge meaning needs to be exposed beyond its text."
+          },
+          "aria-label": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides an accessible name when the visible badge text is incomplete."
+          },
+          "aria-live": {
+            "type": "off | polite | assertive",
+            "values": [
+              "off",
+              "polite",
+              "assertive"
+            ],
+            "control": "select",
+            "description": "Announces changing badge content; omit for static badges."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Box/Box.tsx",
+      "description": "A neutral block container with opt-in flex layout controls.",
+      "displayName": "Box",
+      "methods": [],
+      "props": {
+        "flex": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "Enables flex layout. Box otherwise renders as a normal block container.",
+          "name": "flex",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+            "name": "BoxProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+              "name": "BoxProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "direction": {
+          "defaultValue": {
+            "value": "row"
+          },
+          "description": "Controls the main-axis direction when flex is enabled.",
+          "name": "direction",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+            "name": "BoxProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+              "name": "BoxProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BoxDirection",
+            "value": [
+              {
+                "value": "\"row\""
+              },
+              {
+                "value": "\"column\""
+              }
+            ]
+          }
+        },
+        "gap": {
+          "defaultValue": null,
+          "description": "Applies a spacing token between flex items.",
+          "name": "gap",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+            "name": "BoxProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+              "name": "BoxProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BoxGap",
+            "value": [
+              {
+                "value": "\"000\""
+              },
+              {
+                "value": "\"100\""
+              },
+              {
+                "value": "\"200\""
+              },
+              {
+                "value": "\"300\""
+              },
+              {
+                "value": "\"400\""
+              },
+              {
+                "value": "\"500\""
+              },
+              {
+                "value": "\"600\""
+              },
+              {
+                "value": "\"700\""
+              },
+              {
+                "value": "\"800\""
+              }
+            ]
+          }
+        },
+        "align": {
+          "defaultValue": null,
+          "description": "Aligns flex items on the cross axis.",
+          "name": "align",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+            "name": "BoxProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+              "name": "BoxProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BoxAlign",
+            "value": [
+              {
+                "value": "\"start\""
+              },
+              {
+                "value": "\"center\""
+              },
+              {
+                "value": "\"end\""
+              },
+              {
+                "value": "\"stretch\""
+              },
+              {
+                "value": "\"baseline\""
+              }
+            ]
+          }
+        },
+        "justify": {
+          "defaultValue": null,
+          "description": "Distributes flex items on the main axis.",
+          "name": "justify",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+            "name": "BoxProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+              "name": "BoxProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BoxJustify",
+            "value": [
+              {
+                "value": "\"start\""
+              },
+              {
+                "value": "\"center\""
+              },
+              {
+                "value": "\"end\""
+              },
+              {
+                "value": "\"between\""
+              },
+              {
+                "value": "\"around\""
+              },
+              {
+                "value": "\"evenly\""
+              }
+            ]
+          }
+        },
+        "wrap": {
+          "defaultValue": {
+            "value": "nowrap"
+          },
+          "description": "Controls whether flex items wrap onto additional lines.",
+          "name": "wrap",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+            "name": "BoxProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Box/Box.types.ts",
+              "name": "BoxProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BoxWrap",
+            "value": [
+              {
+                "value": "\"wrap\""
+              },
+              {
+                "value": "\"nowrap\""
+              },
+              {
+                "value": "\"reverse\""
+              }
+            ]
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Box",
+        "description": "Box is a neutral container that becomes a token-aware flex layout when requested.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Box for local layout and grouping without adding visual presentation.",
+            "Enable flex only when its children need flex layout.",
+            "Choose semantic HTML when the grouping has document meaning."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Use spacing and alignment to support a clear visual hierarchy."
+          ],
+          "engineerList": [
+            "Box always renders a `div`.",
+            "Use semantic HTML when the content requires it.",
+            "Use layout props for presentation only."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: A block-level div by default.",
+            "Flex controls: Optional direction, gap, alignment, justification, and wrapping."
+          ]
+        },
+        "variants": {
+          "items": []
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "default",
+              "title": "Default",
+              "description": "Shows the neutral block container.",
+              "source": "<Box>Content</Box>"
+            },
+            {
+              "key": "flex",
+              "title": "Flex layout",
+              "description": "Shows a vertical flex layout with token spacing.",
+              "source": "<Box flex direction=\"column\" gap=\"300\">...</Box>"
+            },
+            {
+              "key": "alignment",
+              "title": "Alignment",
+              "description": "Shows cross-axis and main-axis alignment.",
+              "source": "<Box flex align=\"center\" justify=\"between\" gap=\"300\">...</Box>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Box composes with any component when local layout is needed.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Card",
+              "link": ""
+            },
+            {
+              "name": "Stack",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Box has no visual treatment and uses normal block layout unless flex is enabled."
+          ]
+        },
+        "writing": {
+          "list": []
+        }
+      },
+      "api": {
+        "name": "Box",
+        "element": "div",
+        "inherits": "HTMLAttributes<HTMLDivElement>",
+        "props": {
+          "flex": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Enables flex layout."
+          },
+          "direction": {
+            "type": "row | column",
+            "values": [
+              "row",
+              "column"
+            ],
+            "defaultValue": "row",
+            "control": "select",
+            "description": "Controls the main-axis direction when flex is enabled."
+          },
+          "gap": {
+            "type": "000 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800",
+            "values": [
+              "000",
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "700",
+              "800"
+            ],
+            "control": "select",
+            "description": "Applies a spacing token between flex items."
+          },
+          "align": {
+            "type": "start | center | end | stretch | baseline",
+            "values": [
+              "start",
+              "center",
+              "end",
+              "stretch",
+              "baseline"
+            ],
+            "control": "select",
+            "description": "Aligns flex items on the cross axis."
+          },
+          "justify": {
+            "type": "start | center | end | between | around | evenly",
+            "values": [
+              "start",
+              "center",
+              "end",
+              "between",
+              "around",
+              "evenly"
+            ],
+            "control": "select",
+            "description": "Distributes flex items on the main axis."
+          },
+          "wrap": {
+            "type": "nowrap | wrap | reverse",
+            "values": [
+              "nowrap",
+              "wrap",
+              "reverse"
+            ],
+            "defaultValue": "nowrap",
+            "control": "select",
+            "description": "Controls whether flex items wrap onto additional lines."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Button/Button.tsx",
+      "description": "Basic action button with primary, secondary, and tertiary emphasis.",
+      "displayName": "Button",
+      "methods": [],
+      "props": {
+        "variant": {
+          "defaultValue": {
+            "value": "primary"
+          },
+          "description": "Controls the visual emphasis of the button.",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "ButtonVariant",
+            "value": [
+              {
+                "value": "\"link\""
+              },
+              {
+                "value": "\"primary\""
+              },
+              {
+                "value": "\"secondary\""
+              },
+              {
+                "value": "\"tertiary\""
+              }
+            ]
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "Controls the button height, spacing, and typography.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "ButtonSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              },
+              {
+                "value": "\"xs\""
+              }
+            ]
+          }
+        },
+        "iconOnly": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "Makes an icon-only action square. Provide an accessible name with aria-label.",
+          "name": "iconOnly",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "usage": {
+          "defaultValue": null,
+          "description": "Opts the button into a named parent composition.",
+          "name": "usage",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "ButtonUsage",
+            "value": [
+              {
+                "value": "\"text-input-before\""
+              },
+              {
+                "value": "\"text-input-after\""
+              }
+            ]
+          }
+        },
+        "href": {
+          "defaultValue": null,
+          "description": "Renders the action as an anchor when provided.",
+          "name": "href",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "string"
+          }
+        },
+        "target": {
+          "defaultValue": null,
+          "description": "Sets the anchor target when href is provided.",
+          "name": "target",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "HTMLAttributeAnchorTarget"
+          }
+        },
+        "rel": {
+          "defaultValue": null,
+          "description": "Sets the anchor relationship when href is provided.",
+          "name": "rel",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "string"
+          }
+        },
+        "download": {
+          "defaultValue": null,
+          "description": "Sets the download behaviour when href is provided.",
+          "name": "download",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+            "name": "ButtonProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Button/Button.types.ts",
+              "name": "ButtonProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "string | boolean"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Button",
+        "description": "Button triggers an action with primary, secondary, or tertiary visual emphasis.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use primary for the main action in a context, secondary or tertiary for supporting actions, and link for inline navigation.",
+            "Pass href for navigation or downloads; Button then renders a native anchor. Use the default button element for an in-page action.",
+            "Match size to the surrounding interface and use an action-oriented label.",
+            "Use iconOnly for a square icon action and provide its action name with aria-label."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Ensure button labels clearly describe the result of the action.",
+            "Do not make colour, icons, or position the only way to understand an action."
+          ],
+          "engineerList": [
+            "Give every Button an accessible name.",
+            "Give icon-only Buttons an explicit accessible name.",
+            "Choose `submit`, `reset`, or the default `button` type deliberately.",
+            "Use native `disabled` for unavailable button actions.",
+            "Disabled links automatically lose navigation and focus.",
+            "Expose state with the relevant native or ARIA props."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: Background, border, radius, and focus treatment.",
+            "Label: Action text."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "primary",
+              "title": "Primary",
+              "description": "Highest-emphasis turquoise action.",
+              "image": ""
+            },
+            {
+              "key": "secondary",
+              "title": "Secondary",
+              "description": "Outlined supporting action.",
+              "image": ""
+            },
+            {
+              "key": "tertiary",
+              "title": "Tertiary",
+              "description": "Borderless low-emphasis action.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "primary",
+              "title": "Primary",
+              "description": "Shows the highest-emphasis Button treatment."
+            },
+            {
+              "key": "secondary",
+              "title": "Secondary",
+              "description": "Shows the outlined supporting Button treatment."
+            },
+            {
+              "key": "tertiary",
+              "title": "Tertiary",
+              "description": "Shows the borderless low-emphasis Button treatment."
+            },
+            {
+              "key": "icon-only",
+              "title": "Icon Only",
+              "description": "Uses iconOnly to create a square action. Provide aria-label because the icon does not supply the Button's accessible name."
+            },
+            {
+              "key": "text-input-attachment",
+              "title": "Usage: TextInput Attachment",
+              "description": "Shows leading and trailing Button attachments. Match usage='text-input-before' to TextInput before and usage='text-input-after' to TextInput after; Button owns the joined radius, border overlap, inherited sizing, and focus treatment.",
+              "source": "<TextInput\n  label=\"Domain\"\n  after={<Button usage=\"text-input-after\">Verify</Button>}\n/>"
+            },
+            {
+              "key": "disabled-link",
+              "title": "Disabled link",
+              "description": "Shows how a linked action becomes non-navigable, unfocusable, and aria-disabled when disabled."
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Button supports an explicit usage contract for attached TextInput actions.",
+          "items": [
+            {
+              "key": "text-input-action",
+              "name": "TextInput attached action",
+              "description": "Place Button in the matching TextInput before or after slot and use the corresponding text-input-before or text-input-after usage value.",
+              "image": ""
+            }
+          ]
+        },
+        "related": {
+          "items": [
+            {
+              "name": "TextInput",
+              "link": ""
+            },
+            {
+              "name": "Icon",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [
+          {
+            "heading": "Attached TextInput Actions",
+            "description": "Keep slot placement and Button usage paired so ownership remains explicit.",
+            "doContent": [
+              {
+                "description": "Pair TextInput after with Button usage='text-input-after'.",
+                "image": ""
+              },
+              {
+                "description": "Pair TextInput before with Button usage='text-input-before'.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not recreate attached radii, overlap, inherited sizing, or focus treatment with custom classes.",
+                "image": ""
+              }
+            ]
+          }
+        ],
+        "behaviour": {
+          "list": [
+            "Keyboard focus uses a turquoise focus indicator.",
+            "Disabled Buttons do not trigger actions.",
+            "Button usage emits data-text-input-slot-button only while the attached composition is active."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Begin labels with a clear verb."
+          ]
+        }
+      },
+      "api": {
+        "name": "Button",
+        "element": "button",
+        "inherits": "ButtonHTMLAttributes<HTMLButtonElement>",
+        "props": {
+          "variant": {
+            "type": "primary | secondary | tertiary | link",
+            "values": [
+              "primary",
+              "secondary",
+              "tertiary",
+              "link"
+            ],
+            "defaultValue": "primary",
+            "control": "select",
+            "description": "Controls the visual emphasis of the action."
+          },
+          "size": {
+            "type": "xs | s | m | l",
+            "values": [
+              "xs",
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls the button height, spacing, and typography."
+          },
+          "iconOnly": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Makes an icon-only action square. Provide an accessible name with aria-label."
+          },
+          "usage": {
+            "type": "text-input-before | text-input-after",
+            "values": [
+              "text-input-before",
+              "text-input-after"
+            ],
+            "control": "select",
+            "description": "Attaches Button to the corresponding TextInput outside slot, inherits its height and typography, and applies the secondary treatment with joined edges."
+          },
+          "type": {
+            "type": "button | submit | reset",
+            "values": [
+              "button",
+              "submit",
+              "reset"
+            ],
+            "defaultValue": "button",
+            "control": "select",
+            "description": "Controls the native button action; use submit or reset deliberately inside forms."
+          },
+          "href": {
+            "type": "string",
+            "control": "text",
+            "description": "Renders the action as an anchor when provided."
+          },
+          "target": {
+            "type": "_self | _blank | _parent | _top",
+            "values": [
+              "_self",
+              "_blank",
+              "_parent",
+              "_top"
+            ],
+            "control": "select",
+            "description": "Sets the anchor target when href is provided."
+          },
+          "rel": {
+            "type": "string",
+            "control": "text",
+            "description": "Sets the anchor relationship when href is provided."
+          },
+          "download": {
+            "type": "string | boolean",
+            "control": "text",
+            "description": "Sets the download behaviour when href is provided."
+          },
+          "disabled": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Disables a native button. For linked actions it removes href and keyboard focus, prevents activation, and exposes aria-disabled."
+          },
+          "aria-label": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides an accessible name, required when the button has no visible text."
+          },
+          "aria-pressed": {
+            "type": "boolean",
+            "control": "boolean",
+            "description": "Exposes pressed state for toggle buttons."
+          },
+          "aria-expanded": {
+            "type": "boolean",
+            "control": "boolean",
+            "description": "Exposes expanded state for disclosure controls."
+          },
+          "aria-controls": {
+            "type": "string",
+            "control": "text",
+            "description": "Identifies the controlled element for a disclosure or toggle action."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Card/Card.tsx",
+      "description": "Surface container for grouping related content.",
+      "displayName": "Card",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "Controls the card radius and default padding scale.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+            "name": "CardProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+              "name": "CardProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "CardSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "padding": {
+          "defaultValue": {
+            "value": "true"
+          },
+          "description": "Removes the card's internal padding when false.",
+          "name": "padding",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+            "name": "CardProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+              "name": "CardProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "surface": {
+          "defaultValue": {
+            "value": "100"
+          },
+          "description": "Selects the semantic surface tone used by the card.",
+          "name": "surface",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+            "name": "CardProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+              "name": "CardProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "CardSurface",
+            "value": [
+              {
+                "value": "\"100\""
+              },
+              {
+                "value": "\"200\""
+              },
+              {
+                "value": "\"300\""
+              }
+            ]
+          }
+        },
+        "surfaceDirection": {
+          "defaultValue": {
+            "value": "lift"
+          },
+          "description": "Identifies the shadow and border treatment direction for the card.",
+          "name": "surfaceDirection",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+            "name": "CardProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Card/Card.types.ts",
+              "name": "CardProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "CardSurfaceDirection",
+            "value": [
+              {
+                "value": "\"lift\""
+              },
+              {
+                "value": "\"depth\""
+              }
+            ]
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Card",
+        "description": "Card groups related content on a theme-aware surface with size-based radius and padding.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Card to group related content on a semantic surface.",
+            "Choose size and surface according to the surrounding hierarchy.",
+            "Remove padding only for intentional full-bleed content."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Choose a semantic heading and content structure inside the card."
+          ],
+          "engineerList": [
+            "Add semantics when the Card has a specific purpose.",
+            "Do not make an entire Card interactive by default.",
+            "Ensure interactive Card content remains keyboard accessible."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: Surface, border, radius, and padding.",
+            "Content: Related card content supplied by the consumer."
+          ]
+        },
+        "variants": {
+          "items": []
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "size",
+              "title": "Size",
+              "description": "Compares small, medium, and large cards with optional padding.",
+              "source": "<Card size=\"m\"><Text>Card content</Text></Card>"
+            },
+            {
+              "key": "table-composition",
+              "title": "Composition: Full-bleed Table",
+              "description": "Pairs Card padding={false} with Table usage='card'. Card provides the clipped surface and edge-to-edge layout; Table removes its own final row divider at the card edge.",
+              "source": "<Card padding={false}>\n  <Table usage=\"card\" aria-label=\"Recent payments\">...</Table>\n</Card>"
+            },
+            {
+              "key": "nested",
+              "title": "Nested cards",
+              "description": "Uses progressively stronger surfaces to group related workspace content.",
+              "source": "<Card surface=\"100\"><Card surface=\"200\"><Card surface=\"300\">...</Card></Card></Card>"
+            },
+            {
+              "key": "nested-inset",
+              "title": "One-level inset",
+              "description": "Uses one inset surface to separate settings within a parent Card.",
+              "source": "<Card surface=\"100\"><Card surface=\"200\" surfaceDirection=\"depth\">...</Card></Card>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Card composes with content, actions, forms, and full-bleed children through explicit ownership contracts.",
+          "items": [
+            {
+              "key": "full-bleed-table",
+              "name": "Full-bleed rows Table",
+              "description": "Use Card padding={false} and Table usage='card'. Do not recreate the final-divider treatment from Card with descendant selectors.",
+              "image": ""
+            }
+          ]
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Text",
+              "link": ""
+            },
+            {
+              "name": "Button",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [
+          {
+            "heading": "Full-bleed Table",
+            "description": "Keep surface layout and table boundary styling owned by their respective components.",
+            "doContent": [
+              {
+                "description": "Pair Card padding={false} with Table usage='card' for an edge-to-edge rows table.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not make Card inspect Table descendants or manually remove the final cell borders.",
+                "image": ""
+              }
+            ]
+          }
+        ],
+        "behaviour": {
+          "list": [
+            "Card is a layout container and has no interaction by default.",
+            "Card padding={false} removes internal spacing but does not inspect or restyle child components."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Keep card content focused on one related topic or task."
+          ]
+        }
+      },
+      "api": {
+        "name": "Card",
+        "element": "div",
+        "inherits": "HTMLAttributes<HTMLDivElement>",
+        "props": {
+          "size": {
+            "type": "s | m | l",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls the card radius and padding scale."
+          },
+          "padding": {
+            "type": "boolean",
+            "defaultValue": true,
+            "control": "boolean",
+            "description": "Removes the card's internal padding when false. For a full-bleed rows Table, pair this with Table usage='card'."
+          },
+          "surface": {
+            "type": "100 | 200 | 300",
+            "values": [
+              "100",
+              "200",
+              "300"
+            ],
+            "defaultValue": "100",
+            "control": "select",
+            "description": "Selects the semantic surface tone used by the card."
+          },
+          "surfaceDirection": {
+            "type": "lift | depth",
+            "values": [
+              "lift",
+              "depth"
+            ],
+            "defaultValue": "lift",
+            "control": "select",
+            "description": "Identifies the shadow and border treatment direction."
+          },
+          "role": {
+            "type": "AriaRole",
+            "control": "text",
+            "description": "Adds an ARIA role when the card has a specific semantic purpose."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Field/Field.tsx",
+      "description": "Field wrapper molecule that composes Label, form controls (children), and validation message text.",
+      "displayName": "Field",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "FieldSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "default"
+          },
+          "description": "",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "FieldVariant",
+            "value": [
+              {
+                "value": "\"default\""
+              },
+              {
+                "value": "\"success\""
+              },
+              {
+                "value": "\"warning\""
+              },
+              {
+                "value": "\"error\""
+              }
+            ]
+          }
+        },
+        "label": {
+          "defaultValue": null,
+          "description": "",
+          "name": "label",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        },
+        "hideLabel": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "hideLabel",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "optional": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "optional",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "required": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "required",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "message": {
+          "defaultValue": null,
+          "description": "",
+          "name": "message",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        },
+        "messageId": {
+          "defaultValue": null,
+          "description": "Customises the generated message id used by the control relationship.",
+          "name": "messageId",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "string"
+          }
+        },
+        "children": {
+          "defaultValue": null,
+          "description": "Render-function children receive the ARIA relationship props for the intended control.",
+          "name": "children",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+            "name": "FieldProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Field/Field.types.ts",
+              "name": "FieldProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode | ((controlProps: FieldControlAccessibilityProps) => ReactNode)"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Field",
+        "description": "Field acts as a composable form element wrapper, bundling Label, child form elements, and validation or helper messages with consistent vertical spacing.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Field to visually and semantically group form elements with accessible labels, helper text, and validation error messages.",
+            "Omit TextInput label and id so Field can supply them automatically.",
+            "Use the stories below for validation and other form-control compositions."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Ensure helper text and validation messages maintain a minimum colour contrast ratio of 4.5:1 against the background.",
+            "Do not rely solely on colour to communicate validation errors; ensure descriptive error text is provided.",
+            "Use a real `fieldset` and `legend` when one label describes multiple related controls; Field renders a `div` and a single label target."
+          ],
+          "engineerList": [
+            "Omit TextInput `label` and `id` inside Field.",
+            "Field context supplies TextInput relationships automatically.",
+            "Give every additional control its own accessible name.",
+            "Use a render function for controls without Field context support.",
+            "Set native `required` on the child control.",
+            "Treat Field as a wrapper, not a form control."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Label Container: Top section containing label text, (Optional) tag, or required indicator.",
+            "Control Region: Middle section containing the wrapped form element (e.g. TextInput).",
+            "Message Area: Bottom section rendering helper text or state-driven validation feedback."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "default",
+              "title": "Default Field",
+              "description": "Standard field wrapper with neutral helper text.",
+              "image": ""
+            },
+            {
+              "key": "success",
+              "title": "Success State Field",
+              "description": "Field wrapper rendering positive validation messaging in green.",
+              "image": ""
+            },
+            {
+              "key": "warning",
+              "title": "Warning State Field",
+              "description": "Field wrapper rendering caution messaging in warning colour.",
+              "image": ""
+            },
+            {
+              "key": "error",
+              "title": "Error State Field",
+              "description": "Field wrapper rendering error messaging in red caution colour.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "empty-default",
+              "title": "Empty Default Field",
+              "description": "General-purpose form field wrapper that bundles labels, helper text, and form element slots into a consistent vertical layout."
+            },
+            {
+              "key": "empty-with-optional",
+              "title": "Empty Field with Optional Tag",
+              "description": "Appends an explicit (Optional) tag to the field label. Preferred over mandatory asterisks for non-required form elements."
+            },
+            {
+              "key": "empty-with-required",
+              "title": "Empty Field with Required Indicator",
+              "description": "Appends a required asterisk indicator to mandatory form element labels."
+            },
+            {
+              "key": "empty-error-message",
+              "title": "Empty Field with Error Message",
+              "description": "Renders contextual validation error messages in red directly beneath the form element slot."
+            },
+            {
+              "key": "composed-default",
+              "title": "Composed with TextInput",
+              "description": "Grouped field composition where Field labels the first TextInput and the second TextInput retains its own visually hidden label. Both controls receive the shared helper-message relationship.",
+              "source": "<Field label=\"Payment amount\" message=\"Enter the amount to pay.\">\n  <TextInput inputMode=\"decimal\" />\n</Field>"
+            },
+            {
+              "key": "composed-success-validation",
+              "title": "Composed Success State",
+              "description": "Synchronizes positive validation feedback (variant='success') across both the Field wrapper and nested TextInput element.",
+              "source": "<Field label=\"Promo code\" variant=\"success\" message=\"Promo code applied.\">\n  <TextInput variant=\"success\" defaultValue=\"PEPPERONI2026\" />\n</Field>"
+            },
+            {
+              "key": "composed-warning-validation",
+              "title": "Composed Warning State",
+              "description": "Synchronizes non-blocking caution messaging (variant='warning') across the Field helper message and nested TextInput element.",
+              "source": "<Field label=\"Password\" variant=\"warning\" message=\"Add a number or symbol.\">\n  <TextInput type=\"password\" variant=\"warning\" />\n</Field>"
+            },
+            {
+              "key": "composed-error-validation",
+              "title": "Composed Error State",
+              "description": "Synchronizes actionable error guidance (variant='error') across the Field error text and nested TextInput element.",
+              "source": "<Field label=\"Phone number\" variant=\"error\" message=\"Enter a valid 10-digit number.\">\n  <TextInput variant=\"error\" required />\n</Field>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Demonstrates how Field wraps various input controls in real-world form panels.",
+          "items": [
+            {
+              "key": "account-creation-form",
+              "name": "Account Details Fieldset",
+              "description": "Multiple Field components stacked vertically for email, password, and optional feedback.",
+              "image": ""
+            }
+          ]
+        },
+        "related": {
+          "items": [
+            {
+              "name": "TextInput",
+              "link": ""
+            },
+            {
+              "name": "Label",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [
+          {
+            "heading": "State Synchronization",
+            "description": "Keep validation states consistent between Field and nested form element.",
+            "doContent": [
+              {
+                "description": "Match the variant prop on Field and form element during validation states.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Avoid displaying an error message on Field without setting the form element state.",
+                "image": ""
+              }
+            ]
+          }
+        ],
+        "behaviour": {
+          "list": [
+            "Vertically stacks label, form element, and message area.",
+            "Adjusts message text colour dynamically according to the variant prop.",
+            "Required takes precedence if optional and required are both supplied, preventing contradictory label indicators."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Write helper messages in sentence case.",
+            "Keep error messages direct, clear, and focused on how the user can fix the input."
+          ]
+        }
+      },
+      "api": {
+        "name": "Field",
+        "element": "div",
+        "inherits": "HTMLAttributes<HTMLDivElement>",
+        "props": {
+          "size": {
+            "type": "S | M | L",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls Field spacing and the scale passed to its label and message."
+          },
+          "variant": {
+            "type": "default | success | warning | error",
+            "values": [
+              "default",
+              "success",
+              "warning",
+              "error"
+            ],
+            "defaultValue": "default",
+            "control": "select",
+            "description": "Maps the supporting message to its semantic feedback colour."
+          },
+          "label": {
+            "type": "ReactNode",
+            "control": "text",
+            "description": "Provides the shared visible or visually hidden Field label."
+          },
+          "hideLabel": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Visually hides the Field label while retaining accessible text."
+          },
+          "optional": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Displays the optional indicator beside the Field label."
+          },
+          "required": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Displays a visual required indicator beside the Field label; set required on the child control for native validation."
+          },
+          "message": {
+            "type": "ReactNode",
+            "control": "text",
+            "description": "Renders helper or validation text below the Field content."
+          },
+          "messageId": {
+            "type": "string",
+            "control": "text",
+            "description": "Customises the generated message id used by TextInput context and render-function ARIA relationship props."
+          },
+          "children": {
+            "type": "ReactNode",
+            "control": false,
+            "description": "Provides content or a render function. TextInput consumes Field context automatically; use the render function to pass ARIA props to other controls."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Heading/Heading.tsx",
+      "description": "Heading text with independent visual size and document outline level.",
+      "displayName": "Heading",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "h2"
+          },
+          "description": "Controls the visual font-size and line-height token pairing.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Heading/Heading.types.ts",
+            "name": "HeadingProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Heading/Heading.types.ts",
+              "name": "HeadingProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "HeadingSize",
+            "value": [
+              {
+                "value": "\"h1\""
+              },
+              {
+                "value": "\"h2\""
+              },
+              {
+                "value": "\"h3\""
+              },
+              {
+                "value": "\"h4\""
+              },
+              {
+                "value": "\"h5\""
+              },
+              {
+                "value": "\"h6\""
+              }
+            ]
+          }
+        },
+        "level": {
+          "defaultValue": {
+            "value": "h2"
+          },
+          "description": "Controls the document heading level; use none when the text is not a structural heading.",
+          "name": "level",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Heading/Heading.types.ts",
+            "name": "HeadingProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Heading/Heading.types.ts",
+              "name": "HeadingProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "HeadingLevel",
+            "value": [
+              {
+                "value": "\"none\""
+              },
+              {
+                "value": "\"h1\""
+              },
+              {
+                "value": "\"h2\""
+              },
+              {
+                "value": "\"h3\""
+              },
+              {
+                "value": "\"h4\""
+              },
+              {
+                "value": "\"h5\""
+              },
+              {
+                "value": "\"h6\""
+              }
+            ]
+          }
+        },
+        "weight": {
+          "defaultValue": {
+            "value": "700"
+          },
+          "description": "Applies a font weight from the brand token scale.",
+          "name": "weight",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Heading/Heading.types.ts",
+            "name": "HeadingProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Heading/Heading.types.ts",
+              "name": "HeadingProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "HeadingWeight",
+            "value": [
+              {
+                "value": "400"
+              },
+              {
+                "value": "500"
+              },
+              {
+                "value": "600"
+              },
+              {
+                "value": "700"
+              }
+            ]
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Heading",
+        "description": "Heading provides token-based size, weight, and document-level typography.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use a heading when the content introduces or labels a meaningful section of the page.",
+            "Choose visual size separately from document level.",
+            "Use the default h2 only when it fits the document outline."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Maintain a clear, logical heading hierarchy for users who scan by headings.",
+            "Do not choose a heading level only because its visual size looks right; use size when the visual treatment needs to differ."
+          ],
+          "engineerList": [
+            "Match `level` to the section hierarchy.",
+            "Use `size` for visual hierarchy.",
+            "Use `level=\"none\"` only for non-structural text.",
+            "Do not use Heading solely for styling."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Content: Heading text.",
+            "Style: Visual size and weight token pairing.",
+            "Level: Native heading element or non-semantic presentation."
+          ]
+        },
+        "variants": {
+          "items": []
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "default",
+              "title": "Default",
+              "description": "Shows a page title with a semantic level.",
+              "source": "<Heading level=\"h1\">Payroll overview</Heading>"
+            },
+            {
+              "key": "sizes",
+              "title": "Sizes",
+              "description": "Compares every visual heading size using one consistent document level.",
+              "source": "<Heading level=\"h2\" size=\"l\">Payment details</Heading>"
+            },
+            {
+              "key": "levels",
+              "title": "Levels",
+              "description": "Shows visual size, document level, and non-semantic presentation working independently.",
+              "source": "<Heading level=\"h3\" size=\"l\">Payment schedule</Heading>"
+            },
+            {
+              "key": "weight",
+              "title": "Weight",
+              "description": "Compares the available heading font weights.",
+              "source": "<Heading level=\"h2\" weight=\"bold\">Payroll summary</Heading>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Heading labels page and component sections.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Text",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Heading colour uses the theme-aware heading token."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Use concise labels that describe the section that follows."
+          ]
+        }
+      },
+      "api": {
+        "name": "Heading",
+        "element": "h1–h6 | div",
+        "inherits": "HTMLAttributes<HTMLElement>",
+        "props": {
+          "size": {
+            "type": "h1 | h2 | h3 | h4 | h5 | h6",
+            "values": [
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6"
+            ],
+            "defaultValue": "h2",
+            "control": "select",
+            "description": "Controls the visual font-size and line-height token pairing."
+          },
+          "level": {
+            "type": "h1 | h2 | h3 | h4 | h5 | h6 | none",
+            "values": [
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "none"
+            ],
+            "defaultValue": "h2",
+            "control": "select",
+            "description": "Controls the document heading level; use none when the text is not a structural heading."
+          },
+          "weight": {
+            "type": "400 | 500 | 600 | 700",
+            "values": [
+              400,
+              500,
+              600,
+              700
+            ],
+            "defaultValue": 700,
+            "control": "select",
+            "description": "Applies a font weight from the brand token scale."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Icon/Icon.tsx",
+      "description": "Renders a consistently sized icon from the Pepperoni icon set.",
+      "displayName": "Icon",
+      "methods": [],
+      "props": {
+        "name": {
+          "defaultValue": null,
+          "description": "Selects an icon from the Pepperoni icon set.",
+          "name": "name",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Icon/Icon.types.ts",
+            "name": "IconProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Icon/Icon.types.ts",
+              "name": "IconProps"
+            }
+          ],
+          "required": true,
+          "type": {
+            "name": "enum",
+            "raw": "IconName",
+            "value": [
+              {
+                "value": "\"search\""
+              },
+              {
+                "value": "\"counter-clockwise-triangle-circle\""
+              }
+            ]
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "Controls the rendered icon dimensions.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Icon/Icon.types.ts",
+            "name": "IconProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Icon/Icon.types.ts",
+              "name": "IconProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "IconSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "label": {
+          "defaultValue": null,
+          "description": "Gives meaningful icons an accessible name. Omit for decorative icons.",
+          "name": "label",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Icon/Icon.types.ts",
+            "name": "IconProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Icon/Icon.types.ts",
+              "name": "IconProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "string"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Icon",
+        "description": "Icon renders a named Pepperoni SVG icon at a consistent token-based size and semantic colour.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Select icons through the typed name prop and match size to the surrounding component.",
+            "Leave label unset for decorative icons.",
+            "Label only meaningful standalone icons."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Pair unfamiliar icons with visible text."
+          ],
+          "engineerList": [
+            "Leave decorative Icons hidden from assistive technology.",
+            "Label meaningful standalone Icons.",
+            "Name an icon-only Button on Button, not Icon."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: Controls dimensions and semantic colour.",
+            "SVG: Named vector artwork."
+          ]
+        },
+        "variants": {
+          "items": []
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "search",
+              "title": "Search",
+              "description": "Displays the Search icon."
+            },
+            {
+              "key": "counter-clockwise-triangle-circle",
+              "title": "Counter-clockwise Triangle Circle",
+              "description": "Displays the Counter-clockwise Triangle Circle icon."
+            },
+            {
+              "key": "labelled",
+              "title": "Labelled",
+              "description": "Shows a meaningful standalone icon exposed with an accessible image name."
+            },
+            {
+              "key": "size",
+              "title": "Size",
+              "description": "Compares Small, Medium, and Large icons.",
+              "source": "<Box flex align=\"center\" gap=\"300\">\n  <Icon name=\"search\" size=\"s\" />\n  <Icon name=\"search\" size=\"m\" />\n  <Icon name=\"search\" size=\"l\" />\n</Box>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Icon can be placed inside inputs and actions.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "TextInput",
+              "link": ""
+            },
+            {
+              "name": "Button",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Icon inherits its colour from the icon semantic token."
+          ]
+        },
+        "writing": {
+          "list": []
+        }
+      },
+      "api": {
+        "name": "Icon",
+        "element": "span",
+        "inherits": "HTMLAttributes<HTMLSpanElement>",
+        "props": {
+          "name": {
+            "type": "search | counter-clockwise-triangle-circle",
+            "values": [
+              "search",
+              "counter-clockwise-triangle-circle"
+            ],
+            "required": true,
+            "control": "select",
+            "description": "Selects an icon from the Pepperoni icon set."
+          },
+          "size": {
+            "type": "S | M | L",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls the rendered icon dimensions."
+          },
+          "label": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides an accessible name for a meaningful standalone icon; omit for decorative icons."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Label/Label.tsx",
+      "description": "Standalone Label atom for form controls.",
+      "displayName": "Label",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+            "name": "LabelProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+              "name": "LabelProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "FieldSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "label": {
+          "defaultValue": null,
+          "description": "",
+          "name": "label",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+            "name": "LabelProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+              "name": "LabelProps"
+            }
+          ],
+          "required": true,
+          "type": {
+            "name": "ReactNode"
+          }
+        },
+        "hideLabel": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "hideLabel",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+            "name": "LabelProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+              "name": "LabelProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "optional": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "optional",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+            "name": "LabelProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+              "name": "LabelProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "required": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "required",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+            "name": "LabelProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Label/Label.types.ts",
+              "name": "LabelProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Label",
+        "description": "Label provides accessible, standardized text identification for form controls, supporting size scaling, required/optional tags, and visually hidden modes.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Label to give a form control a clear accessible name.",
+            "Prefer visible labels and match their size to the control.",
+            "Use the stories below for hidden, optional, and required treatments."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Position labels directly above or alongside input elements consistently.",
+            "Ensure label text is clear, concise, and unambiguously identifies the requested input."
+          ],
+          "engineerList": [
+            "Match `htmlFor` to the control's `id`.",
+            "Use `hideLabel` only when visual context is clear.",
+            "Treat `required` and `optional` as visual indicators.",
+            "Set native `required` on the form control.",
+            "Use `aria-describedby` for supporting messages."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Label Text: Descriptive label text identifying the field.",
+            "Status Indicator: Optional tag '(Optional)' or required asterisk indicator '*'."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "small",
+              "title": "Small (S)",
+              "description": "Compact label scale for dense data forms or small inputs.",
+              "image": ""
+            },
+            {
+              "key": "medium",
+              "title": "Medium (M)",
+              "description": "Standard default label scale for standard form fields.",
+              "image": ""
+            },
+            {
+              "key": "large",
+              "title": "Large (L)",
+              "description": "Prominent label scale for hero search or prominent inputs.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "default",
+              "title": "Default Label",
+              "description": "Standard form label providing accessible text identification. Automatically focuses the associated control when clicked via htmlFor."
+            },
+            {
+              "key": "size",
+              "title": "Size",
+              "description": "Compares Small (12px), Medium (14px), and Large (16px) Label scales in one example.",
+              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <Label htmlFor=\"small\" label=\"Small label\" size=\"s\" />\n  <Label htmlFor=\"medium\" label=\"Medium label\" size=\"m\" />\n  <Label htmlFor=\"large\" label=\"Large label\" size=\"l\" />\n</Box>"
+            },
+            {
+              "key": "optional-label",
+              "title": "Optional Label",
+              "description": "Appends a subtle (Optional) tag. Preferred over required asterisks for reducing form visual complexity."
+            },
+            {
+              "key": "required-label",
+              "title": "Required Label",
+              "description": "Appends a required asterisk indicator to denote mandatory fields when explicit required marking is necessary."
+            },
+            {
+              "key": "visually-hidden",
+              "title": "Visually Hidden Label",
+              "description": "Visually hides the label using CSS clip utilities while keeping full text accessible to screen readers."
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Demonstrates standalone Label usage paired with custom controls.",
+          "items": [
+            {
+              "key": "checkbox-label",
+              "name": "Checkbox Group Label",
+              "description": "Label paired with standalone custom checkbox group.",
+              "image": ""
+            }
+          ]
+        },
+        "related": {
+          "items": [
+            {
+              "name": "TextInput",
+              "link": ""
+            },
+            {
+              "name": "Field",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [
+          {
+            "heading": "Label Accessibility",
+            "description": "Ensure all form controls have an accessible name.",
+            "doContent": [
+              {
+                "description": "Always connect Label to input using htmlFor or hide visually with hideLabel.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Never leave inputs without labels or screen reader text.",
+                "image": ""
+              }
+            ]
+          }
+        ],
+        "behaviour": {
+          "list": [
+            "Clicking the Label focuses the linked input control."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Use short, concise nouns or noun phrases for label titles.",
+            "Avoid using punctuation (colons) at the end of labels."
+          ]
+        }
+      },
+      "api": {
+        "name": "Label",
+        "element": "label",
+        "inherits": "LabelHTMLAttributes<HTMLLabelElement>",
+        "props": {
+          "size": {
+            "type": "S | M | L",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls label font size and line height."
+          },
+          "label": {
+            "type": "ReactNode",
+            "required": true,
+            "control": "text",
+            "description": "Provides the visible or visually hidden label content."
+          },
+          "htmlFor": {
+            "type": "string",
+            "control": "text",
+            "description": "Associates the label with a form control whose id matches exactly."
+          },
+          "id": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides an identifier for the label when referenced by aria-labelledby."
+          },
+          "hideLabel": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Visually hides the label while retaining its accessible association."
+          },
+          "optional": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Displays the optional indicator beside the label unless required is also true."
+          },
+          "required": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Displays a visual required indicator and takes precedence over optional; does not set the associated control's native required state."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Table/Table.tsx",
+      "description": "",
+      "displayName": "Table",
+      "methods": [],
+      "props": {
+        "variant": {
+          "defaultValue": {
+            "value": "rows"
+          },
+          "description": "Horizontal row dividers or borders around every cell.",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TableVariant",
+            "value": [
+              {
+                "value": "\"grid\""
+              },
+              {
+                "value": "\"rows\""
+              }
+            ]
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "Controls table cell padding.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TableSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "layout": {
+          "defaultValue": {
+            "value": "auto"
+          },
+          "description": "Controls the browser table layout algorithm.",
+          "name": "layout",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TableLayout",
+            "value": [
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "\"fixed\""
+              }
+            ]
+          }
+        },
+        "minWidth": {
+          "defaultValue": null,
+          "description": "Sets the minimum width before the table can overflow horizontally.",
+          "name": "minWidth",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "MinWidth<string | number>"
+          }
+        },
+        "columns": {
+          "defaultValue": null,
+          "description": "Defines widths for columns across every header and body cell.",
+          "name": "columns",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "readonly TableColumn[]"
+          }
+        },
+        "overflow": {
+          "defaultValue": {
+            "value": "visible"
+          },
+          "description": "Controls horizontal overflow on the table container.",
+          "name": "overflow",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TableOverflow",
+            "value": [
+              {
+                "value": "\"hidden\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "\"scroll\""
+              },
+              {
+                "value": "\"visible\""
+              }
+            ]
+          }
+        },
+        "overflowLabel": {
+          "defaultValue": null,
+          "description": "Names the keyboard-focusable horizontal scroll region when overflow is auto or scroll.",
+          "name": "overflowLabel",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "string"
+          }
+        },
+        "usage": {
+          "defaultValue": null,
+          "description": "Opts the table into a named parent composition.",
+          "name": "usage",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+            "name": "TableProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Table/Table.types.ts",
+              "name": "TableProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "\"card\"",
+            "value": [
+              {
+                "value": "\"card\""
+              }
+            ]
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Table",
+        "description": "Table provides accessible rows and grid presentation for structured data, with opt-in column sizing, overflow, and cell-content controls.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use rows for lightweight data and grid for bordered cells.",
+            "Use native headings and cells through Table.HeaderCell and Table.Cell.",
+            "Use columns to give predictable values a deliberate width and let descriptive content use the remaining space.",
+            "Use the stories below for columns, overflow, editable cells, and content truncation."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Provide clear column headings and sufficient cell contrast.",
+            "Provide a visible caption or another clear way to identify the table's purpose."
+          ],
+          "engineerList": [
+            "Preserve native table structure.",
+            "Give every Table an accessible purpose.",
+            "Use `scope` for simple row and column headers.",
+            "Use `id` and `headers` for complex header relationships.",
+            "Expose sorting with `aria-sort`.",
+            "Name every keyboard-focusable overflow region.",
+            "Provide the full value when visible content is truncated."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: Visible by default; becomes a horizontal overflow boundary only when requested.",
+            "Columns: Optional exact CSS widths and/or proportional ratios shared by every row.",
+            "Header: Native th cells, optionally provided through Table.HeaderCell.",
+            "Body: Native td cells, optionally provided through Table.Cell.",
+            "Cells: Logical alignment, wrapping, line clamping, and ellipsis truncation."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "rows",
+              "title": "Rows",
+              "description": "Rows separated by horizontal borders.",
+              "image": ""
+            },
+            {
+              "key": "grid",
+              "title": "Grid",
+              "description": "Cells separated by horizontal and vertical borders.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "rows",
+              "title": "Rows",
+              "description": "Displays a row-based data table with comfortable outer edge padding.",
+              "source": "<Table aria-label=\"Recent payments\">...</Table>"
+            },
+            {
+              "key": "grid",
+              "title": "Grid",
+              "description": "Displays a bordered data grid with edge-to-edge cells.",
+              "source": "<Table variant=\"grid\" aria-label=\"Payment summary\">...</Table>"
+            },
+            {
+              "key": "columns",
+              "title": "Columns and overflow",
+              "description": "Combines an exact column width with proportional remaining columns. Overflow remains visible unless explicitly enabled.",
+              "source": "<Table\n  layout=\"fixed\"\n  overflow=\"auto\"\n  overflowLabel=\"Payment columns\"\n  columns={[{ width: \"20rem\" }, { ratio: 1 }, { ratio: 2 }]}\n>...</Table>"
+            },
+            {
+              "key": "cell-content",
+              "title": "Cell content",
+              "description": "Shows one-line ellipsis truncation, two-line clamping, and right-aligned slotted content.",
+              "source": "<Table.Cell ellipsis title=\"Full value\">Truncated value</Table.Cell>"
+            },
+            {
+              "key": "grid-input-usage",
+              "title": "Grid: Input Usage",
+              "description": "Demonstrates editable TextInput controls inside grid cells with deliberate column widths. usage='table' inherits the table size and configures each input for its cell. The Payment column receives two shares of the flexible space, Reference receives one share, and Amount remains a predictable 12rem wide for easy comparison down the column.",
+              "source": "<Table\n  variant=\"grid\"\n  layout=\"fixed\"\n  columns={[{ ratio: 2 }, { ratio: 1 }, { width: \"12rem\" }]}\n  aria-label=\"Editable payment line\"\n>\n  <thead><tr>\n    <Table.HeaderCell>Payment</Table.HeaderCell>\n    <Table.HeaderCell>Reference</Table.HeaderCell>\n    <Table.HeaderCell align=\"end\">Amount</Table.HeaderCell>\n  </tr></thead>\n  <tbody><tr>\n    <Table.Cell><TextInput usage=\"table\" label=\"Payment\" hideLabel /></Table.Cell>\n    <Table.Cell><TextInput usage=\"table\" label=\"Reference\" hideLabel /></Table.Cell>\n    <Table.Cell><TextInput usage=\"table\" label=\"Amount\" hideLabel align=\"end\" type=\"text\" inputMode=\"decimal\" /></Table.Cell>\n  </tr></tbody>\n</Table>"
+            },
+            {
+              "key": "header-action",
+              "title": "Header Action",
+              "description": "Makes the complete header label and icon a native button while preserving the surrounding th semantics. Use onAction for sorting or changing the values displayed in a column, and actionLabel to describe the result.",
+              "source": "<Table.HeaderCell\n  onAction={toggleValueMode}\n  actionLabel=\"Show token names\"\n>\n  Computed Value\n  <Icon name=\"counter-clockwise-triangle-circle\" />\n</Table.HeaderCell>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Table composes native table content, Table.HeaderCell/Table.Cell behaviour, and editable form controls.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "TextInput",
+              "link": ""
+            },
+            {
+              "name": "Text",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [
+          {
+            "heading": "Columns: Width and Priority",
+            "description": "Use columns to make the visual width of each column reflect its content and importance.",
+            "doContent": [
+              {
+                "description": "Give descriptive content a larger share of the available width.",
+                "image": ""
+              },
+              {
+                "description": "Use a consistent width and end alignment for amounts, totals, and other quantitative values.",
+                "image": ""
+              },
+              {
+                "description": "Check narrow layouts and enable horizontal overflow before important values become difficult to read.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not give every column equal width when their content has different needs.",
+                "image": ""
+              },
+              {
+                "description": "Avoid widths that truncate key identifiers or separate values from their context.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Grid Input Usage",
+            "description": "Use TextInput usage='table' for editable grid cells and customise columns for the editing task.",
+            "doContent": [
+              {
+                "description": "Keep editable and read-only values aligned consistently within each column.",
+                "image": ""
+              },
+              {
+                "description": "End-align amounts, totals, rates, and quantities beneath an end-aligned heading.",
+                "image": ""
+              },
+              {
+                "description": "Allow enough width for the expected value, focus treatment, and supporting prefix or suffix.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not rely on the browser's automatic column widths for a frequently edited grid.",
+                "image": ""
+              },
+              {
+                "description": "Do not end-align references, account numbers, or other identifiers merely because they contain digits.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Header Actions",
+            "description": "Use onAction when a column heading sorts or changes the values shown in that column.",
+            "doContent": [
+              {
+                "description": "Keep the heading text and supporting icon within one clear action target.",
+                "image": ""
+              },
+              {
+                "description": "Use actionLabel when the visible heading does not explain what the next action will do.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not make the th element itself interactive or place several actions in one heading.",
+                "image": ""
+              }
+            ]
+          }
+        ],
+        "behaviour": {
+          "list": [
+            "Table size is inherited by TextInput controls using table usage.",
+            "Rows have larger inline padding at the first and last cells; grid cells remain edge-to-edge.",
+            "A rows table using usage=\"card\" removes its final divider; use that value only with the matching Card padding={false} composition.",
+            "Rows show a shared animated hover highlight that follows resizing and the full scrollable table width.",
+            "Row-highlight movement is disabled when the user requests reduced motion.",
+            "Rows grow with wrapping or clamped content; sizes provide spacing rather than a fixed row height.",
+            "Header and data cells can use logical start, center, or end alignment, including slotted nodes.",
+            "End-aligned header and data cells use tabular numerals so amounts and quantities align consistently.",
+            "HeaderCell onAction preserves th semantics and renders a native button for keyboard and pointer interaction.",
+            "Cell content can wrap, clamp to a fixed number of lines, or truncate with an ellipsis."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Keep headings concise and values scannable."
+          ]
+        }
+      },
+      "api": {
+        "name": "Table",
+        "element": "table",
+        "inherits": "TableHTMLAttributes<HTMLTableElement>",
+        "props": {
+          "variant": {
+            "type": "rows | grid",
+            "values": [
+              "rows",
+              "grid"
+            ],
+            "defaultValue": "rows",
+            "control": "select",
+            "description": "Uses horizontal row dividers or borders around every cell."
+          },
+          "size": {
+            "type": "s | m | l",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls row height, typography, and cell spacing."
+          },
+          "layout": {
+            "type": "auto | fixed",
+            "values": [
+              "auto",
+              "fixed"
+            ],
+            "defaultValue": "auto",
+            "control": "select",
+            "description": "Controls the browser table layout algorithm."
+          },
+          "minWidth": {
+            "type": "CSSProperties['minWidth']",
+            "control": "text",
+            "description": "Sets the minimum width before the table can overflow horizontally."
+          },
+          "overflow": {
+            "type": "auto | scroll | hidden | visible",
+            "values": [
+              "auto",
+              "scroll",
+              "hidden",
+              "visible"
+            ],
+            "defaultValue": "visible",
+            "control": "select",
+            "description": "Controls horizontal overflow on the table container. Use auto only when horizontal scrolling is required."
+          },
+          "overflowLabel": {
+            "type": "string",
+            "control": "text",
+            "description": "Names the keyboard-focusable horizontal scroll region used by overflow='auto' or overflow='scroll'."
+          },
+          "usage": {
+            "type": "card",
+            "values": [
+              "card"
+            ],
+            "control": "select",
+            "description": "Opts a rows table into a full-bleed Card composition and removes the table's final row divider. Pair with Card padding={false}."
+          },
+          "columns": {
+            "type": "TableColumn[]",
+            "control": false,
+            "description": "Defines exact CSS widths or proportional ratios for columns across every header and body cell. Ratios share the remaining width after fixed columns."
+          },
+          "align": {
+            "type": "start | center | end",
+            "values": [
+              "start",
+              "center",
+              "end"
+            ],
+            "control": "select",
+            "description": "Used by Table.HeaderCell and Table.Cell to align content along the logical inline axis."
+          },
+          "wrap": {
+            "type": "boolean",
+            "defaultValue": true,
+            "control": "boolean",
+            "description": "Used by Table.HeaderCell and Table.Cell to allow or prevent content wrapping."
+          },
+          "clamp": {
+            "type": "number",
+            "control": "number",
+            "description": "Used by Table.HeaderCell and Table.Cell to limit content to a number of lines."
+          },
+          "ellipsis": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Used by Table.HeaderCell and Table.Cell to truncate one-line content with an ellipsis."
+          },
+          "onAction": {
+            "type": "MouseEventHandler<HTMLButtonElement>",
+            "control": false,
+            "description": "Adds a native button inside Table.HeaderCell for sorting or changing the displayed column values."
+          },
+          "actionLabel": {
+            "type": "string",
+            "control": "text",
+            "description": "Names the header action when its visible heading does not describe the result."
+          },
+          "aria-label": {
+            "type": "string",
+            "control": "text",
+            "description": "Names the table when no visible caption is provided."
+          },
+          "aria-labelledby": {
+            "type": "string",
+            "control": "text",
+            "description": "References visible text that names the table."
+          },
+          "aria-describedby": {
+            "type": "string",
+            "control": "text",
+            "description": "References supplementary text that describes the table."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Text/Text.tsx",
+      "description": "Body copy with consistent sizing and semantic colour variants.",
+      "displayName": "Text",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "Controls the body-copy font size and line height.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Text/Text.types.ts",
+            "name": "TextProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Text/Text.types.ts",
+              "name": "TextProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TextSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "default"
+          },
+          "description": "Applies the appropriate semantic text colour.",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Text/Text.types.ts",
+            "name": "TextProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Text/Text.types.ts",
+              "name": "TextProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TextVariant",
+            "value": [
+              {
+                "value": "\"secondary\""
+              },
+              {
+                "value": "\"default\""
+              },
+              {
+                "value": "\"warning\""
+              },
+              {
+                "value": "\"positive\""
+              },
+              {
+                "value": "\"attention\""
+              }
+            ]
+          }
+        },
+        "weight": {
+          "defaultValue": {
+            "value": "400"
+          },
+          "description": "Applies a font weight from the brand token scale.",
+          "name": "weight",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Text/Text.types.ts",
+            "name": "TextProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Text/Text.types.ts",
+              "name": "TextProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "TextWeight",
+            "value": [
+              {
+                "value": "400"
+              },
+              {
+                "value": "500"
+              },
+              {
+                "value": "600"
+              },
+              {
+                "value": "700"
+              }
+            ]
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Text",
+        "description": "Text renders body copy with token-based size, weight, and semantic colour variants.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Text for body copy and supporting messages.",
+            "Choose variants according to meaning.",
+            "Use Heading for structural section titles."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Ensure semantic text colours retain sufficient contrast.",
+            "Never use colour, weight, or size as the only way to communicate meaning."
+          ],
+          "engineerList": [
+            "Use Text only for paragraph content.",
+            "Use semantic HTML for headings and lists.",
+            "Connect helper text with `aria-describedby`.",
+            "Use live regions only when changes need announcing."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Text content: Body copy or message.",
+            "Style: Size, weight, and semantic colour."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "default",
+              "title": "Default",
+              "description": "Primary body text.",
+              "image": ""
+            },
+            {
+              "key": "secondary",
+              "title": "Secondary",
+              "description": "Supporting body text.",
+              "image": ""
+            },
+            {
+              "key": "positive",
+              "title": "Positive",
+              "description": "Successful feedback text.",
+              "image": ""
+            },
+            {
+              "key": "warning",
+              "title": "Warning",
+              "description": "Warning feedback text.",
+              "image": ""
+            },
+            {
+              "key": "attention",
+              "title": "Attention",
+              "description": "Error or attention text.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "default",
+              "title": "Default",
+              "description": "Displays default body text."
+            },
+            {
+              "key": "size",
+              "title": "Size",
+              "description": "Compares Small, Medium, and Large text.",
+              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <Text size=\"s\">Small supporting text</Text>\n  <Text size=\"m\">Medium body text</Text>\n  <Text size=\"l\">Large introductory text</Text>\n</Box>"
+            },
+            {
+              "key": "variant",
+              "title": "Variant",
+              "description": "Compares semantic text variants.",
+              "source": "<Text variant=\"attention\">The payment reference is invalid.</Text>"
+            },
+            {
+              "key": "weight",
+              "title": "Weight",
+              "description": "Compares available font weights.",
+              "source": "<Text weight=\"bold\">Total payment amount</Text>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Text is used for Field helper and validation messages.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Field",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Text colour responds to the active theme."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Use concise, direct language."
+          ]
+        }
+      },
+      "api": {
+        "name": "Text",
+        "element": "p",
+        "inherits": "HTMLAttributes<HTMLParagraphElement>",
+        "props": {
+          "size": {
+            "type": "S | M | L",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls body-copy font size and line height."
+          },
+          "variant": {
+            "type": "default | secondary | positive | warning | attention",
+            "values": [
+              "default",
+              "secondary",
+              "positive",
+              "warning",
+              "attention"
+            ],
+            "defaultValue": "default",
+            "control": "select",
+            "description": "Applies the corresponding semantic text colour."
+          },
+          "weight": {
+            "type": "400 | 500 | 600 | 700",
+            "values": [
+              400,
+              500,
+              600,
+              700
+            ],
+            "defaultValue": 400,
+            "control": "select",
+            "description": "Applies a font weight from the brand token scale."
+          },
+          "id": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides an identifier for referencing this text from a control or relationship."
+          },
+          "role": {
+            "type": "AriaRole",
+            "control": "text",
+            "description": "Adds semantic behaviour such as status or alert when the text is dynamic."
+          },
+          "aria-live": {
+            "type": "off | polite | assertive",
+            "values": [
+              "off",
+              "polite",
+              "assertive"
+            ],
+            "control": "select",
+            "description": "Controls announcement timing for dynamic text."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/TextInput/TextInput.tsx",
+      "description": "",
+      "displayName": "TextInput",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "m"
+          },
+          "description": "",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "FieldSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "default"
+          },
+          "description": "",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "FieldVariant",
+            "value": [
+              {
+                "value": "\"default\""
+              },
+              {
+                "value": "\"success\""
+              },
+              {
+                "value": "\"warning\""
+              },
+              {
+                "value": "\"error\""
+              }
+            ]
+          }
+        },
+        "align": {
+          "defaultValue": {
+            "value": "start"
+          },
+          "description": "",
+          "name": "align",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "\"start\" | \"end\"",
+            "value": [
+              {
+                "value": "\"start\""
+              },
+              {
+                "value": "\"end\""
+              }
+            ]
+          }
+        },
+        "usage": {
+          "defaultValue": null,
+          "description": "",
+          "name": "usage",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "\"table\"",
+            "value": [
+              {
+                "value": "\"table\""
+              }
+            ]
+          }
+        },
+        "label": {
+          "defaultValue": null,
+          "description": "Required for standalone use; omit when an enclosing Field supplies the label.",
+          "name": "label",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        },
+        "hideLabel": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "hideLabel",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "optional": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "optional",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "before": {
+          "defaultValue": null,
+          "description": "",
+          "name": "before",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        },
+        "after": {
+          "defaultValue": null,
+          "description": "",
+          "name": "after",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        },
+        "insideBefore": {
+          "defaultValue": null,
+          "description": "",
+          "name": "insideBefore",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactElement<TextInputInsideSlotProps, string | JSXElementConstructor<any>>"
+          }
+        },
+        "insideAfter": {
+          "defaultValue": null,
+          "description": "",
+          "name": "insideAfter",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactElement<TextInputInsideSlotProps, string | JSXElementConstructor<any>>"
+          }
+        },
+        "noRadius": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "noRadius",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        },
+        "noBorder": {
+          "defaultValue": {
+            "value": "false"
+          },
+          "description": "",
+          "name": "noBorder",
+          "parent": {
+            "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+            "name": "TextInputProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/TextInput/TextInput.types.ts",
+              "name": "TextInputProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "boolean"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "TextInput",
+        "description": "Use TextInput for single-line data entry. It pairs a native input with an accessible label and supports validation, affixes, attached actions, and embedded contexts without replacing native input behaviour.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use TextInput for a single line of editable text; choose a more suitable control for longer responses or constrained choices.",
+            "Provide a visible label by default and use the Medium size for standard form layouts.",
+            "Match type, inputMode, and autoComplete to the value being collected.",
+            "Use the stories below to choose validation, slot, alignment, and embedded composition patterns."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Ensure visible label text or screen-reader accessible label text is provided for every TextInput.",
+            "Maintain high contrast focus indicators and distinct validation state colours (positive, warning, caution)."
+          ],
+          "engineerList": [
+            "Provide a meaningful `label`.",
+            "TextInput automatically connects the label and input.",
+            "Use `hideLabel` only when the visual context is clear.",
+            "Inside Field, omit `label` and `id` from TextInput.",
+            "Field context automatically supplies the control id and message relationships.",
+            "Pass a custom `id` only for an external integration or ARIA relationship.",
+            "Use native `required` for validation; `optional` changes the label only.",
+            "Set `name` when the value must be included in form submission.",
+            "Choose native input props that match the expected value and interaction.",
+            "Preserve native keyboard behaviour, focus rings, and tab order."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Label / Header: Accessible text identifier for the input element.",
+            "Input Container / Wrapper: Interactive visual boundary holding input text, focus rings, and border styling.",
+            "InsideSlot: Explicit text or compact spacing wrapper for content within the input boundary.",
+            "Outside Slots (Before / After): Attached controls positioned outside the input boundary.",
+            "Validation State: Highlights success, warning, or error states with semantic token colours."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "small",
+              "title": "Small (S)",
+              "description": "Compact scale for dense tables, sidebars, and space-constrained forms.",
+              "image": ""
+            },
+            {
+              "key": "medium",
+              "title": "Medium (M)",
+              "description": "Standard default scale for standard form layouts and user input.",
+              "image": ""
+            },
+            {
+              "key": "large",
+              "title": "Large (L)",
+              "description": "Spacious scale for hero search bars, key entry fields, or touch-heavy interfaces.",
+              "image": ""
+            },
+            {
+              "key": "success",
+              "title": "Success Variant",
+              "description": "Positive state indicating valid input entry or successful verification.",
+              "image": ""
+            },
+            {
+              "key": "warning",
+              "title": "Warning Variant",
+              "description": "Attention state drawing notice to non-blocking input cautions.",
+              "image": ""
+            },
+            {
+              "key": "error",
+              "title": "Error Variant",
+              "description": "Caution state indicating invalid data entry requiring user resolution.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "with-label",
+              "title": "Label",
+              "description": "Standard text field layout paired with a visible accessible label above the input. Recommended for all primary form inputs to ensure readability and WCAG compliance."
+            },
+            {
+              "key": "automatic-label-connection",
+              "title": "Accessibility: Automatic Label Connection",
+              "description": "Shows what TextInput handles when label is provided: it generates an id, connects the label with htmlFor, gives the input an accessible name, and lets selecting the label move focus to the input. No manual id is needed for standard use."
+            },
+            {
+              "key": "field-error-relationship",
+              "title": "Accessibility: Field Error Relationship",
+              "description": "Shows the Field composition engineers should use for validation messaging. When TextInput omits label and id, it automatically uses Field's label target and receives aria-describedby, aria-errormessage, and aria-invalid from context.",
+              "source": "<Field\n  label=\"Payroll reference\"\n  variant=\"error\"\n  message=\"Enter a reference containing 6 to 12 letters or numbers.\"\n>\n  <TextInput variant=\"error\" defaultValue=\"A-1\" />\n</Field>"
+            },
+            {
+              "key": "visually-hidden-label",
+              "title": "Hidden Label",
+              "description": "Visually hides the label while preserving its accessible name. Ideal for compact search bars or header input fields where visual context is obvious."
+            },
+            {
+              "key": "optional",
+              "title": "Optional",
+              "description": "Identifies a non-mandatory field with an (Optional) label indicator. Use this when most fields in the form are required; the optional prop changes the label only and does not alter native validation."
+            },
+            {
+              "key": "size",
+              "title": "Size",
+              "description": "Compares Small (32px), Medium (40px), and Large (48px) TextInput scales in one example.",
+              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <TextInput size=\"s\" label=\"Employee number — Small\" placeholder=\"e.g. 1042\" />\n  <TextInput size=\"m\" label=\"Employee number — Medium\" placeholder=\"e.g. 1042\" />\n  <TextInput size=\"l\" label=\"Employee number — Large\" placeholder=\"e.g. 1042\" />\n</Box>"
+            },
+            {
+              "key": "variant-success",
+              "title": "Success",
+              "description": "Positive validation state with green border styling (--green-500). Use when input has passed inline validation (e.g. promo code verified or username available)."
+            },
+            {
+              "key": "variant-warning",
+              "title": "Warning",
+              "description": "Caution state with orange border styling (--orange-500). Use to highlight non-blocking soft warnings (e.g. storage capacity at 85% or password strength warning)."
+            },
+            {
+              "key": "variant-error",
+              "title": "Error",
+              "description": "Critical error state with red border styling (--red-500). Use when input data is invalid and prevents form submission until corrected."
+            },
+            {
+              "key": "inside-slot-density",
+              "title": "Inside Slot Density",
+              "description": "Compares the two explicit inside-slot spacing contracts. Use density='text' for typographic affixes such as '$' or 'AUD'. Use density='compact' for Icons and Badges. Always wrap insideBefore and insideAfter content in TextInput.InsideSlot; density describes spacing, not the child component type.",
+              "source": "<TextInput\n  label=\"Amount\"\n  type=\"text\"\n  inputMode=\"decimal\"\n  align=\"end\"\n  insideBefore={<TextInput.InsideSlot density=\"text\"><Text>$</Text></TextInput.InsideSlot>}\n  insideAfter={<TextInput.InsideSlot density=\"text\"><Text>AUD</Text></TextInput.InsideSlot>}\n  placeholder=\"0.00\"\n/>"
+            },
+            {
+              "key": "inside-slots-before",
+              "title": "Inside Slot: Before",
+              "description": "Places compact Icon content before editable text with TextInput.InsideSlot density='compact'. Use for search, filter, or other visual field indicators.",
+              "source": "<TextInput\n  label=\"Search products\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Icon name=\"search\" /></TextInput.InsideSlot>}\n  placeholder=\"Search catalogue...\"\n/>"
+            },
+            {
+              "key": "inside-slots-after",
+              "title": "Inside Slot: After",
+              "description": "Places compact Icon content after editable text with TextInput.InsideSlot density='compact' and compares all three input sizes.",
+              "source": "<TextInput\n  label=\"Filter catalogue\"\n  insideAfter={<TextInput.InsideSlot density=\"compact\"><Icon name=\"search\" /></TextInput.InsideSlot>}\n  placeholder=\"Filter options...\"\n/>"
+            },
+            {
+              "key": "inside-slots-badge",
+              "title": "Inside Slot: Badge",
+              "description": "Demonstrates leading and trailing Badges using TextInput.InsideSlot density='compact' at Small, Medium, and Large sizes.",
+              "source": "<TextInput\n  label=\"Payment amount\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Badge>NZD</Badge></TextInput.InsideSlot>}\n  placeholder=\"0.00\"\n/>"
+            },
+            {
+              "key": "outside-slots-before",
+              "title": "Outside Slot: Before",
+              "description": "Attaches an action before the input. Pair the before slot with Button usage='text-input-before'; TextInput removes its leading radius while Button owns the matching joined edge, border overlap, sizing, and focus treatment."
+            },
+            {
+              "key": "outside-slots-after",
+              "title": "Outside Slot: After",
+              "description": "Attaches an action after the input. Pair the after slot with Button usage='text-input-after'; TextInput removes its trailing radius while Button owns the matching joined edge, border overlap, sizing, and focus treatment."
+            },
+            {
+              "key": "align-right-numbers",
+              "title": "Aligned: End",
+              "description": "Uses align='end' for quantitative values people compare or total, such as amounts, balances, rates, and quantities. Keep identifiers such as codes, account numbers, and telephone numbers start-aligned. Currency and unit affixes use TextInput.InsideSlot density='text'.",
+              "source": "<TextInput\n  label=\"Transfer amount\"\n  align=\"end\"\n  inputMode=\"decimal\"\n  defaultValue=\"1,250.00\"\n  insideBefore={<TextInput.InsideSlot density=\"text\"><Text>$</Text></TextInput.InsideSlot>}\n  insideAfter={<TextInput.InsideSlot density=\"text\"><Text>AUD</Text></TextInput.InsideSlot>}\n/>"
+            },
+            {
+              "key": "input-mode",
+              "title": "Input Mode",
+              "description": "Matches native input semantics and virtual keyboard hints to the expected value. Use decimal for amounts, numeric for whole-number codes, email for email addresses, and tel for telephone numbers. inputMode changes the suggested keyboard; it does not validate, restrict, or align the value. Reserve align='end' for amounts, totals, and other quantitative values.",
+              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <TextInput label=\"Amount\" type=\"text\" inputMode=\"decimal\" align=\"end\" placeholder=\"0.00\" />\n  <TextInput label=\"Verification code\" type=\"text\" inputMode=\"numeric\" autoComplete=\"one-time-code\" />\n  <TextInput label=\"Email address\" type=\"email\" inputMode=\"email\" autoComplete=\"email\" />\n  <TextInput label=\"Telephone number\" type=\"tel\" inputMode=\"tel\" autoComplete=\"tel\" />\n</Box>"
+            },
+            {
+              "key": "table-cell-embedding",
+              "title": "Usage: Table Cell",
+              "description": "Composes TextInput with Table.HeaderCell and Table.Cell for inline editing. usage='table' inherits the Table size and applies the seamless grid-cell treatment. Customise columns for each density: the final Amount column uses 16rem at Small, 21rem at Medium, and 24rem at Large.",
+              "source": "const size = \"m\";\nconst amountColumnWidths = { s: \"16rem\", m: \"21rem\", l: \"24rem\" };\n\n<Table\n  size={size}\n  variant=\"grid\"\n  aria-label=\"Editable payment line item\"\n  columns={[\n    { ratio: 1 },\n    { ratio: 2 },\n    { width: amountColumnWidths[size] },\n  ]}\n>\n  <thead>\n    <tr>\n      <Table.HeaderCell>Payment</Table.HeaderCell>\n      <Table.HeaderCell>Reference</Table.HeaderCell>\n      <Table.HeaderCell align=\"end\">Amount</Table.HeaderCell>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <Table.Cell>\n        <TextInput\n          usage=\"table\"\n          label=\"Payment\"\n          hideLabel\n          defaultValue=\"Supplier payment\"\n        />\n      </Table.Cell>\n      <Table.Cell>\n        <TextInput\n          usage=\"table\"\n          label=\"Reference\"\n          hideLabel\n          defaultValue=\"INV-1042\"\n        />\n      </Table.Cell>\n      <Table.Cell>\n        <TextInput\n          usage=\"table\"\n          label=\"Amount\"\n          hideLabel\n          align=\"end\"\n          type=\"text\"\n          inputMode=\"decimal\"\n          defaultValue=\"1,250.00\"\n          insideBefore={\n            <TextInput.InsideSlot density=\"text\">\n              <Text variant=\"secondary\">$</Text>\n            </TextInput.InsideSlot>\n          }\n        />\n      </Table.Cell>\n    </tr>\n  </tbody>\n</Table>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Showcases real-world UI scenarios and slot combinations for TextInput.",
+          "items": [
+            {
+              "key": "search-bar",
+              "name": "Global Search Bar",
+              "description": "TextInput composed with insideBefore search icon and insideAfter clear button for fast content filtering.",
+              "image": ""
+            },
+            {
+              "key": "currency-input",
+              "name": "Currency & Financial Entry",
+              "description": "Right-aligned TextInput with prefix '$' and suffix currency tag for financial applications.",
+              "image": ""
+            }
+          ]
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Field",
+              "link": ""
+            },
+            {
+              "name": "Label",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [
+          {
+            "heading": "Input Format: Match the Expected Value",
+            "description": "Choose input settings that support the value's format without changing its meaning.",
+            "doContent": [
+              {
+                "description": "Use decimal for amounts and numeric for whole-number codes.",
+                "image": ""
+              },
+              {
+                "description": "Use email or tel for the corresponding contact details.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not use number for codes, account numbers, or values that may contain leading zeroes.",
+                "image": ""
+              },
+              {
+                "description": "Do not rely on inputMode to format or validate the entered value.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "End Alignment: Number / Quantity",
+            "description": "Use align='end' only for numbers and quantities people need to compare. TextInput automatically uses tabular numerals so repeated values align consistently.",
+            "doContent": [
+              {
+                "description": "End-align amounts, balances, totals, rates, and quantities.",
+                "image": ""
+              },
+              {
+                "description": "Keep related values consistently aligned in tables and comparison layouts.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not end-align codes, references, account numbers, or telephone numbers.",
+                "image": ""
+              },
+              {
+                "description": "Do not end-align general text merely because it contains digits.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Form Layout Direction",
+            "description": "Organise form inputs in clean vertical flows.",
+            "doContent": [
+              {
+                "description": "Stack text inputs vertically in standard form flows for scannability.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Avoid complex multi-column input layouts on standard forms.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Table Usage: Grid Editing",
+            "description": "Use usage='table' for inline table editing. It inherits the Table size and configures TextInput for an editable cell.",
+            "doContent": [
+              {
+                "description": "Use usage='table' when editable inputs should fill their cells seamlessly.",
+                "image": ""
+              },
+              {
+                "description": "Align values consistently with their column heading and read-only cells.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Avoid editable grid cells for long-form entry, detailed validation guidance, or a task people complete one field at a time; use a standard form instead.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Label and Hidden Label",
+            "description": "Use label to make the expected value clear before someone starts typing.",
+            "doContent": [
+              {
+                "description": "Use hideLabel only when the surrounding context communicates the purpose clearly.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not use placeholder text as the only explanation of what to enter.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Optional Fields",
+            "description": "Use optional to identify the exception in a form instead of marking every field.",
+            "doContent": [
+              {
+                "description": "Use (Optional) when most fields are required and only a small number can be skipped.",
+                "image": ""
+              },
+              {
+                "description": "Apply the same optional pattern consistently throughout the form.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Avoid adding an asterisk to every required field when an Optional indicator would make the form easier to scan.",
+                "image": ""
+              },
+              {
+                "description": "Do not mix required asterisks and optional markers in the same form.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Inside Slots: Prefixes and Suffixes",
+            "description": "Use insideBefore and insideAfter for supporting content that helps people understand the value.",
+            "doContent": [
+              {
+                "description": "Use familiar prefixes and suffixes for currencies, units, and formats.",
+                "image": ""
+              },
+              {
+                "description": "Use a recognisable icon when it clarifies the field's purpose or state.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not crowd the input with decorative icons, badges, or repeated information.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "heading": "Outside Slots: Attached Actions",
+            "description": "Use before and after for actions that directly support the value being entered.",
+            "doContent": [
+              {
+                "description": "Use a short, specific action such as Verify, Apply, Show, or Clear.",
+                "image": ""
+              },
+              {
+                "description": "Keep the action visually connected to the input it affects.",
+                "image": ""
+              }
+            ],
+            "dontContent": [
+              {
+                "description": "Do not attach unrelated actions or several competing actions to one input.",
+                "image": ""
+              },
+              {
+                "description": "Avoid icon-only actions when their meaning is not immediately recognisable.",
+                "image": ""
+              }
+            ]
+          }
+        ],
+        "behaviour": {
+          "list": [
+            "Automatically generates and associates a stable input id with the internal Label.",
+            "The error variant exposes the native invalid state while leaving message relationships to the composed helper or Field content.",
+            "Focus ring highlights on user interaction or keyboard navigation.",
+            "Validation states update dynamically based on form control props.",
+            "Slot content aligns vertically within input height bounds.",
+            "TextInput.InsideSlot receives placement and resolved size from TextInput; consumers choose only text or compact density.",
+            "Text density preserves typographic breathing room; compact density reduces edge spacing for Icons and Badges.",
+            "End-aligned values use tabular numerals for consistent number comparison."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Write labels as short nouns or noun phrases that describe the expected value.",
+            "Use placeholders for examples or formatting hints, not requirements.",
+            "Write validation messages that explain what went wrong and how to fix it.",
+            "Use optional markers sparingly and consistently across a form.",
+            "Keep hint text short enough that it does not compete with the entered value."
+          ]
+        }
+      },
+      "api": {
+        "name": "TextInput",
+        "element": "input",
+        "inherits": "InputHTMLAttributes<HTMLInputElement>",
+        "props": {
+          "size": {
+            "type": "s | m | l",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls the input height, typography, spacing, and radius."
+          },
+          "variant": {
+            "type": "default | success | warning | error",
+            "values": [
+              "default",
+              "success",
+              "warning",
+              "error"
+            ],
+            "defaultValue": "default",
+            "control": "select",
+            "description": "Applies the validation state and corresponding semantic colours."
+          },
+          "align": {
+            "type": "start | end",
+            "values": [
+              "start",
+              "end"
+            ],
+            "defaultValue": "start",
+            "control": "radio",
+            "description": "Aligns editable text to the start or end of the input."
+          },
+          "usage": {
+            "type": "table",
+            "values": [
+              "table"
+            ],
+            "control": "select",
+            "description": "Enables seamless table-cell composition: inherits the nearest Table size, removes the input border and radius, and emits the table-cell control contract."
+          },
+          "label": {
+            "type": "ReactNode",
+            "control": "text",
+            "description": "Accessible label associated with the native input. Required for standalone use; omit when an enclosing Field supplies the label and control context."
+          },
+          "required": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Native input constraint that marks the control as required; distinct from the visual optional indicator."
+          },
+          "name": {
+            "type": "string",
+            "control": "text",
+            "description": "Names the input for native form submission."
+          },
+          "autoComplete": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides the browser autocomplete token appropriate to the field purpose."
+          },
+          "inputMode": {
+            "type": "string",
+            "control": "text",
+            "description": "Hints the most suitable virtual keyboard for the expected input."
+          },
+          "aria-label": {
+            "type": "string",
+            "control": "text",
+            "description": "Provides an accessible name when a visible or hidden Label cannot be used."
+          },
+          "aria-labelledby": {
+            "type": "string",
+            "control": "text",
+            "description": "References one or more elements that provide the input's accessible name."
+          },
+          "aria-describedby": {
+            "type": "string",
+            "control": "text",
+            "description": "References helper or validation text that describes the input."
+          },
+          "aria-errormessage": {
+            "type": "string",
+            "control": "text",
+            "description": "References the error message element when the input is invalid."
+          },
+          "hideLabel": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Visually hides the label while preserving its accessible name."
+          },
+          "optional": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Displays a visual optional indicator beside the label; does not change native input validation."
+          },
+          "before": {
+            "type": "ReactNode",
+            "control": false,
+            "description": "Places content outside and before the input boundary. Use Button usage='text-input-before' for an attached action."
+          },
+          "after": {
+            "type": "ReactNode",
+            "control": false,
+            "description": "Places content outside and after the input boundary. Use Button usage='text-input-after' for an attached action."
+          },
+          "insideBefore": {
+            "type": "ReactElement<TextInputInsideSlotProps>",
+            "control": false,
+            "description": "Places TextInput.InsideSlot content before editable text. Use density='text' for words or symbols and density='compact' for icons or badges."
+          },
+          "insideAfter": {
+            "type": "ReactElement<TextInputInsideSlotProps>",
+            "control": false,
+            "description": "Places TextInput.InsideSlot content after editable text. Use density='text' for words or symbols and density='compact' for icons or badges."
+          },
+          "noRadius": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Removes the input boundary radius for flush composition."
+          },
+          "noBorder": {
+            "type": "boolean",
+            "defaultValue": false,
+            "control": "boolean",
+            "description": "Removes the input border for embedded composition."
+          }
+        }
+      }
+    }
+  ],
+  "fragments": [
+    {
+      "id": "editable-payment-table",
+      "title": "Editable payment table",
+      "description": "Compose TextInput controls inside a grid Table for inline editing of a payment line item. The table owns cell layout and density; each input owns its value, accessible name, focus, and interaction.",
+      "useWhen": "A structured desktop table needs directly editable values while preserving native table semantics and a full-cell input target.",
+      "components": [
+        "Table",
+        "TextInput"
+      ],
+      "rules": [
+        "Set usage='table' on every TextInput embedded in a table cell so it inherits the table size and is configured for that context.",
+        "Set size on Table and let TextInput inherit that size through TableSizeContext; do not duplicate size on each input.",
+        "Keep the native table, thead, tbody, tr, th, and td structure.",
+        "Provide a specific label for every TextInput; use hideLabel when the column heading already provides the visible context.",
+        "Use align='end' for monetary or numeric values.",
+        "Wrap typographic prefixes or suffixes in TextInput.InsideSlot with density='text'; use density='compact' only for Icons, Badges, or similarly compact visual indicators.",
+        "Do not set data-table-cell-control manually. TextInput emits it from usage='table', and Table responds with td:has([data-table-cell-control]) to remove cell padding.",
+        "Keep focus, keyboard editing, value state, and validation on TextInput rather than recreating them on the table cell."
+      ],
+      "example": {
+        "type": "Table",
+        "props": {
+          "variant": "grid",
+          "size": "m"
+        },
+        "children": [
+          {
+            "type": "thead",
+            "props": {},
+            "children": [
+              {
+                "type": "tr",
+                "props": {},
+                "children": [
+                  {
+                    "type": "th",
+                    "props": {},
+                    "children": [
+                      "Payment"
+                    ]
+                  },
+                  {
+                    "type": "th",
+                    "props": {},
+                    "children": [
+                      "Reference"
+                    ]
+                  },
+                  {
+                    "type": "th",
+                    "props": {},
+                    "children": [
+                      "Amount"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tbody",
+            "props": {},
+            "children": [
+              {
+                "type": "tr",
+                "props": {},
+                "children": [
+                  {
+                    "type": "td",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "TextInput",
+                        "props": {
+                          "usage": "table",
+                          "label": "Payment",
+                          "hideLabel": true,
+                          "defaultValue": "Supplier payment"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "td",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "TextInput",
+                        "props": {
+                          "usage": "table",
+                          "label": "Reference",
+                          "hideLabel": true,
+                          "defaultValue": "INV-1042"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "type": "td",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "TextInput",
+                        "props": {
+                          "usage": "table",
+                          "label": "Amount",
+                          "hideLabel": true,
+                          "align": "end",
+                          "insideBefore": {
+                            "type": "TextInput.InsideSlot",
+                            "props": {
+                              "density": "text"
+                            },
+                            "children": [
+                              "$"
+                            ]
+                          },
+                          "insideAfter": {
+                            "type": "TextInput.InsideSlot",
+                            "props": {
+                              "density": "text"
+                            },
+                            "children": [
+                              "AUD"
+                            ]
+                          },
+                          "defaultValue": "1,250.00"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

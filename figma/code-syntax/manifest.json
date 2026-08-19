@@ -1,0 +1,7 @@
+{
+  "name": "Pepperoni token code syntax",
+  "id": "pepperoni-token-code-syntax",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"]
+}

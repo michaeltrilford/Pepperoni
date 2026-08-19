@@ -1,0 +1,128 @@
+import * as sx from "@stylexjs/stylex";
+
+export const styles = sx.create({
+  button: {
+    alignItems: "center",
+    borderColor: "transparent",
+    borderRadius: "var(--form-radius-medium)",
+    borderStyle: "solid",
+    borderWidth: "var(--stroke-100)",
+    cursor: "pointer",
+    display: "inline-flex",
+    fontFamily: "var(--font-family)",
+    fontSize: "var(--font-size-200)",
+    fontWeight: "var(--font-weight-400)",
+    justifyContent: "center",
+    lineHeight: "var(--line-height-200)",
+    minHeight: "40px",
+    paddingBlock: 0,
+    paddingInline: "var(--space-300)",
+    textDecoration: "none",
+    letterSpacing: "var(--letter-spacing-200)",
+    transition:
+      "background-color var(--speed-200) ease, border-color var(--speed-200) ease, color var(--speed-200) ease",
+    ":focus-visible": {
+      outlineColor: "var(--form-focus-border)",
+      outlineOffset: "var(--stroke-100)",
+      outlineStyle: "solid",
+      outlineWidth: "var(--stroke-200)",
+    },
+  },
+  sizeXS: {
+    fontSize: "var(--font-size-50)",
+    lineHeight: "var(--line-height-50)",
+    minHeight: "var(--space-500)",
+    paddingInline: "var(--space-200)",
+  },
+  sizeS: {
+    fontSize: "var(--font-size-100)",
+    lineHeight: "var(--line-height-100)",
+    minHeight: "var(--space-600)",
+    paddingInline: "var(--space-300)",
+  },
+  sizeM: { minHeight: "40px" },
+  sizeL: {
+    fontSize: "var(--font-size-300)",
+    lineHeight: "var(--line-height-300)",
+    minHeight: "var(--space-700)",
+    paddingInline: "var(--space-400)",
+  },
+  iconOnly: {
+    flexShrink: 0,
+    paddingInline: 0,
+  },
+  iconOnlyXS: {
+    height: "var(--space-500)",
+    width: "var(--space-500)",
+  },
+  iconOnlyS: {
+    height: "var(--space-600)",
+    width: "var(--space-600)",
+  },
+  iconOnlyM: {
+    height: "40px",
+    width: "40px",
+  },
+  iconOnlyL: {
+    height: "var(--space-700)",
+    width: "var(--space-700)",
+  },
+  primary: {
+    backgroundColor: "var(--button-primary-background)",
+    color: "var(--button-primary-text-color)",
+    ":hover": { backgroundColor: "var(--button-primary-hover-background)" },
+  },
+  secondary: {
+    backgroundColor: "transparent",
+    borderColor: "var(--button-secondary-border)",
+    color: "var(--button-secondary-text-color)",
+    ":hover": { backgroundColor: "var(--button-secondary-hover-background)" },
+    ":focus-visible": { borderColor: "transparent" },
+  },
+  tertiary: {
+    backgroundColor: "transparent",
+    borderColor: "transparent",
+    color: "var(--button-tertiary-text-color)",
+    ":hover": { backgroundColor: "var(--button-tertiary-hover-background)" },
+  },
+  link: {
+    backgroundColor: "transparent",
+    borderColor: "transparent",
+    color: "var(--button-tertiary-text-color)",
+    minHeight: "auto",
+    paddingInline: 0,
+    textDecoration: "underline",
+    textUnderlineOffset: "0.15em",
+    ":hover": { backgroundColor: "transparent" },
+  },
+  disabled: {
+    backgroundColor: "var(--form-disabled-background)",
+    borderColor: "transparent",
+    color: "var(--form-disabled-text-color)",
+    cursor: "not-allowed",
+    ":hover": { backgroundColor: "var(--form-disabled-background)" },
+  },
+  textInputSlot: {
+    fontSize: "inherit",
+    height: "100%",
+    lineHeight: "inherit",
+    minHeight: "inherit",
+    position: "relative",
+    ":focus-visible": {
+      borderColor: "var(--form-focus-border)",
+      boxShadow: "0 0 0 var(--stroke-100) var(--form-focus-border)",
+      outlineStyle: "none",
+      zIndex: 2,
+    },
+  },
+  textInputBefore: {
+    borderBottomRightRadius: 0,
+    borderTopRightRadius: 0,
+    marginInlineEnd: "calc(var(--stroke-100) * -1)",
+  },
+  textInputAfter: {
+    borderBottomLeftRadius: 0,
+    borderTopLeftRadius: 0,
+    marginInlineStart: "calc(var(--stroke-100) * -1)",
+  },
+});

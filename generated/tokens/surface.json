@@ -1,0 +1,48 @@
+{
+  "surface-tone": {
+    "100": {
+      "$value": "oklch(99.5% 0.002 248)",
+      "$type": "color"
+    },
+    "200": {
+      "$value": "oklch(96.6% 0.004 248)",
+      "$type": "color"
+    },
+    "300": {
+      "$value": "oklch(94% 0.006 248)",
+      "$type": "color"
+    },
+    "400": {
+      "$value": "oklch(90% 0.008 248)",
+      "$type": "color"
+    },
+    "500": {
+      "$value": "oklch(87% 0.01 248)",
+      "$type": "color"
+    },
+    "600": {
+      "$value": "oklch(20% 0.0312 239.31)",
+      "$type": "color"
+    },
+    "700": {
+      "$value": "oklch(18% 0.0312 239.31)",
+      "$type": "color"
+    },
+    "800": {
+      "$value": "oklch(16% 0.0312 239.31)",
+      "$type": "color"
+    },
+    "900": {
+      "$value": "oklch(12% 0.03 239.31)",
+      "$type": "color"
+    },
+    "1000": {
+      "$value": "oklch(8% 0.04 239.31)",
+      "$type": "color"
+    },
+    "1100": {
+      "$value": "oklch(3% 0.04 239.31)",
+      "$type": "color"
+    }
+  }
+}

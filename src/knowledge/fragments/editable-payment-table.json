@@ -1,0 +1,115 @@
+{
+  "id": "editable-payment-table",
+  "title": "Editable payment table",
+  "description": "Compose TextInput controls inside a grid Table for inline editing of a payment line item. The table owns cell layout and density; each input owns its value, accessible name, focus, and interaction.",
+  "useWhen": "A structured desktop table needs directly editable values while preserving native table semantics and a full-cell input target.",
+  "components": [
+    "Table",
+    "TextInput"
+  ],
+  "rules": [
+    "Set usage='table' on every TextInput embedded in a table cell so it inherits the table size and is configured for that context.",
+    "Set size on Table and let TextInput inherit that size through TableSizeContext; do not duplicate size on each input.",
+    "Keep the native table, thead, tbody, tr, th, and td structure.",
+    "Provide a specific label for every TextInput; use hideLabel when the column heading already provides the visible context.",
+    "Use align='end' for monetary or numeric values.",
+    "Wrap typographic prefixes or suffixes in TextInput.InsideSlot with density='text'; use density='compact' only for Icons, Badges, or similarly compact visual indicators.",
+    "Do not set data-table-cell-control manually. TextInput emits it from usage='table', and Table responds with td:has([data-table-cell-control]) to remove cell padding.",
+    "Keep focus, keyboard editing, value state, and validation on TextInput rather than recreating them on the table cell."
+  ],
+  "example": {
+    "type": "Table",
+    "props": {
+      "variant": "grid",
+      "size": "m"
+    },
+    "children": [
+      {
+        "type": "thead",
+        "props": {},
+        "children": [
+          {
+            "type": "tr",
+            "props": {},
+            "children": [
+              { "type": "th", "props": {}, "children": ["Payment"] },
+              { "type": "th", "props": {}, "children": ["Reference"] },
+              { "type": "th", "props": {}, "children": ["Amount"] }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "tbody",
+        "props": {},
+        "children": [
+          {
+            "type": "tr",
+            "props": {},
+            "children": [
+              {
+                "type": "td",
+                "props": {},
+                "children": [
+                  {
+                    "type": "TextInput",
+                    "props": {
+                      "usage": "table",
+                      "label": "Payment",
+                      "hideLabel": true,
+                      "defaultValue": "Supplier payment"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "td",
+                "props": {},
+                "children": [
+                  {
+                    "type": "TextInput",
+                    "props": {
+                      "usage": "table",
+                      "label": "Reference",
+                      "hideLabel": true,
+                      "defaultValue": "INV-1042"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "td",
+                "props": {},
+                "children": [
+                  {
+                    "type": "TextInput",
+                    "props": {
+                      "usage": "table",
+                      "label": "Amount",
+                      "hideLabel": true,
+                      "align": "end",
+                      "insideBefore": {
+                        "type": "TextInput.InsideSlot",
+                        "props": { "density": "text" },
+                        "children": ["$"]
+                      },
+                      "insideAfter": {
+                        "type": "TextInput.InsideSlot",
+                        "props": { "density": "text" },
+                        "children": ["AUD"]
+                      },
+                      "defaultValue": "1,250.00"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

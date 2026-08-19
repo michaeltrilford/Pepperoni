@@ -1,0 +1,149 @@
+/**
+ * Semantic theme mappings.
+ * Primitive values are defined in brand.css.
+ */
+
+:where(html) {
+  /* Form */
+  --form-radius-small: var(--radius-100);
+  --form-radius-medium: var(--radius-200);
+  --form-radius-large: var(--radius-300);
+
+  /* ================================================================================================== */
+  /* Components                                                                                         */
+  /* ================================================================================================== */
+
+  /* Icon */
+  --icon-size-small: 2rem;
+  --icon-size-medium: 2.4rem;
+  --icon-size-large: 3.2rem;
+
+  /* Badge */
+  --badge-radius-small: var(--radius-400);
+  --badge-radius-medium: var(--radius-500);
+  --badge-radius-large: var(--radius-600);
+  --badge-height-small: 2rem;
+  --badge-height-medium: 2.4rem;
+  --badge-height-large: 3.2rem;
+  --badge-padding-inline-small: var(--space-100);
+  --badge-padding-inline-medium: var(--space-200);
+  --badge-padding-inline-large: var(--space-300);
+
+  /* Table */
+  --table-background: var(--transparent);
+  --table-header-background: var(--transparent);
+  --table-cell-padding-small-block: var(--space-300);
+  --table-cell-padding-small-inline: var(--space-400);
+  --table-cell-padding-medium-block: var(--space-400);
+  --table-cell-padding-medium-inline: var(--space-500);
+  --table-cell-padding-large-block: var(--space-500);
+  --table-cell-padding-large-inline: var(--space-600);
+}
+
+html[data-theme="light"] {
+  /* Surface */
+  --surface: var(--white);
+
+  /* Text */
+  --text-color: var(--grey-800);
+  --text-color-secondary: var(--grey-400);
+  --text-color-positive: var(--green-500);
+  --text-color-warning: var(--orange-500);
+  --text-color-attention: var(--red-500);
+
+  /* Form */
+  --form-background: var(--white);
+  --form-focus-border: var(--turquoise-500);
+  --form-placeholder-text-color: var(--grey-400);
+  --form-disabled-background: var(--grey-200);
+  --form-disabled-text-color: var(--grey-400);
+  --form-default-border: var(--grey-300);
+  --form-default-text-color: var(--grey-800);
+  --form-success-border: var(--green-500);
+  --form-success-text-color: var(--green-500);
+  --form-warning-border: var(--orange-500);
+  --form-warning-text-color: var(--orange-500);
+  --form-error-border: var(--red-500);
+  --form-error-text-color: var(--red-500);
+
+  /* Button */
+  --button-primary-background: var(--turquoise-500);
+  --button-primary-hover-background: var(--turquoise-400);
+  --button-primary-text-color: var(--black);
+  --button-secondary-border: var(--grey-300);
+  --button-secondary-text-color: var(--grey-800);
+  --button-secondary-hover-background: var(--grey-100);
+  --button-tertiary-text-color: var(--grey-800);
+  --button-tertiary-hover-background: var(--grey-100);
+
+  /* Icon */
+  --icon-color: var(--grey-800);
+
+  /* Badge */
+  --badge-background: var(--grey-200);
+  --badge-text-color: var(--grey-800);
+
+  /* ================================================================================================== */
+  /* Components                                                                                         */
+  /* ================================================================================================== */
+
+  /* Table */
+  --table-border: var(--grey-300);
+  --table-text-color: var(--grey-800);
+  --table-header-text-color: var(--grey-900);
+  --table-row-hover-background: var(--grey-100);
+}
+
+html[data-theme="dark"] {
+  /* Surface */
+  --surface: var(--black);
+
+  /* Text */
+  --text-color: var(--white);
+  --text-color-secondary: var(--grey-300);
+  --text-color-positive: var(--green-400);
+  --text-color-warning: var(--orange-400);
+  --text-color-attention: var(--red-400);
+
+  /* Form */
+  --form-background: var(--grey-900);
+  --form-focus-border: var(--turquoise-500);
+  --form-placeholder-text-color: var(--grey-400);
+  --form-disabled-background: var(--grey-800);
+  --form-disabled-text-color: var(--grey-400);
+  --form-default-border: var(--grey-600);
+  --form-default-text-color: var(--white);
+  --form-success-border: var(--green-400);
+  --form-success-text-color: var(--green-400);
+  --form-warning-border: var(--orange-400);
+  --form-warning-text-color: var(--orange-400);
+  --form-error-border: var(--red-400);
+  --form-error-text-color: var(--red-400);
+
+  /* Button */
+  --button-primary-background: var(--turquoise-500);
+  --button-primary-hover-background: var(--turquoise-400);
+  --button-primary-text-color: var(--black);
+  --button-secondary-border: var(--grey-600);
+  --button-secondary-text-color: var(--white);
+  --button-secondary-hover-background: var(--grey-800);
+  --button-tertiary-text-color: var(--white);
+  --button-tertiary-hover-background: var(--grey-800);
+
+  /* Icon */
+  --icon-color: var(--grey-300);
+
+  /* Badge */
+  --badge-background: var(--grey-800);
+  --badge-text-color: var(--white);
+
+  /* ================================================================================================== */
+  /* Components                                                                                         */
+  /* ================================================================================================== */
+
+  /* Table */
+  --table-border: var(--grey-600);
+  --table-text-color: var(--white);
+  --table-header-text-color: var(--white);
+  --table-row-hover-background: var(--grey-800);
+}

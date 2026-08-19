@@ -1,0 +1,23 @@
+:root {
+  --root-font-size: 62.5%;
+}
+
+html {
+  font-size: var(--root-font-size);
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+#storybook-root,
+.docs-story {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-200);
+  line-height: var(--line-height-200);
+}

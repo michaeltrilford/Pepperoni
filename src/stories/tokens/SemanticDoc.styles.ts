@@ -1,0 +1,70 @@
+import * as sx from "@stylexjs/stylex";
+
+export const styles = sx.create({
+  root: {
+    boxSizing: "border-box",
+    color: "var(--text-color)",
+    padding: "24px",
+    width: "100%",
+  },
+  header: {
+    borderBottom: "var(--stroke-100) solid var(--border-color)",
+    marginBottom: "var(--space-300)",
+    paddingBottom: "var(--space-200)",
+  },
+  headerStack: {
+    display: "grid",
+    gridTemplateColumns: "1fr auto",
+    gap: "var(--space-500)",
+    alignItems: "start",
+  },
+  title: { marginBottom: "var(--space-100)" },
+  description: {},
+  surface: { marginTop: "var(--space-500)" },
+  surfaceTitle: { marginBlockEnd: "var(--space-400)" },
+  visualGrid: {
+    display: "grid",
+    gap: "var(--space-500)",
+    gridTemplateColumns: "repeat(auto-fit, minmax(20rem, 1fr))",
+  },
+  visualCard: {
+    backgroundColor: "var(--surface)",
+    borderColor: "var(--border-color)",
+    borderRadius: "12px",
+    borderStyle: "solid",
+    borderWidth: "var(--stroke-100)",
+    padding: "16px",
+  },
+  tokenName: { fontWeight: 600, overflowWrap: "anywhere" },
+  secondaryCell: {
+    color: "var(--text-color-secondary)",
+    overflowWrap: "anywhere",
+  },
+  resolvedCell: { overflowWrap: "anywhere" },
+  resolvedValue: {
+    alignItems: "center",
+    display: "flex",
+    gap: "8px",
+    maxWidth: "100%",
+    minWidth: 0,
+    overflow: "hidden",
+  },
+  truncatedValue: {
+    display: "block",
+    flex: "1 1 auto",
+    maxWidth: "100%",
+    minWidth: 0,
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+  },
+  colorSwatch: {
+    borderColor: "var(--border-color)",
+    borderRadius: "4px",
+    borderStyle: "solid",
+    borderWidth: "var(--stroke-100)",
+    flex: "0 0 auto",
+    height: "14px",
+    width: "14px",
+  },
+});

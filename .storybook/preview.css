@@ -1,0 +1,26 @@
+:where(#storybook-root[data-theme="light"]) {
+  color-scheme: light;
+}
+
+:where(#storybook-root[data-theme="dark"]) {
+  color-scheme: dark;
+}
+
+#storybook-root {
+  min-height: 100%;
+  background-color: var(--surface-100) !important;
+  color: var(--text-color);
+}
+
+.sb-main-fullscreen.sb-show-main,
+.sb-show-main.sb-main-padded {
+  background-color: var(--surface-100) !important;
+}
+
+.docs-story {
+  background-color: var(--surface-100) !important;
+}
+
+.docs-story:has([data-card-doc]) {
+  background-color: var(--surface) !important;
+}

@@ -1,0 +1,86 @@
+{
+  "name": "pepperoni-ui",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.5"
+  },
+  "volta": {
+    "node": "20.19.5"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./knowledge/*": "./dist/knowledge/*"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "predev": "node scripts/check-node-version.js",
+    "dev": "vite",
+    "build:tokens": "node scripts/generate-surface-tokens.js && style-dictionary build --config style-dictionary.config.js",
+    "build:manifest": "node scripts/generate-manifest.js",
+    "build:lib": "tsc --noEmit && vite build",
+    "prebuild": "node scripts/check-node-version.js",
+    "build": "npm run build:tokens && npm run build:manifest && npm run build:lib && npm run build:manifest && npm run build-storybook",
+    "test": "vitest",
+    "pretest:run": "node scripts/check-node-version.js",
+    "test:run": "vitest run --project=unit",
+    "pretest:coverage": "node scripts/check-node-version.js && node scripts/clean-coverage.mjs coverage",
+    "test:coverage": "vitest run --coverage --coverage.reportsDirectory=coverage",
+    "pretest:coverage:unit": "node scripts/check-node-version.js && node scripts/clean-coverage.mjs coverage/unit",
+    "test:coverage:unit": "vitest run --project=unit --coverage --coverage.reportsDirectory=coverage/unit",
+    "pretest:coverage:storybook": "node scripts/check-node-version.js && node scripts/clean-coverage.mjs coverage/storybook",
+    "test:coverage:storybook": "vitest run --project=storybook --coverage --coverage.reportsDirectory=coverage/storybook --coverage.include='src/components/**/*.{ts,tsx}'",
+    "pretest:storybook": "node scripts/check-node-version.js",
+    "test:storybook": "vitest run --project=storybook",
+    "check": "npm run build && npm run test:run",
+    "prestorybook": "node scripts/check-node-version.js && npm run build:tokens && npm run build:manifest",
+    "storybook": "storybook dev -p 6006",
+    "prebuild-storybook": "node scripts/check-node-version.js && npm run build:tokens && npm run build:manifest",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.5.5",
+    "@storybook/addon-docs": "^10.5.5",
+    "@storybook/addon-themes": "^10.5.5",
+    "@storybook/addon-vitest": "^10.5.5",
+    "@storybook/react": "^10.5.5",
+    "@storybook/react-vite": "^10.5.5",
+    "@stylexjs/unplugin": "^0.19.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/browser": "3.2.7",
+    "@vitest/coverage-v8": "3.2.7",
+    "jsdom": "^26.0.0",
+    "playwright": "^1.62.0",
+    "react": "^19.0.0",
+    "react-docgen-typescript": "^2.4.0",
+    "react-dom": "^19.0.0",
+    "storybook": "^10.5.5",
+    "style-dictionary": "^4.3.5",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vite-plugin-dts": "^4.5.0",
+    "vitest": "^3.0.6"
+  },
+  "dependencies": {
+    "@stylexjs/stylex": "^0.19.0"
+  }
+}
