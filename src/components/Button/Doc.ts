@@ -45,7 +45,7 @@ export const muiDocs: MuiDocs = {
         {
           key: "primary",
           title: "Primary",
-          description: "Highest-emphasis turquoise action.",
+          description: "Highest-emphasis primary brand action.",
           image: "",
         },
         {
@@ -150,7 +150,7 @@ export const muiDocs: MuiDocs = {
     ],
     behaviour: {
       list: [
-        "Keyboard focus uses a turquoise focus indicator.",
+        "Keyboard focus uses a brand focus indicator.",
         "Disabled Buttons do not trigger actions.",
         "Button usage emits data-text-input-slot-button only while the attached composition is active.",
       ],

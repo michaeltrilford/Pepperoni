@@ -17,7 +17,7 @@ export const BrandDoc: React.FC = () => {
 
   const colorGroups = [
     { title: "Grey", key: "grey", prefix: "--grey" },
-    { title: "Turquoise", key: "turquoise", prefix: "--turquoise" },
+    { title: "Pepperoni", key: "pepperoni", prefix: "--pepperoni" },
     { title: "Green", key: "green", prefix: "--green" },
     { title: "Orange", key: "orange", prefix: "--orange" },
     { title: "Red", key: "red", prefix: "--red" },
