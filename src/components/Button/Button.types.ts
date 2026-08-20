@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "tertiary" | "link";
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "attention" | "link";
 export type ButtonSize = "xs" | "s" | "m" | "l";
 export type ButtonUsage = "text-input-before" | "text-input-after";
 

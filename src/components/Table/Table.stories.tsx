@@ -317,7 +317,7 @@ export const CellContent: Story = {
             Stone-baked sourdough crust topped with San Marzano tomatoes, fresh basil, and chili-infused honey.
           </Table.Cell>
           <Table.Cell align="end">
-            <Badge>Baking (450°C)</Badge>
+            <Badge variant="caution">Baking (450°C)</Badge>
           </Table.Cell>
         </tr>
       </tbody>

@@ -1,8 +1,8 @@
 import * as sx from "@stylexjs/stylex";
 
-const focusRing = "0 0 0 var(--stroke-200) var(--form-focus-border)";
+const focusRing = "0 0 0 var(--stroke-100) var(--form-focus-border)";
 const tableFocusRing =
-  "inset 0 0 0 var(--stroke-100) var(--form-focus-border), 0 0 0 var(--stroke-200) var(--form-focus-border)";
+  "inset 0 0 0 var(--stroke-100) var(--form-focus-border), 0 0 0 var(--stroke-100) var(--form-focus-border)";
 
 export const styles = sx.create({
   container: {
@@ -48,21 +48,21 @@ export const styles = sx.create({
     borderColor: "var(--form-success-border)",
     ":focus-within": {
       borderColor: "var(--form-success-border)",
-      boxShadow: "0 0 0 var(--stroke-200) var(--form-success-border)",
+      boxShadow: "0 0 0 var(--stroke-100) var(--form-success-border)",
     },
   },
   variantWarning: {
     borderColor: "var(--form-warning-border)",
     ":focus-within": {
       borderColor: "var(--form-warning-border)",
-      boxShadow: "0 0 0 var(--stroke-200) var(--form-warning-border)",
+      boxShadow: "0 0 0 var(--stroke-100) var(--form-warning-border)",
     },
   },
   variantError: {
     borderColor: "var(--form-error-border)",
     ":focus-within": {
       borderColor: "var(--form-error-border)",
-      boxShadow: "0 0 0 var(--stroke-200) var(--form-error-border)",
+      boxShadow: "0 0 0 var(--stroke-100) var(--form-error-border)",
     },
   },
   tableUsage: {

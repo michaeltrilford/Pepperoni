@@ -87,4 +87,9 @@ describe("Button", () => {
       "before",
     );
   });
+
+  it("renders attention variant", () => {
+    render(<Button variant="attention">Delete</Button>);
+    expect(screen.getByRole("button", { name: "Delete" })).toBeInTheDocument();
+  });
 });

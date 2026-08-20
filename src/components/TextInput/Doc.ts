@@ -113,9 +113,9 @@ export const muiDocs: MuiDocs = {
           description:
             "Shows the Field composition engineers should use for validation messaging. When TextInput omits label and id, it automatically uses Field's label target and receives aria-describedby, aria-errormessage, and aria-invalid from context.",
           source: `<Field
-  label="Payroll reference"
+  label="Kitchen Order Ticket"
   variant="error"
-  message="Enter a reference containing 6 to 12 letters or numbers."
+  message="Enter an order ticket containing 6 to 12 letters or numbers."
 >
   <TextInput variant="error" defaultValue="A-1" />
 </Field>`,
@@ -137,9 +137,9 @@ export const muiDocs: MuiDocs = {
           title: "Size",
           description: "Compares Small (32px), Medium (40px), and Large (48px) TextInput scales in one example.",
           source: `<Box flex direction="column" gap="300">
-  <TextInput size="s" label="Employee number — Small" placeholder="e.g. 1042" />
-  <TextInput size="m" label="Employee number — Medium" placeholder="e.g. 1042" />
-  <TextInput size="l" label="Employee number — Large" placeholder="e.g. 1042" />
+  <TextInput size="s" label="Pizza Table Number — Small" placeholder="e.g. Table 14" />
+  <TextInput size="m" label="Pizza Table Number — Medium" placeholder="e.g. Table 14" />
+  <TextInput size="l" label="Pizza Table Number — Large" placeholder="e.g. Table 14" />
 </Box>`,
         },
         {
@@ -166,7 +166,7 @@ export const muiDocs: MuiDocs = {
           description:
             "Compares the two explicit inside-slot spacing contracts. Use density='text' for typographic affixes such as '$' or 'AUD'. Use density='compact' for Icons and Badges. Always wrap insideBefore and insideAfter content in TextInput.InsideSlot; density describes spacing, not the child component type.",
           source: `<TextInput
-  label="Amount"
+  label="Pizza Price"
   type="text"
   inputMode="decimal"
   align="end"
@@ -181,9 +181,9 @@ export const muiDocs: MuiDocs = {
           description:
             "Places compact Icon content before editable text with TextInput.InsideSlot density='compact'. Use for search, filter, or other visual field indicators.",
           source: `<TextInput
-  label="Search products"
+  label="Search Pizzas"
   insideBefore={<TextInput.InsideSlot density="compact"><Icon name="search" /></TextInput.InsideSlot>}
-  placeholder="Search catalogue..."
+  placeholder="Search pizzas..."
 />`,
         },
         {
@@ -192,9 +192,9 @@ export const muiDocs: MuiDocs = {
           description:
             "Places compact Icon content after editable text with TextInput.InsideSlot density='compact' and compares all three input sizes.",
           source: `<TextInput
-  label="Filter catalogue"
+  label="Filter Toppings"
   insideAfter={<TextInput.InsideSlot density="compact"><Icon name="search" /></TextInput.InsideSlot>}
-  placeholder="Filter options..."
+  placeholder="Filter toppings..."
 />`,
         },
         {
@@ -203,8 +203,8 @@ export const muiDocs: MuiDocs = {
           description:
             "Demonstrates leading and trailing Badges using TextInput.InsideSlot density='compact' at Small, Medium, and Large sizes.",
           source: `<TextInput
-  label="Payment amount"
-  insideBefore={<TextInput.InsideSlot density="compact"><Badge>NZD</Badge></TextInput.InsideSlot>}
+  label="Pizza Price"
+  insideBefore={<TextInput.InsideSlot density="compact"><Badge>USD</Badge></TextInput.InsideSlot>}
   placeholder="0.00"
 />`,
         },
@@ -226,10 +226,10 @@ export const muiDocs: MuiDocs = {
           description:
             "Uses align='end' for quantitative values people compare or total, such as amounts, balances, rates, and quantities. Keep identifiers such as codes, account numbers, and telephone numbers start-aligned. Currency and unit affixes use TextInput.InsideSlot density='text'.",
           source: `<TextInput
-  label="Transfer amount"
+  label="Pizza Subtotal"
   align="end"
   inputMode="decimal"
-  defaultValue="1,250.00"
+  defaultValue="24.50"
   insideBefore={<TextInput.InsideSlot density="text"><Text>$</Text></TextInput.InsideSlot>}
   insideAfter={<TextInput.InsideSlot density="text"><Text>AUD</Text></TextInput.InsideSlot>}
 />`,
@@ -240,10 +240,10 @@ export const muiDocs: MuiDocs = {
           description:
             "Matches native input semantics and virtual keyboard hints to the expected value. Use decimal for amounts, numeric for whole-number codes, email for email addresses, and tel for telephone numbers. inputMode changes the suggested keyboard; it does not validate, restrict, or align the value. Reserve align='end' for amounts, totals, and other quantitative values.",
           source: `<Box flex direction="column" gap="300">
-  <TextInput label="Amount" type="text" inputMode="decimal" align="end" placeholder="0.00" />
-  <TextInput label="Verification code" type="text" inputMode="numeric" autoComplete="one-time-code" />
-  <TextInput label="Email address" type="email" inputMode="email" autoComplete="email" />
-  <TextInput label="Telephone number" type="tel" inputMode="tel" autoComplete="tel" />
+  <TextInput label="Pizza Total Price" type="text" inputMode="decimal" align="end" placeholder="0.00" />
+  <TextInput label="Pizza Pickup PIN" type="text" inputMode="numeric" autoComplete="one-time-code" />
+  <TextInput label="Customer Order Email" type="email" inputMode="email" autoComplete="email" />
+  <TextInput label="Pizza Courier Mobile" type="tel" inputMode="tel" autoComplete="tel" />
 </Box>`,
         },
         {

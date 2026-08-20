@@ -13,6 +13,19 @@ export const api = {
       control: "select",
       description: "Controls badge height, typography, padding, and radius."
     },
+    variant: {
+      type: "neutral | positive | caution | attention",
+      values: ["neutral", "positive", "caution", "attention"],
+      defaultValue: "neutral",
+      control: "select",
+      description: "Semantic status styling for common badge states."
+    },
+    color: {
+      type: "grey | pepperoni | green | orange | red | string",
+      values: ["grey", "pepperoni", "green", "orange", "red"],
+      control: "select",
+      description: "Applies a brand color ramp or custom CSS color string."
+    },
     role: {
       type: "AriaRole",
       control: "text",

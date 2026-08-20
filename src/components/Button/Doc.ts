@@ -60,6 +60,12 @@ export const muiDocs: MuiDocs = {
           description: "Borderless low-emphasis action.",
           image: "",
         },
+        {
+          key: "attention",
+          title: "Attention",
+          description: "High-emphasis destructive or critical action.",
+          image: "",
+        },
       ],
     },
     stories: {
@@ -78,6 +84,11 @@ export const muiDocs: MuiDocs = {
           key: "tertiary",
           title: "Tertiary",
           description: "Shows the borderless low-emphasis Button treatment.",
+        },
+        {
+          key: "attention",
+          title: "Attention",
+          description: "Shows the destructive or critical attention Button treatment.",
         },
         {
           key: "icon-only",

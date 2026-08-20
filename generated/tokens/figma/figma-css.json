@@ -16,12 +16,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 1,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -29,12 +29,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.1,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -42,12 +42,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.2,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -55,12 +55,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.3,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -68,12 +68,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.4,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -81,12 +81,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.5,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -94,12 +94,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.6,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -107,12 +107,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.7,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -120,12 +120,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.8,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -133,12 +133,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029024958195350198,
-        0.008221136366698764,
-        0.0026017809988074033
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 0.9,
-      "hex": "#070201"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -276,12 +276,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.9670807177211059,
-        0.9591116599385671,
-        0.953069452279253
+        0.9736912701043999,
+        0.9736912701043999,
+        0.9736912701044002
       ],
       "alpha": 1,
-      "hex": "#f7f5f3"
+      "hex": "#f8f8f8"
     },
     "$type": "color"
   },
@@ -289,12 +289,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.8526379080539963,
-        0.8422736520847686,
-        0.8344098253952522
+        0.8826790221467262,
+        0.8826790221467264,
+        0.8826790221467264
       ],
       "alpha": 1,
-      "hex": "#d9d7d5"
+      "hex": "#e1e1e1"
     },
     "$type": "color"
   },
@@ -302,12 +302,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.7220647176677281,
-        0.7095241622646751,
-        0.7000002449641995
+        0.7432059179986803,
+        0.7432059179986803,
+        0.7432059179986803
       ],
       "alpha": 1,
-      "hex": "#b8b5b3"
+      "hex": "#bebebe"
     },
     "$type": "color"
   },
@@ -315,12 +315,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.4599544626006313,
-        0.4410001130464028,
-        0.4275382043143701
+        0.5254196025989158,
+        0.5254196025989158,
+        0.5254196025989158
       ],
       "alpha": 1,
-      "hex": "#75706d"
+      "hex": "#868686"
     },
     "$type": "color"
   },
@@ -328,12 +328,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.3977504369196167,
-        0.37250126076897644,
-        0.3544984041935062
+        0.3885728590463344,
+        0.3885728590463344,
+        0.3885728590463344
       ],
       "alpha": 1,
-      "hex": "#655f5a"
+      "hex": "#636363"
     },
     "$type": "color"
   },
@@ -341,12 +341,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.3036673359802045,
-        0.27456932296271924,
-        0.2551610946930501
+        0.2806042475396953,
+        0.2806042475396954,
+        0.2806042475396954
       ],
       "alpha": 1,
-      "hex": "#4d4641"
+      "hex": "#484848"
     },
     "$type": "color"
   },
@@ -354,12 +354,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.22429666489334416,
-        0.19183898364930213,
-        0.17157099614071075
+        0.18903638158420696,
+        0.189036381584207,
+        0.189036381584207
       ],
       "alpha": 1,
-      "hex": "#39312c"
+      "hex": "#303030"
     },
     "$type": "color"
   },
@@ -367,12 +367,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.16014302466693092,
-        0.12486104413550284,
-        0.10421516781245163
+        0.11303983818349111,
+        0.11303983818349114,
+        0.11303983818349111
       ],
       "alpha": 1,
-      "hex": "#29201b"
+      "hex": "#1d1d1d"
     },
     "$type": "color"
   },
@@ -380,12 +380,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.10669253938750725,
-        0.06745436465591129,
-        0.04581339470081534
+        0.051758493807284485,
+        0.05175849380728447,
+        0.05175849380728447
       ],
       "alpha": 1,
-      "hex": "#1b110c"
+      "hex": "#0d0d0d"
     },
     "$type": "color"
   },
@@ -393,12 +393,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.06387496270462345,
-        0.023859664329383027,
-        0.010425167468275815
+        0.022325759999999993,
+        0.022325759999999993,
+        0.022325759999999993
       ],
       "alpha": 1,
-      "hex": "#100603"
+      "hex": "#060606"
     },
     "$type": "color"
   },
@@ -406,12 +406,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        1,
-        0.9435892183223538,
-        0.9184892393321511
+        0.9873084626931757,
+        0.9347339474780627,
+        0.9242807772499955
       ],
       "alpha": 1,
-      "hex": "#fff1ea"
+      "hex": "#fceeec"
     },
     "$type": "color"
   },
@@ -419,12 +419,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        1,
-        0.8686103595865977,
-        0.8126737439812265
+        0.9587402809468942,
+        0.8394689491843311,
+        0.8168537376717189
       ],
       "alpha": 1,
-      "hex": "#ffddcf"
+      "hex": "#f4d6d0"
     },
     "$type": "color"
   },
@@ -432,12 +432,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        1,
-        0.7420391163885928,
-        0.6489342228125872
+        0.8574885223406884,
+        0.648271388351922,
+        0.611375808307457
       ],
       "alpha": 1,
-      "hex": "#ffbda5"
+      "hex": "#dba59c"
     },
     "$type": "color"
   },
@@ -445,12 +445,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.9964100388842377,
-        0.5553484015405035,
-        0.41846112785845024
+        0.7029560035769447,
+        0.41052586648794553,
+        0.3659218742338783
       ],
       "alpha": 1,
-      "hex": "#fe8e6b"
+      "hex": "#b3695d"
     },
     "$type": "color"
   },
@@ -458,12 +458,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.9435565291862597,
-        0.35169518524117116,
-        0.16693699074607352
+        0.537069105287133,
+        0.16782860644815034,
+        0.13113852971926507
       ],
       "alpha": 1,
-      "hex": "#f15a2b"
+      "hex": "#892b21"
     },
     "$type": "color"
   },
@@ -471,12 +471,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.795129727631184,
-        0.2591202571482676,
-        0.0997053018987738
+        0.41535295669871775,
+        0.0987153538622943,
+        0.07429183068083059
       ],
       "alpha": 1,
-      "hex": "#cb4219"
+      "hex": "#6a1913"
     },
     "$type": "color"
   },
@@ -484,12 +484,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.6497572726930674,
-        0.20265682397562035,
-        0.08638062873385943
+        0.3047251879721682,
+        0.05459179896254574,
+        0.038841993276041084
       ],
       "alpha": 1,
-      "hex": "#a63416"
+      "hex": "#4e0e0a"
     },
     "$type": "color"
   },
@@ -497,12 +497,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.5099092398262789,
-        0.1491738630830339,
-        0.06756953404356536
+        0.21155208054942531,
+        0.02657175147817598,
+        0.01922928898079841
       ],
       "alpha": 1,
-      "hex": "#822611"
+      "hex": "#360705"
     },
     "$type": "color"
   },
@@ -510,12 +510,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.3697411413920029,
-        0.10795773130715286,
-        0.05711678299230961
+        0.13479195647215686,
+        0.015237324328134566,
+        0.011175151553643521
       ],
       "alpha": 1,
-      "hex": "#5e1c0f"
+      "hex": "#220403"
     },
     "$type": "color"
   },
@@ -523,12 +523,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.23329010088991597,
-        0.05005771696903719,
-        0.022393311448261965
+        0.0637778457218447,
+        0.007267598349959609,
+        0.005320181779106625
       ],
       "alpha": 1,
-      "hex": "#3b0d06"
+      "hex": "#100201"
     },
     "$type": "color"
   },
@@ -797,11 +797,11 @@
       "colorSpace": "srgb",
       "components": [
         1,
-        0.9430550508645819,
-        0.9311784557608149
+        0.9424382746439462,
+        0.9346682868221867
       ],
       "alpha": 1,
-      "hex": "#fff0ed"
+      "hex": "#fff0ee"
     },
     "$type": "color"
   },
@@ -810,11 +810,11 @@
       "colorSpace": "srgb",
       "components": [
         1,
-        0.8505134713346117,
-        0.8223691136691207
+        0.8440122371861317,
+        0.8246235256918074
       ],
       "alpha": 1,
-      "hex": "#ffd9d2"
+      "hex": "#ffd7d2"
     },
     "$type": "color"
   },
@@ -823,11 +823,11 @@
       "colorSpace": "srgb",
       "components": [
         1,
-        0.7085359113331796,
-        0.6624289033043181
+        0.6888724743564175,
+        0.6586666495674057
       ],
       "alpha": 1,
-      "hex": "#ffb5a9"
+      "hex": "#ffb0a8"
     },
     "$type": "color"
   },
@@ -835,12 +835,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.970432770277642,
-        0.49900903961234916,
-        0.4367343600778724
+        1,
+        0.44344947744783,
+        0.4185637885680373
       ],
       "alpha": 1,
-      "hex": "#f77f6f"
+      "hex": "#ff716b"
     },
     "$type": "color"
   },
@@ -848,12 +848,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.7843227219083347,
+        0.859734258858036,
         0,
-        0.0001324420085476935
+        0.08963909508084761
       ],
       "alpha": 1,
-      "hex": "#c80000"
+      "hex": "#db0017"
     },
     "$type": "color"
   },
@@ -861,12 +861,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.6411141126443919,
+        0.6891583270880056,
         0,
-        0.004083529070324219
+        0.02760425862788418
       ],
       "alpha": 1,
-      "hex": "#a30001"
+      "hex": "#b00007"
     },
     "$type": "color"
   },
@@ -874,12 +874,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.5068913525980011,
-        0.004424026884748007,
-        0.006108255193041537
+        0.5330167461119244,
+        0,
+        0.011563378810442134
       ],
       "alpha": 1,
-      "hex": "#810102"
+      "hex": "#880003"
     },
     "$type": "color"
   },
@@ -887,12 +887,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.37882238079105135,
-        0.0076248367569545054,
-        0.006217535194903033
+        0.39752443781738916,
+        0,
+        0.01113315485717252
       ],
       "alpha": 1,
-      "hex": "#610202"
+      "hex": "#650003"
     },
     "$type": "color"
   },
@@ -900,12 +900,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.26958617067902696,
-        0.017473685430815355,
-        0.011065716809645772
+        0.2697332716325405,
+        0,
+        0.008815324803333063
       ],
       "alpha": 1,
-      "hex": "#450403"
+      "hex": "#450002"
     },
     "$type": "color"
   },
@@ -913,12 +913,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.172843679376316,
-        0.010577725198267196,
-        0.006630643708384239
+        0.16760082763738127,
+        0,
+        0.006070048388514745
       ],
       "alpha": 1,
-      "hex": "#2c0302"
+      "hex": "#2b0002"
     },
     "$type": "color"
   },
@@ -1272,12 +1272,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.9895500993968652,
-        0.994143339981158,
-        0.9987629074221255
+        0.9999999999999999,
+        0.9999999999999999,
+        0.9999999999999999
       ],
       "alpha": 1,
-      "hex": "#fcfeff"
+      "hex": "#ffffff"
     },
     "$type": "color"
   },
@@ -1285,12 +1285,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.9476790621021537,
-        0.9568018819764831,
-        0.9659695479197098
+        0.9736912701043999,
+        0.9736912701043999,
+        0.9736912701044002
       ],
       "alpha": 1,
-      "hex": "#f2f4f6"
+      "hex": "#f8f8f8"
     },
     "$type": "color"
   },
@@ -1298,12 +1298,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.9100234492720743,
-        0.9236211410755557,
-        0.9372740784584179
+        0.9475164346977826,
+        0.9475164346977826,
+        0.9475164346977826
       ],
       "alpha": 1,
-      "hex": "#e8ecef"
+      "hex": "#f2f2f2"
     },
     "$type": "color"
   },
@@ -1311,12 +1311,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.8546813205110336,
-        0.8726253996291078,
-        0.8906253866131755
+        0.8826790221467262,
+        0.8826790221467264,
+        0.8826790221467264
       ],
       "alpha": 1,
-      "hex": "#dadfe3"
+      "hex": "#e1e1e1"
     },
     "$type": "color"
   },
@@ -1324,12 +1324,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.8126483512633844,
-        0.8349022675511499,
-        0.8572037378869755
+        0.8187265315596153,
+        0.8187265315596154,
+        0.8187265315596154
       ],
       "alpha": 1,
-      "hex": "#cfd5db"
+      "hex": "#d1d1d1"
     },
     "$type": "color"
   },
@@ -1337,12 +1337,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.029092061289401023,
-        0.09356986827052738,
-        0.13588008561483755
+        0.12222154230644067,
+        0.12222154230644067,
+        0.12222154230644067
       ],
       "alpha": 1,
-      "hex": "#071823"
+      "hex": "#1f1f1f"
     },
     "$type": "color"
   },
@@ -1350,12 +1350,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.015800639273872874,
-        0.07564997646431842,
-        0.11700949163141056
+        0.08610420435002503,
+        0.08610420435002505,
+        0.08610420435002505
       ],
       "alpha": 1,
-      "hex": "#04131e"
+      "hex": "#161616"
     },
     "$type": "color"
   },
@@ -1363,12 +1363,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0.006471138415606688,
-        0.05813481813382366,
-        0.09849208469730009
+        0.051758493807284485,
+        0.05175849380728447,
+        0.05175849380728447
       ],
       "alpha": 1,
-      "hex": "#020f19"
+      "hex": "#0d0d0d"
     },
     "$type": "color"
   },
@@ -1376,12 +1376,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0,
-        0.025972492440983642,
-        0.06098827706862001
+        0.028385240000000006,
+        0.028385240000000003,
+        0.028385240000000003
       ],
       "alpha": 1,
-      "hex": "#000710"
+      "hex": "#070707"
     },
     "$type": "color"
   },
@@ -1389,12 +1389,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0,
-        0.006968077865005161,
-        0.03892824322107088
+        0.00941868,
+        0.009418680000000004,
+        0.00941868
       ],
       "alpha": 1,
-      "hex": "#00020a"
+      "hex": "#020202"
     },
     "$type": "color"
   },
@@ -1402,12 +1402,12 @@
     "$value": {
       "colorSpace": "srgb",
       "components": [
-        0,
-        0,
-        0.009412552483347372
+        0.0008268800000000003,
+        0.0008268800000000001,
+        0.0008268800000000001
       ],
       "alpha": 1,
-      "hex": "#000002"
+      "hex": "#000000"
     },
     "$type": "color"
   },
@@ -1532,7 +1532,7 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--badge-text-color": {
-    "$value": "{--text-color}",
+    "$value": "{--grey-800}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1567,32 +1567,32 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--card-effect-lift-100": {
-    "$value": "0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-100-highlight),\n    inset 0 -1px 0 var(--card-lift-100-highlight), 0 var(--stroke-200) 4px var(--card-lift-100-shadow)",
+    "$value": "0 0 0 var(--stroke-100) var(--card-lift-100-border-color), inset 0 1px 0 var(--card-lift-100-highlight),\n    inset 0 -1px 0 var(--card-lift-100-highlight), 0 var(--stroke-200) 4px var(--card-lift-100-shadow)",
     "$type": "string",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--card-effect-lift-200": {
-    "$value": "0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-200-highlight),\n    inset 0 -1px 0 var(--card-lift-200-highlight), 0 var(--stroke-200) 6px var(--card-lift-200-shadow)",
+    "$value": "0 0 0 var(--stroke-100) var(--card-lift-200-border-color), inset 0 1px 0 var(--card-lift-200-highlight),\n    inset 0 -1px 0 var(--card-lift-200-highlight), 0 var(--stroke-200) 6px var(--card-lift-200-shadow)",
     "$type": "string",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--card-effect-lift-300": {
-    "$value": "0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-300-highlight),\n    inset 0 -1px 0 var(--card-lift-300-highlight), 0 var(--stroke-200) 8px var(--card-lift-300-shadow)",
+    "$value": "0 0 0 var(--stroke-100) var(--card-lift-300-border-color), inset 0 1px 0 var(--card-lift-300-highlight),\n    inset 0 -1px 0 var(--card-lift-300-highlight), 0 var(--stroke-200) 8px var(--card-lift-300-shadow)",
     "$type": "string",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--card-effect-depth-100": {
-    "$value": "0 var(--stroke-100) 0 var(--card-depth-100-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-100-shadow)",
+    "$value": "0 0 0 var(--stroke-100) var(--card-depth-100-border-color), 0 var(--stroke-100) 0 var(--card-depth-100-highlight),\n    inset 0 var(--stroke-100) var(--stroke-400) 0 var(--card-depth-100-shadow)",
     "$type": "string",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--card-effect-depth-200": {
-    "$value": "0 var(--stroke-100) 0 var(--card-depth-200-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-200-shadow)",
+    "$value": "0 0 0 var(--stroke-100) var(--card-depth-200-border-color), 0 var(--stroke-100) 0 var(--card-depth-200-highlight),\n    inset 0 var(--stroke-100) var(--stroke-400) 0 var(--card-depth-200-shadow)",
     "$type": "string",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--card-effect-depth-300": {
-    "$value": "0 var(--stroke-100) 0 var(--card-depth-300-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-300-shadow)",
+    "$value": "0 0 0 var(--stroke-100) var(--card-depth-300-border-color), 0 var(--stroke-100) 0 var(--card-depth-300-highlight),\n    inset 0 var(--stroke-100) var(--stroke-400) 0 var(--card-depth-300-shadow)",
     "$type": "string",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1617,7 +1617,7 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--border-color": {
-    "$value": "{--grey-300}",
+    "$value": "{--grey-200}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1632,7 +1632,7 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--text-color-secondary": {
-    "$value": "{--grey-400}",
+    "$value": "{--grey-500}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1657,12 +1657,12 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--form-focus-border": {
-    "$value": "{--pepperoni-700}",
+    "$value": "{--pepperoni-400}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--form-placeholder-text-color": {
-    "$value": "{--grey-400}",
+    "$value": "{--grey-500}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1672,7 +1672,7 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--form-disabled-text-color": {
-    "$value": "{--grey-400}",
+    "$value": "{--grey-500}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1712,12 +1712,12 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--button-primary-background": {
-    "$value": "{--pepperoni-800}",
+    "$value": "{--pepperoni-500}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--button-primary-hover-background": {
-    "$value": "{--pepperoni-900}",
+    "$value": "{--pepperoni-600}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1741,8 +1741,113 @@
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
+  "--button-attention-background": {
+    "$value": "{--red-500}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--button-attention-hover-background": {
+    "$value": "{--red-600}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--button-attention-text-color": {
+    "$value": "{--white}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
   "--badge-background": {
     "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-neutral-background": {
+    "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-neutral-text-color": {
+    "$value": "{--grey-800}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-positive-background": {
+    "$value": "{--green-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-positive-text-color": {
+    "$value": "{--green-800}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-caution-background": {
+    "$value": "{--orange-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-caution-text-color": {
+    "$value": "{--orange-900}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-attention-background": {
+    "$value": "{--red-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-attention-text-color": {
+    "$value": "{--red-900}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-pepperoni-background": {
+    "$value": "{--pepperoni-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-pepperoni-text-color": {
+    "$value": "{--pepperoni-800}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-grey-background": {
+    "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-grey-text-color": {
+    "$value": "{--grey-800}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-green-background": {
+    "$value": "{--green-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-green-text-color": {
+    "$value": "{--green-800}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-orange-background": {
+    "$value": "{--orange-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-orange-text-color": {
+    "$value": "{--orange-900}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-red-background": {
+    "$value": "{--red-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--badge-red-text-color": {
+    "$value": "{--red-900}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1751,7 +1856,17 @@
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
-  "--card-border-color": {
+  "--card-lift-100-border-color": {
+    "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--card-lift-200-border-color": {
+    "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--card-lift-300-border-color": {
     "$value": "{--grey-200}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
@@ -1783,6 +1898,21 @@
   },
   "--card-lift-300-shadow": {
     "$value": "{--black-opacity-10}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--card-depth-100-border-color": {
+    "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--card-depth-200-border-color": {
+    "$value": "{--grey-200}",
+    "$type": "color",
+    "$description": "Runtime mapping from tokens.css (light theme)."
+  },
+  "--card-depth-300-border-color": {
+    "$value": "{--grey-200}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
@@ -1822,7 +1952,7 @@
     "$description": "Runtime mapping from tokens.css (light theme)."
   },
   "--surface-text-secondary-100": {
-    "$value": "{--grey-400}",
+    "$value": "{--grey-500}",
     "$type": "color",
     "$description": "Runtime mapping from tokens.css (light theme)."
   },

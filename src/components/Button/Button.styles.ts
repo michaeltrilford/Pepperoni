@@ -87,6 +87,12 @@ export const styles = sx.create({
     color: "var(--button-tertiary-text-color)",
     ":hover": { backgroundColor: "var(--button-tertiary-hover-background)" },
   },
+  attention: {
+    backgroundColor: "var(--button-attention-background)",
+    borderColor: "transparent",
+    color: "var(--button-attention-text-color)",
+    ":hover": { backgroundColor: "var(--button-attention-hover-background)" },
+  },
   link: {
     backgroundColor: "transparent",
     borderColor: "transparent",

@@ -34,7 +34,7 @@ export const styles = sx.create({
   },
   downloadButton: { marginLeft: "auto" },
   code: {
-    backgroundColor: "var(--surface-300)",
+    backgroundColor: "var(--surface-200)",
     borderRadius: "8px",
     color: "var(--text-color)",
     fontFamily: "monospace",

@@ -339,3 +339,123 @@ export const NestedInset: Story = {
     </div>
   ),
 };
+
+export const NestedLifted: Story = {
+  ...getStoryMetaFromManifest("Card", "nested-lifted"),
+  render: () => (
+    <div style={{ maxWidth: "48rem" }}>
+      <Card size="l" surface="100" surfaceDirection="lift">
+        <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-500)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <Text size="l" weight={600}>
+                Pizzeria Production Floor
+              </Text>
+              <Text size="m" variant="secondary">
+                Level 1 Lifted Surface (100)
+              </Text>
+            </div>
+            <Badge variant="positive">Kitchen Open</Badge>
+          </div>
+
+          <Card size="m" surface="200" surfaceDirection="lift">
+            <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-400)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div>
+                  <Text size="m" weight={600}>
+                    Artisanal Dough Mixing Station
+                  </Text>
+                  <Text size="s" variant="secondary">
+                    Level 2 Lifted Surface (200)
+                  </Text>
+                </div>
+                <Badge variant="caution">Preheating</Badge>
+              </div>
+
+              <Card size="s" surface="300" surfaceDirection="lift">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div>
+                    <Text size="s" weight={600}>
+                      Fermentation Vault 04
+                    </Text>
+                    <Text size="s" variant="secondary">
+                      Level 3 Lifted Surface (300)
+                    </Text>
+                  </div>
+                  <Button size="s" variant="secondary">
+                    Check temperature
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </Card>
+        </div>
+      </Card>
+    </div>
+  ),
+  play: async ({ canvas }) => {
+    await expect(canvas.getByText("Pizzeria Production Floor")).toBeInTheDocument();
+    await expect(canvas.getByText("Artisanal Dough Mixing Station")).toBeInTheDocument();
+    await expect(canvas.getByText("Fermentation Vault 04")).toBeInTheDocument();
+  },
+};
+
+export const NestedDepth: Story = {
+  ...getStoryMetaFromManifest("Card", "nested-depth"),
+  render: () => (
+    <div style={{ maxWidth: "48rem" }}>
+      <Card size="l" surface="100" surfaceDirection="depth">
+        <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-500)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <div>
+              <Text size="l" weight={600}>
+                Oven Pit Diagnostics
+              </Text>
+              <Text size="m" variant="secondary">
+                Level 1 Depth Inset (100)
+              </Text>
+            </div>
+            <Badge variant="attention">High Temp Area</Badge>
+          </div>
+
+          <Card size="m" surface="200" surfaceDirection="depth">
+            <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-400)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div>
+                  <Text size="m" weight={600}>
+                    Refractory Stone Hearth
+                  </Text>
+                  <Text size="s" variant="secondary">
+                    Level 2 Depth Inset (200)
+                  </Text>
+                </div>
+                <Badge color="pepperoni">Wood Burning</Badge>
+              </div>
+
+              <Card size="s" surface="300" surfaceDirection="depth">
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div>
+                    <Text size="s" weight={600}>
+                      Internal Flame Sensor Well
+                    </Text>
+                    <Text size="s" variant="secondary">
+                      Level 3 Depth Inset (300)
+                    </Text>
+                  </div>
+                  <Button size="s" variant="attention">
+                    Recalibrate sensor
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </Card>
+        </div>
+      </Card>
+    </div>
+  ),
+  play: async ({ canvas }) => {
+    await expect(canvas.getByText("Oven Pit Diagnostics")).toBeInTheDocument();
+    await expect(canvas.getByText("Refractory Stone Hearth")).toBeInTheDocument();
+    await expect(canvas.getByText("Internal Flame Sensor Well")).toBeInTheDocument();
+  },
+};

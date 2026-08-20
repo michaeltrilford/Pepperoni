@@ -48,24 +48,24 @@
   --surface-300: var(--surface-tone-300);
 
   /* Border */
-  --border-color: var(--grey-300);
+  --border-color: var(--grey-200);
 
   /* Heading */
   --heading-color: var(--grey-900);
 
   /* Text */
   --text-color: var(--grey-800);
-  --text-color-secondary: var(--grey-400);
+  --text-color-secondary: var(--grey-500);
   --text-color-positive: var(--green-600);
   --text-color-warning: var(--orange-600);
   --text-color-attention: var(--red-600);
 
   /* Form */
   --form-background: var(--white);
-  --form-focus-border: var(--pepperoni-700);
-  --form-placeholder-text-color: var(--grey-400);
+  --form-focus-border: var(--pepperoni-400);
+  --form-placeholder-text-color: var(--grey-500);
   --form-disabled-background: var(--grey-200);
-  --form-disabled-text-color: var(--grey-400);
+  --form-disabled-text-color: var(--grey-500);
   --form-default-border: var(--grey-300);
   --form-default-text-color: var(--grey-800);
   --form-success-border: var(--green-600);
@@ -76,15 +76,37 @@
   --form-error-text-color: var(--red-600);
 
   /* Button */
-  --button-primary-background: var(--pepperoni-800);
-  --button-primary-hover-background: var(--pepperoni-900);
+  --button-primary-background: var(--pepperoni-500);
+  --button-primary-hover-background: var(--pepperoni-600);
   --button-primary-text-color: var(--white);
   --button-secondary-border: var(--grey-300);
   --button-secondary-hover-background: var(--grey-100);
   --button-tertiary-hover-background: var(--grey-100);
+  --button-attention-background: var(--red-500);
+  --button-attention-hover-background: var(--red-600);
+  --button-attention-text-color: var(--white);
 
   /* Badge */
   --badge-background: var(--grey-200);
+  --badge-text-color: var(--grey-800);
+  --badge-neutral-background: var(--grey-200);
+  --badge-neutral-text-color: var(--grey-800);
+  --badge-positive-background: var(--green-200);
+  --badge-positive-text-color: var(--green-800);
+  --badge-caution-background: var(--orange-200);
+  --badge-caution-text-color: var(--orange-900);
+  --badge-attention-background: var(--red-200);
+  --badge-attention-text-color: var(--red-900);
+  --badge-pepperoni-background: var(--pepperoni-200);
+  --badge-pepperoni-text-color: var(--pepperoni-800);
+  --badge-grey-background: var(--grey-200);
+  --badge-grey-text-color: var(--grey-800);
+  --badge-green-background: var(--green-200);
+  --badge-green-text-color: var(--green-800);
+  --badge-orange-background: var(--orange-200);
+  --badge-orange-text-color: var(--orange-900);
+  --badge-red-background: var(--red-200);
+  --badge-red-text-color: var(--red-900);
 
   /* ================================================================================================== */
   /* Components                                                                                         */
@@ -94,13 +116,18 @@
   --table-row-hover-background: var(--grey-100);
 
   /* Card effects */
-  --card-border-color: var(--grey-200);
+  --card-lift-100-border-color: var(--grey-200);
+  --card-lift-200-border-color: var(--grey-200);
+  --card-lift-300-border-color: var(--grey-200);
   --card-lift-100-highlight: var(--white-opacity-90);
   --card-lift-100-shadow: var(--black-opacity-10);
   --card-lift-200-highlight: var(--white-opacity-90);
   --card-lift-200-shadow: var(--black-opacity-10);
   --card-lift-300-highlight: var(--white-opacity-90);
   --card-lift-300-shadow: var(--black-opacity-10);
+  --card-depth-100-border-color: var(--grey-200);
+  --card-depth-200-border-color: var(--grey-200);
+  --card-depth-300-border-color: var(--grey-200);
   --card-depth-100-highlight: var(--white-opacity-90);
   --card-depth-100-shadow: var(--black-opacity-10);
   --card-depth-200-highlight: var(--white-opacity-90);
@@ -108,7 +135,7 @@
   --card-depth-300-highlight: var(--white-opacity-90);
   --card-depth-300-shadow: var(--black-opacity-10);
   --surface-text-color-100: var(--grey-800);
-  --surface-text-secondary-100: var(--grey-400);
+  --surface-text-secondary-100: var(--grey-500);
   --surface-text-color-200: var(--grey-800);
   --surface-text-secondary-200: var(--grey-600);
   --surface-text-color-300: var(--grey-800);
@@ -137,7 +164,7 @@
 
   /* Form */
   --form-background: var(--grey-900);
-  --form-focus-border: var(--pepperoni-500);
+  --form-focus-border: var(--pepperoni-400);
   --form-placeholder-text-color: var(--grey-400);
   --form-disabled-background: var(--grey-800);
   --form-disabled-text-color: var(--grey-400);
@@ -152,14 +179,36 @@
 
   /* Button */
   --button-primary-background: var(--pepperoni-500);
-  --button-primary-hover-background: var(--pepperoni-400);
-  --button-primary-text-color: var(--black);
+  --button-primary-hover-background: var(--pepperoni-600);
+  --button-primary-text-color: var(--white);
   --button-secondary-border: var(--grey-600);
   --button-secondary-hover-background: var(--grey-800);
   --button-tertiary-hover-background: var(--grey-800);
+  --button-attention-background: var(--red-500);
+  --button-attention-hover-background: var(--red-600);
+  --button-attention-text-color: var(--white);
 
   /* Badge */
   --badge-background: var(--grey-800);
+  --badge-text-color: var(--grey-100);
+  --badge-neutral-background: var(--grey-800);
+  --badge-neutral-text-color: var(--grey-100);
+  --badge-positive-background: var(--green-900);
+  --badge-positive-text-color: var(--green-300);
+  --badge-caution-background: var(--orange-900);
+  --badge-caution-text-color: var(--orange-300);
+  --badge-attention-background: var(--red-900);
+  --badge-attention-text-color: var(--red-300);
+  --badge-pepperoni-background: var(--pepperoni-900);
+  --badge-pepperoni-text-color: var(--pepperoni-300);
+  --badge-grey-background: var(--grey-800);
+  --badge-grey-text-color: var(--grey-100);
+  --badge-green-background: var(--green-900);
+  --badge-green-text-color: var(--green-300);
+  --badge-orange-background: var(--orange-900);
+  --badge-orange-text-color: var(--orange-300);
+  --badge-red-background: var(--red-900);
+  --badge-red-text-color: var(--red-300);
 
   /* ================================================================================================== */
   /* Components                                                                                         */
@@ -169,19 +218,24 @@
   --table-row-hover-background: var(--grey-800);
 
   /* Card effects */
-  --card-border-color: var(--grey-700);
-  --card-lift-100-highlight: var(--white-opacity-10);
+  --card-lift-100-border-color: var(--grey-800);
+  --card-lift-200-border-color: var(--grey-700);
+  --card-lift-300-border-color: var(--grey-700);
+  --card-lift-100-highlight: transparent;
   --card-lift-100-shadow: var(--black-opacity-50);
-  --card-lift-200-highlight: var(--white-opacity-10);
+  --card-lift-200-highlight: transparent;
   --card-lift-200-shadow: var(--black-opacity-50);
-  --card-lift-300-highlight: var(--white-opacity-10);
+  --card-lift-300-highlight: transparent;
   --card-lift-300-shadow: var(--black-opacity-50);
+  --card-depth-100-border-color: var(--grey-800);
+  --card-depth-200-border-color: var(--grey-800);
+  --card-depth-300-border-color: var(--grey-700);
   --card-depth-100-highlight: var(--white-opacity-10);
-  --card-depth-100-shadow: var(--black-opacity-50);
+  --card-depth-100-shadow: var(--black-opacity-60);
   --card-depth-200-highlight: var(--white-opacity-10);
-  --card-depth-200-shadow: var(--black-opacity-50);
+  --card-depth-200-shadow: var(--black-opacity-60);
   --card-depth-300-highlight: var(--white-opacity-10);
-  --card-depth-300-shadow: var(--black-opacity-50);
+  --card-depth-300-shadow: var(--black-opacity-60);
   --surface-text-color-100: var(--grey-100);
   --surface-text-secondary-100: var(--grey-300);
   --surface-text-color-200: var(--grey-100);
@@ -200,18 +254,21 @@
   --table-text-color: var(--text-color);
   --table-header-text-color: var(--heading-color);
   --card-effect-lift-100:
-    0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-100-highlight),
+    0 0 0 var(--stroke-100) var(--card-lift-100-border-color), inset 0 1px 0 var(--card-lift-100-highlight),
     inset 0 -1px 0 var(--card-lift-100-highlight), 0 var(--stroke-200) 4px var(--card-lift-100-shadow);
   --card-effect-lift-200:
-    0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-200-highlight),
+    0 0 0 var(--stroke-100) var(--card-lift-200-border-color), inset 0 1px 0 var(--card-lift-200-highlight),
     inset 0 -1px 0 var(--card-lift-200-highlight), 0 var(--stroke-200) 6px var(--card-lift-200-shadow);
   --card-effect-lift-300:
-    0 0 0 var(--stroke-100) var(--card-border-color), inset 0 1px 0 var(--card-lift-300-highlight),
+    0 0 0 var(--stroke-100) var(--card-lift-300-border-color), inset 0 1px 0 var(--card-lift-300-highlight),
     inset 0 -1px 0 var(--card-lift-300-highlight), 0 var(--stroke-200) 8px var(--card-lift-300-shadow);
   --card-effect-depth-100:
-    0 var(--stroke-100) 0 var(--card-depth-100-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-100-shadow);
+    0 0 0 var(--stroke-100) var(--card-depth-100-border-color), 0 var(--stroke-100) 0 var(--card-depth-100-highlight),
+    inset 0 var(--stroke-100) var(--stroke-400) 0 var(--card-depth-100-shadow);
   --card-effect-depth-200:
-    0 var(--stroke-100) 0 var(--card-depth-200-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-200-shadow);
+    0 0 0 var(--stroke-100) var(--card-depth-200-border-color), 0 var(--stroke-100) 0 var(--card-depth-200-highlight),
+    inset 0 var(--stroke-100) var(--stroke-400) 0 var(--card-depth-200-shadow);
   --card-effect-depth-300:
-    0 var(--stroke-100) 0 var(--card-depth-300-highlight), inset 0 var(--stroke-100) 0 var(--card-depth-300-shadow);
+    0 0 0 var(--stroke-100) var(--card-depth-300-border-color), 0 var(--stroke-100) 0 var(--card-depth-300-highlight),
+    inset 0 var(--stroke-100) var(--stroke-400) 0 var(--card-depth-300-shadow);
 }

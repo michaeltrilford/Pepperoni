@@ -7,8 +7,8 @@ export const api = {
   inherits: "ButtonHTMLAttributes<HTMLButtonElement>",
   props: {
     variant: {
-      type: "primary | secondary | tertiary | link",
-      values: ["primary", "secondary", "tertiary", "link"],
+      type: "primary | secondary | tertiary | attention | link",
+      values: ["primary", "secondary", "tertiary", "attention", "link"],
       defaultValue: "primary",
       control: "select",
       description: "Controls the visual emphasis of the action.",

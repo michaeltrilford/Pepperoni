@@ -60,7 +60,7 @@ export const Secondary: Story = {
 };
 
 export const Tertiary: Story = {
-  ...getStoryMetaFromManifest("Button", "variant"),
+  ...getStoryMetaFromManifest("Button", "tertiary"),
   args: {
     children: "Customize Toppings",
     variant: "tertiary",
@@ -74,18 +74,21 @@ export const Tertiary: Story = {
   },
 };
 
-export const Interaction: Story = {
+export const Attention: Story = {
+  ...getStoryMetaFromManifest("Button", "attention"),
   args: {
-    children: "Bake pizza now",
+    children: "Cancel Pizza Order",
+    variant: "attention",
   },
   play: async ({ args, canvas, userEvent }) => {
-    const button = canvas.getByRole("button", { name: "Bake pizza now" });
+    const button = canvas.getByRole("button", { name: "Cancel Pizza Order" });
 
     await userEvent.click(button);
 
     await expect(args.onClick).toHaveBeenCalledOnce();
   },
 };
+
 
 export const Disabled: Story = {
   args: {

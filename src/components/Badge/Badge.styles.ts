@@ -34,4 +34,40 @@ export const styles = sx.create({
     minHeight: "var(--badge-height-large)",
     paddingInline: "var(--badge-padding-inline-large)",
   },
+  variantNeutral: {
+    backgroundColor: "var(--badge-neutral-background)",
+    color: "var(--badge-neutral-text-color)",
+  },
+  variantPositive: {
+    backgroundColor: "var(--badge-positive-background)",
+    color: "var(--badge-positive-text-color)",
+  },
+  variantCaution: {
+    backgroundColor: "var(--badge-caution-background)",
+    color: "var(--badge-caution-text-color)",
+  },
+  variantAttention: {
+    backgroundColor: "var(--badge-attention-background)",
+    color: "var(--badge-attention-text-color)",
+  },
+  colorPepperoni: {
+    backgroundColor: "var(--badge-pepperoni-background)",
+    color: "var(--badge-pepperoni-text-color)",
+  },
+  colorGrey: {
+    backgroundColor: "var(--badge-grey-background)",
+    color: "var(--badge-grey-text-color)",
+  },
+  colorGreen: {
+    backgroundColor: "var(--badge-green-background)",
+    color: "var(--badge-green-text-color)",
+  },
+  colorOrange: {
+    backgroundColor: "var(--badge-orange-background)",
+    color: "var(--badge-orange-text-color)",
+  },
+  colorRed: {
+    backgroundColor: "var(--badge-red-background)",
+    color: "var(--badge-red-text-color)",
+  },
 });

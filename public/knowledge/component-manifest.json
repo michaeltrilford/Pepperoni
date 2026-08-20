@@ -40,6 +40,61 @@
               }
             ]
           }
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "neutral"
+          },
+          "description": "Semantic status styling for common status states.",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Badge/Badge.types.ts",
+            "name": "BadgeProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Badge/Badge.types.ts",
+              "name": "BadgeProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "BadgeVariant",
+            "value": [
+              {
+                "value": "\"neutral\""
+              },
+              {
+                "value": "\"positive\""
+              },
+              {
+                "value": "\"caution\""
+              },
+              {
+                "value": "\"attention\""
+              }
+            ]
+          }
+        },
+        "color": {
+          "defaultValue": null,
+          "description": "Brand color ramp or custom color value.",
+          "name": "color",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Badge/Badge.types.ts",
+            "name": "BadgeProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Badge/Badge.types.ts",
+              "name": "BadgeProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "BadgeColor"
+          }
         }
       },
       "guidelines": {
@@ -78,7 +133,32 @@
           ]
         },
         "variants": {
-          "items": []
+          "items": [
+            {
+              "key": "neutral",
+              "title": "Neutral",
+              "description": "Default subtle grey badge for neutral metadata or counts.",
+              "image": ""
+            },
+            {
+              "key": "positive",
+              "title": "Positive",
+              "description": "Green badge indicating success, completed, or active states.",
+              "image": ""
+            },
+            {
+              "key": "caution",
+              "title": "Caution",
+              "description": "Orange badge indicating warning, pending, or in-progress states.",
+              "image": ""
+            },
+            {
+              "key": "attention",
+              "title": "Attention",
+              "description": "Red badge indicating critical status, high urgency, or errors.",
+              "image": ""
+            }
+          ]
         },
         "stories": {
           "items": [
@@ -98,10 +178,22 @@
               "description": "Shows the larger Badge size."
             },
             {
+              "key": "variants",
+              "title": "Variants",
+              "description": "Demonstrates neutral, positive, caution, and attention semantic status badges.",
+              "source": "<Badge variant=\"neutral\">Neutral</Badge>\n<Badge variant=\"positive\">Ready for Oven</Badge>\n<Badge variant=\"caution\">Oven Preheating</Badge>\n<Badge variant=\"attention\">High Heat Warning</Badge>"
+            },
+            {
+              "key": "colors",
+              "title": "Colors",
+              "description": "Demonstrates named brand color scales (pepperoni, green, orange, red, grey) and custom token values.",
+              "source": "<Badge color=\"pepperoni\">Pepperoni Slice</Badge>\n<Badge color=\"green\">Fresh Basil</Badge>\n<Badge color=\"orange\">Cheddar Crust</Badge>\n<Badge color=\"red\">Chili Flakes</Badge>\n<Badge color=\"grey\">Cast Iron</Badge>\n<Badge color=\"var(--pepperoni-500)\">Custom Token</Badge>"
+            },
+            {
               "key": "text-input-slot",
               "title": "TextInput slot",
               "description": "Shows the explicit compact slot spacing and matched sizing required when Badge appears inside TextInput.",
-              "source": "<TextInput\n  label=\"Payment status\"\n  insideAfter={<TextInput.InsideSlot density=\"compact\"><Badge>Paid</Badge></TextInput.InsideSlot>}\n/>"
+              "source": "<TextInput\n  label=\"Pizza Special\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Badge variant=\"attention\">HOT</Badge></TextInput.InsideSlot>}\n/>"
             }
           ]
         },
@@ -148,6 +240,30 @@
             "defaultValue": "m",
             "control": "select",
             "description": "Controls badge height, typography, padding, and radius."
+          },
+          "variant": {
+            "type": "neutral | positive | caution | attention",
+            "values": [
+              "neutral",
+              "positive",
+              "caution",
+              "attention"
+            ],
+            "defaultValue": "neutral",
+            "control": "select",
+            "description": "Semantic status styling for common badge states."
+          },
+          "color": {
+            "type": "grey | pepperoni | green | orange | red | string",
+            "values": [
+              "grey",
+              "pepperoni",
+              "green",
+              "orange",
+              "red"
+            ],
+            "control": "select",
+            "description": "Applies a brand color ramp or custom CSS color string."
           },
           "role": {
             "type": "AriaRole",
@@ -579,6 +695,9 @@
             "raw": "ButtonVariant",
             "value": [
               {
+                "value": "\"attention\""
+              },
+              {
                 "value": "\"link\""
               },
               {
@@ -812,6 +931,12 @@
               "title": "Tertiary",
               "description": "Borderless low-emphasis action.",
               "image": ""
+            },
+            {
+              "key": "attention",
+              "title": "Attention",
+              "description": "High-emphasis destructive or critical action.",
+              "image": ""
             }
           ]
         },
@@ -831,6 +956,11 @@
               "key": "tertiary",
               "title": "Tertiary",
               "description": "Shows the borderless low-emphasis Button treatment."
+            },
+            {
+              "key": "attention",
+              "title": "Attention",
+              "description": "Shows the destructive or critical attention Button treatment."
             },
             {
               "key": "icon-only",
@@ -914,11 +1044,12 @@
         "inherits": "ButtonHTMLAttributes<HTMLButtonElement>",
         "props": {
           "variant": {
-            "type": "primary | secondary | tertiary | link",
+            "type": "primary | secondary | tertiary | attention | link",
             "values": [
               "primary",
               "secondary",
               "tertiary",
+              "attention",
               "link"
             ],
             "defaultValue": "primary",
@@ -1204,6 +1335,18 @@
               "title": "One-level inset",
               "description": "Uses one inset surface to separate settings within a parent Card.",
               "source": "<Card surface=\"100\"><Card surface=\"200\" surfaceDirection=\"depth\">...</Card></Card>"
+            },
+            {
+              "key": "nested-lifted",
+              "title": "Nested lifted cards",
+              "description": "Shows 3-tier progressive elevation hierarchy using surface='100', '200', and '300' all with surfaceDirection='lift'.",
+              "source": "<Card size=\"l\" surface=\"100\" surfaceDirection=\"lift\">\n  <Card size=\"m\" surface=\"200\" surfaceDirection=\"lift\">\n    <Card size=\"s\" surface=\"300\" surfaceDirection=\"lift\">\n      ...\n    </Card>\n  </Card>\n</Card>"
+            },
+            {
+              "key": "nested-depth",
+              "title": "Nested depth cards",
+              "description": "Shows 3-tier progressive inset depth well hierarchy using surface='100', '200', and '300' all with surfaceDirection='depth'.",
+              "source": "<Card size=\"l\" surface=\"100\" surfaceDirection=\"depth\">\n  <Card size=\"m\" surface=\"200\" surfaceDirection=\"depth\">\n    <Card size=\"s\" surface=\"300\" surfaceDirection=\"depth\">\n      ...\n    </Card>\n  </Card>\n</Card>"
             }
           ]
         },
@@ -3182,6 +3325,12 @@
             "raw": "TextVariant",
             "value": [
               {
+                "value": "\"positive\""
+              },
+              {
+                "value": "\"attention\""
+              },
+              {
                 "value": "\"secondary\""
               },
               {
@@ -3189,12 +3338,6 @@
               },
               {
                 "value": "\"warning\""
-              },
-              {
-                "value": "\"positive\""
-              },
-              {
-                "value": "\"attention\""
               }
             ]
           }
@@ -3832,7 +3975,7 @@
               "key": "field-error-relationship",
               "title": "Accessibility: Field Error Relationship",
               "description": "Shows the Field composition engineers should use for validation messaging. When TextInput omits label and id, it automatically uses Field's label target and receives aria-describedby, aria-errormessage, and aria-invalid from context.",
-              "source": "<Field\n  label=\"Payroll reference\"\n  variant=\"error\"\n  message=\"Enter a reference containing 6 to 12 letters or numbers.\"\n>\n  <TextInput variant=\"error\" defaultValue=\"A-1\" />\n</Field>"
+              "source": "<Field\n  label=\"Kitchen Order Ticket\"\n  variant=\"error\"\n  message=\"Enter an order ticket containing 6 to 12 letters or numbers.\"\n>\n  <TextInput variant=\"error\" defaultValue=\"A-1\" />\n</Field>"
             },
             {
               "key": "visually-hidden-label",
@@ -3848,7 +3991,7 @@
               "key": "size",
               "title": "Size",
               "description": "Compares Small (32px), Medium (40px), and Large (48px) TextInput scales in one example.",
-              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <TextInput size=\"s\" label=\"Employee number — Small\" placeholder=\"e.g. 1042\" />\n  <TextInput size=\"m\" label=\"Employee number — Medium\" placeholder=\"e.g. 1042\" />\n  <TextInput size=\"l\" label=\"Employee number — Large\" placeholder=\"e.g. 1042\" />\n</Box>"
+              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <TextInput size=\"s\" label=\"Pizza Table Number — Small\" placeholder=\"e.g. Table 14\" />\n  <TextInput size=\"m\" label=\"Pizza Table Number — Medium\" placeholder=\"e.g. Table 14\" />\n  <TextInput size=\"l\" label=\"Pizza Table Number — Large\" placeholder=\"e.g. Table 14\" />\n</Box>"
             },
             {
               "key": "variant-success",
@@ -3869,25 +4012,25 @@
               "key": "inside-slot-density",
               "title": "Inside Slot Density",
               "description": "Compares the two explicit inside-slot spacing contracts. Use density='text' for typographic affixes such as '$' or 'AUD'. Use density='compact' for Icons and Badges. Always wrap insideBefore and insideAfter content in TextInput.InsideSlot; density describes spacing, not the child component type.",
-              "source": "<TextInput\n  label=\"Amount\"\n  type=\"text\"\n  inputMode=\"decimal\"\n  align=\"end\"\n  insideBefore={<TextInput.InsideSlot density=\"text\"><Text>$</Text></TextInput.InsideSlot>}\n  insideAfter={<TextInput.InsideSlot density=\"text\"><Text>AUD</Text></TextInput.InsideSlot>}\n  placeholder=\"0.00\"\n/>"
+              "source": "<TextInput\n  label=\"Pizza Price\"\n  type=\"text\"\n  inputMode=\"decimal\"\n  align=\"end\"\n  insideBefore={<TextInput.InsideSlot density=\"text\"><Text>$</Text></TextInput.InsideSlot>}\n  insideAfter={<TextInput.InsideSlot density=\"text\"><Text>AUD</Text></TextInput.InsideSlot>}\n  placeholder=\"0.00\"\n/>"
             },
             {
               "key": "inside-slots-before",
               "title": "Inside Slot: Before",
               "description": "Places compact Icon content before editable text with TextInput.InsideSlot density='compact'. Use for search, filter, or other visual field indicators.",
-              "source": "<TextInput\n  label=\"Search products\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Icon name=\"search\" /></TextInput.InsideSlot>}\n  placeholder=\"Search catalogue...\"\n/>"
+              "source": "<TextInput\n  label=\"Search Pizzas\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Icon name=\"search\" /></TextInput.InsideSlot>}\n  placeholder=\"Search pizzas...\"\n/>"
             },
             {
               "key": "inside-slots-after",
               "title": "Inside Slot: After",
               "description": "Places compact Icon content after editable text with TextInput.InsideSlot density='compact' and compares all three input sizes.",
-              "source": "<TextInput\n  label=\"Filter catalogue\"\n  insideAfter={<TextInput.InsideSlot density=\"compact\"><Icon name=\"search\" /></TextInput.InsideSlot>}\n  placeholder=\"Filter options...\"\n/>"
+              "source": "<TextInput\n  label=\"Filter Toppings\"\n  insideAfter={<TextInput.InsideSlot density=\"compact\"><Icon name=\"search\" /></TextInput.InsideSlot>}\n  placeholder=\"Filter toppings...\"\n/>"
             },
             {
               "key": "inside-slots-badge",
               "title": "Inside Slot: Badge",
               "description": "Demonstrates leading and trailing Badges using TextInput.InsideSlot density='compact' at Small, Medium, and Large sizes.",
-              "source": "<TextInput\n  label=\"Payment amount\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Badge>NZD</Badge></TextInput.InsideSlot>}\n  placeholder=\"0.00\"\n/>"
+              "source": "<TextInput\n  label=\"Pizza Price\"\n  insideBefore={<TextInput.InsideSlot density=\"compact\"><Badge>USD</Badge></TextInput.InsideSlot>}\n  placeholder=\"0.00\"\n/>"
             },
             {
               "key": "outside-slots-before",
@@ -3903,13 +4046,13 @@
               "key": "align-right-numbers",
               "title": "Aligned: End",
               "description": "Uses align='end' for quantitative values people compare or total, such as amounts, balances, rates, and quantities. Keep identifiers such as codes, account numbers, and telephone numbers start-aligned. Currency and unit affixes use TextInput.InsideSlot density='text'.",
-              "source": "<TextInput\n  label=\"Transfer amount\"\n  align=\"end\"\n  inputMode=\"decimal\"\n  defaultValue=\"1,250.00\"\n  insideBefore={<TextInput.InsideSlot density=\"text\"><Text>$</Text></TextInput.InsideSlot>}\n  insideAfter={<TextInput.InsideSlot density=\"text\"><Text>AUD</Text></TextInput.InsideSlot>}\n/>"
+              "source": "<TextInput\n  label=\"Pizza Subtotal\"\n  align=\"end\"\n  inputMode=\"decimal\"\n  defaultValue=\"24.50\"\n  insideBefore={<TextInput.InsideSlot density=\"text\"><Text>$</Text></TextInput.InsideSlot>}\n  insideAfter={<TextInput.InsideSlot density=\"text\"><Text>AUD</Text></TextInput.InsideSlot>}\n/>"
             },
             {
               "key": "input-mode",
               "title": "Input Mode",
               "description": "Matches native input semantics and virtual keyboard hints to the expected value. Use decimal for amounts, numeric for whole-number codes, email for email addresses, and tel for telephone numbers. inputMode changes the suggested keyboard; it does not validate, restrict, or align the value. Reserve align='end' for amounts, totals, and other quantitative values.",
-              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <TextInput label=\"Amount\" type=\"text\" inputMode=\"decimal\" align=\"end\" placeholder=\"0.00\" />\n  <TextInput label=\"Verification code\" type=\"text\" inputMode=\"numeric\" autoComplete=\"one-time-code\" />\n  <TextInput label=\"Email address\" type=\"email\" inputMode=\"email\" autoComplete=\"email\" />\n  <TextInput label=\"Telephone number\" type=\"tel\" inputMode=\"tel\" autoComplete=\"tel\" />\n</Box>"
+              "source": "<Box flex direction=\"column\" gap=\"300\">\n  <TextInput label=\"Pizza Total Price\" type=\"text\" inputMode=\"decimal\" align=\"end\" placeholder=\"0.00\" />\n  <TextInput label=\"Pizza Pickup PIN\" type=\"text\" inputMode=\"numeric\" autoComplete=\"one-time-code\" />\n  <TextInput label=\"Customer Order Email\" type=\"email\" inputMode=\"email\" autoComplete=\"email\" />\n  <TextInput label=\"Pizza Courier Mobile\" type=\"tel\" inputMode=\"tel\" autoComplete=\"tel\" />\n</Box>"
             },
             {
               "key": "table-cell-embedding",

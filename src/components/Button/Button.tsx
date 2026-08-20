@@ -35,6 +35,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       primary: styles.primary,
       secondary: styles.secondary,
       tertiary: styles.tertiary,
+      attention: styles.attention,
       link: styles.link,
     }[resolvedVariant];
     const iconOnlySizeStyle = iconOnly

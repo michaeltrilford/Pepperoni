@@ -158,3 +158,40 @@ npm run build:tokens
 FIGMA_THEME=both npm run build:tokens
 ```
 
+---
+
+## Token Architecture: Surfaces vs. Core Greys
+
+Pepperoni separates **Surface Tonal Ramps** (`--surface-tone-*`) from **Core Greys** (`--grey-*`) because UI backgrounds and content foregrounds have fundamentally different distribution needs:
+
+```
+LIGHTNESS SPECTRUM (100% ──────────────────────────► 0%)
+
+1. Core Greys (Linear Distribution)
+   [100]───[200]───[300]───[400]───[500]───[600]───[700]───[800]───[900]───[1000]
+   98%     91%     80%     62%     50%     40%     31%     23%     16%     12%
+   ▲                                                                       ▲
+   └──────────────────────── EVEN DISTRIBUTION ────────────────────────────┘
+   (Purpose: Text contrast, borders, icons, form controls, disabled states)
+
+2. Surface Tonal Ramp (Inverted Bell Curve / Bimodal Distribution)
+   LIGHT SURFACES (High Density)                    DARK SURFACES (High Density)
+   ██████████                                                        ██████████
+   ████████                                                            ████████
+   ██████                                                                ██████
+   ████                                                                    ████
+   [100 ➔ 500]                                                     [600 ➔ 1100]
+   100% ➔ 86%                MIDTONE VOID (85% - 25%)                 24% ➔ 4%
+                            (No readable UI surfaces)
+   ▲                                                                       ▲
+   └─ Tight micro-steps for Canvas,                 Tight micro-steps for Dark ──┘
+      Cards, Modals, & Elevation                    Canvas, Panels, & Elevation
+```
+
+### Why They Are Independent:
+
+1. **Inverted Bell Curve Concentration**: Surfaces only exist at the extreme light end (100%–86%) and dark end (24%–4%). Midtones (30%–70%) cannot serve as readable surface containers because text fails WCAG 4.5:1 contrast against them.
+2. **Granular Micro-Steps for Elevation**: UI elevation requires subtle 2%–4% lightness deltas to distinguish nested card layers, floating popovers, and sunken wells without harsh visual breaks.
+3. **Decoupled Theme Tuning**: Adjusting surface elevation depth or canvas contrast in `tokens/surface.json` never breaks typography or border contrast tokens in `tokens/base.json`.
+
+

@@ -36,6 +36,30 @@ export const muiDocs: MuiDocs = {
         },
         { key: "nested", title: "Nested cards", description: "Uses progressively stronger surfaces to group related workspace content.", source: `<Card surface="100"><Card surface="200"><Card surface="300">...</Card></Card></Card>` },
         { key: "nested-inset", title: "One-level inset", description: "Uses one inset surface to separate settings within a parent Card.", source: `<Card surface="100"><Card surface="200" surfaceDirection="depth">...</Card></Card>` },
+        {
+          key: "nested-lifted",
+          title: "Nested lifted cards",
+          description: "Shows 3-tier progressive elevation hierarchy using surface='100', '200', and '300' all with surfaceDirection='lift'.",
+          source: `<Card size="l" surface="100" surfaceDirection="lift">
+  <Card size="m" surface="200" surfaceDirection="lift">
+    <Card size="s" surface="300" surfaceDirection="lift">
+      ...
+    </Card>
+  </Card>
+</Card>`,
+        },
+        {
+          key: "nested-depth",
+          title: "Nested depth cards",
+          description: "Shows 3-tier progressive inset depth well hierarchy using surface='100', '200', and '300' all with surfaceDirection='depth'.",
+          source: `<Card size="l" surface="100" surfaceDirection="depth">
+  <Card size="m" surface="200" surfaceDirection="depth">
+    <Card size="s" surface="300" surfaceDirection="depth">
+      ...
+    </Card>
+  </Card>
+</Card>`,
+        },
       ],
     },
     compositions: {

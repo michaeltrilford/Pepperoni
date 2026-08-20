@@ -42,13 +42,11 @@ export const WithLabel: Story = {
   ...getStoryMetaFromManifest("TextInput", "with-label"),
   args: {
     label: "Pizza Order Reference",
+    defaultValue: "PIZZA-1042",
     placeholder: "e.g. PIZZA-1042",
   },
-  play: async ({ canvas, userEvent }) => {
+  play: async ({ canvas }) => {
     const input = canvas.getByRole("textbox", { name: "Pizza Order Reference" });
-
-    await userEvent.type(input, "PIZZA-1042");
-
     await expect(input).toHaveValue("PIZZA-1042");
   },
 };
@@ -56,12 +54,12 @@ export const WithLabel: Story = {
 export const AutomaticLabelConnection: Story = {
   ...getStoryMetaFromManifest("TextInput", "automatic-label-connection"),
   args: {
-    label: "Table number",
-    placeholder: "e.g. 14",
+    label: "Pizza Table Number",
+    placeholder: "e.g. Table 14",
   },
   play: async ({ canvas, userEvent }) => {
-    const input = canvas.getByRole("textbox", { name: "Table number" });
-    const label = canvas.getByText("Table number").closest("label");
+    const input = canvas.getByRole("textbox", { name: "Pizza Table Number" });
+    const label = canvas.getByText("Pizza Table Number").closest("label");
 
     await expect(input.id).not.toBe("");
     await expect(label).toHaveAttribute("for", input.id);
@@ -74,7 +72,7 @@ export const FieldErrorRelationship: Story = {
   ...getStoryMetaFromManifest("TextInput", "field-error-relationship"),
   render: () => (
     <Field
-      label="Kitchen ticket reference"
+      label="Kitchen Order Ticket"
       variant="error"
       message="Enter an order ticket containing 6 to 12 letters or numbers."
     >
@@ -82,12 +80,12 @@ export const FieldErrorRelationship: Story = {
     </Field>
   ),
   play: async ({ canvas }) => {
-    const input = canvas.getByRole("textbox", { name: "Kitchen ticket reference" });
+    const input = canvas.getByRole("textbox", { name: "Kitchen Order Ticket" });
     const message = canvas.getByText(
       "Enter an order ticket containing 6 to 12 letters or numbers.",
     );
 
-    await expect(canvas.getAllByText("Kitchen ticket reference")).toHaveLength(1);
+    await expect(canvas.getAllByText("Kitchen Order Ticket")).toHaveLength(1);
     await expect(input).toHaveAttribute("aria-describedby", message.id);
     await expect(input).toHaveAttribute("aria-errormessage", message.id);
     await expect(input).toHaveAttribute("aria-invalid", "true");
@@ -99,25 +97,25 @@ export const VisuallyHiddenLabel: Story = {
   args: {
     label: "Search Pizza Menu",
     hideLabel: true,
+    defaultValue: "Pepperoni Supreme",
     placeholder: "Search toppings, crusts...",
   },
-  play: async ({ canvas, userEvent }) => {
+  play: async ({ canvas }) => {
     const input = canvas.getByRole("textbox", { name: "Search Pizza Menu" });
-    await userEvent.type(input, "pepperoni");
-    await expect(input).toHaveValue("pepperoni");
+    await expect(input).toHaveValue("Pepperoni Supreme");
   },
 };
 
 export const Optional: Story = {
   ...getStoryMetaFromManifest("TextInput", "optional"),
   args: {
-    label: "Special delivery notes",
+    label: "Artisanal Crust Finishing Notes",
     optional: true,
-    placeholder: "e.g. Ring buzzer or leave at gate",
+    placeholder: "e.g. Extra virgin olive oil drizzle",
   },
   play: async ({ canvas }) => {
     await expect(
-      canvas.getByRole("textbox", { name: /Special delivery notes/i }),
+      canvas.getByRole("textbox", { name: /Artisanal Crust Finishing Notes/i }),
     ).not.toBeRequired();
     await expect(canvas.getByText("(Optional)")).toBeVisible();
   },
@@ -134,31 +132,31 @@ export const Size: Story = {
     >
       <TextInput
         size="s"
-        label="Table number — Small"
-        placeholder="e.g. 14"
+        label="Pizza Table Number — Small"
+        placeholder="e.g. Table 14"
       />
       <TextInput
         size="m"
-        label="Table number — Medium"
-        placeholder="e.g. 14"
+        label="Pizza Table Number — Medium"
+        placeholder="e.g. Table 14"
       />
       <TextInput
         size="l"
-        label="Table number — Large"
-        placeholder="e.g. 14"
+        label="Pizza Table Number — Large"
+        placeholder="e.g. Table 14"
       />
     </Box>
   ),
   play: async ({ canvas }) => {
     await expect(canvas.getAllByRole("textbox")).toHaveLength(3);
     await expect(
-      canvas.getByRole("textbox", { name: "Table number — Small" }),
+      canvas.getByRole("textbox", { name: "Pizza Table Number — Small" }),
     ).toBeVisible();
     await expect(
-      canvas.getByRole("textbox", { name: "Table number — Medium" }),
+      canvas.getByRole("textbox", { name: "Pizza Table Number — Medium" }),
     ).toBeVisible();
     await expect(
-      canvas.getByRole("textbox", { name: "Table number — Large" }),
+      canvas.getByRole("textbox", { name: "Pizza Table Number — Large" }),
     ).toBeVisible();
   },
 };
@@ -180,13 +178,13 @@ export const VariantSuccess: Story = {
 export const VariantWarning: Story = {
   ...getStoryMetaFromManifest("TextInput", "variant-warning"),
   args: {
-    label: "Oven Temperature",
+    label: "Wood Fired Oven Temperature",
     variant: "warning",
     defaultValue: "Heat nearing 480°C maximum",
   },
   play: async ({ canvas }) => {
     await expect(
-      canvas.getByRole("textbox", { name: "Oven Temperature" }),
+      canvas.getByRole("textbox", { name: "Wood Fired Oven Temperature" }),
     ).toHaveValue("Heat nearing 480°C maximum");
   },
 };
@@ -194,69 +192,72 @@ export const VariantWarning: Story = {
 export const VariantError: Story = {
   ...getStoryMetaFromManifest("TextInput", "variant-error"),
   args: {
-    label: "Delivery Email Address",
+    label: "Customer Order Email",
     variant: "error",
     defaultValue: "invalid-email@pizzaspot",
   },
   play: async ({ canvas }) => {
     await expect(
-      canvas.getByRole("textbox", { name: "Delivery Email Address" }),
+      canvas.getByRole("textbox", { name: "Customer Order Email" }),
     ).toHaveValue("invalid-email@pizzaspot");
   },
 };
 
+const InsideSlotDensityStory = () => {
+  const [amount, setAmount] = useState("42.75");
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "var(--space-500)",
+        width: "320px",
+        maxWidth: "100%",
+      }}
+    >
+      <TextInput
+        label="Pizza Price"
+        type="text"
+        inputMode="decimal"
+        align="end"
+        value={amount}
+        onChange={(event) => setAmount(sanitizeAmount(event.target.value))}
+        insideBefore={
+          <TextInput.InsideSlot density="text">
+            <Text>$</Text>
+          </TextInput.InsideSlot>
+        }
+        insideAfter={
+          <TextInput.InsideSlot density="text">
+            <Text>AUD</Text>
+          </TextInput.InsideSlot>
+        }
+        placeholder="0.00"
+      />
+      <TextInput
+        label="Search pizza menu"
+        defaultValue="Margherita"
+        insideBefore={
+          <TextInput.InsideSlot density="compact">
+            <Icon name="search" />
+          </TextInput.InsideSlot>
+        }
+        insideAfter={
+          <TextInput.InsideSlot density="compact">
+            <Badge>⌘K</Badge>
+          </TextInput.InsideSlot>
+        }
+        placeholder="Search pizza menu..."
+      />
+    </div>
+  );
+};
+
 export const InsideSlotDensity: Story = {
   ...getStoryMetaFromManifest("TextInput", "inside-slot-density"),
-  render: () => {
-    const [amount, setAmount] = useState("");
-
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "var(--space-500)",
-          width: "320px",
-          maxWidth: "100%",
-        }}
-      >
-        <TextInput
-          label="Pizza Price"
-          type="text"
-          inputMode="decimal"
-          align="end"
-          value={amount}
-          onChange={(event) => setAmount(sanitizeAmount(event.target.value))}
-          insideBefore={
-            <TextInput.InsideSlot density="text">
-              <Text>$</Text>
-            </TextInput.InsideSlot>
-          }
-          insideAfter={
-            <TextInput.InsideSlot density="text">
-              <Text>AUD</Text>
-            </TextInput.InsideSlot>
-          }
-          placeholder="0.00"
-        />
-        <TextInput
-          label="Search pizza menu"
-          insideBefore={
-            <TextInput.InsideSlot density="compact">
-              <Icon name="search" />
-            </TextInput.InsideSlot>
-          }
-          insideAfter={
-            <TextInput.InsideSlot density="compact">
-              <Badge>⌘K</Badge>
-            </TextInput.InsideSlot>
-          }
-          placeholder="Search pizza menu..."
-        />
-      </div>
-    );
-  },
-  play: async ({ canvas, userEvent }) => {
+  render: () => <InsideSlotDensityStory />,
+  play: async ({ canvas }) => {
     await expect(canvas.getAllByRole("textbox")).toHaveLength(2);
     await expect(
       canvas.getAllByText("$")[0].closest("[data-inside-slot-density]"),
@@ -265,7 +266,6 @@ export const InsideSlotDensity: Story = {
       canvas.getByText("⌘K").closest("[data-inside-slot-density]"),
     ).toHaveAttribute("data-inside-slot-density", "compact");
     const amount = canvas.getByRole("textbox", { name: "Pizza Price" });
-    await userEvent.type(amount, "42abc.75");
     await expect(amount).toHaveValue("42.75");
   },
 };
@@ -373,7 +373,9 @@ export const InsideSlotsBadge: Story = {
               label={`Order status with trailing badge — ${size}`}
               insideAfter={
                 <TextInput.InsideSlot density="compact">
-                  <Badge size={size}>Ready</Badge>
+                  <Badge size={size} variant="positive">
+                    Ready
+                  </Badge>
                 </TextInput.InsideSlot>
               }
               placeholder="Order reference"
@@ -393,6 +395,7 @@ export const InsideSlotsBadge: Story = {
         name: "Order status with trailing badge — l",
       }),
     ).toBeVisible();
+    await expect(canvas.getAllByText("Ready")[0]).toHaveAttribute("data-badge-variant", "positive");
   },
 };
 
@@ -401,11 +404,11 @@ export const OutsideSlotsBefore: Story = {
   args: {
     label: "Pizzeria Website URL",
     before: <Button usage="text-input-before">https://</Button>,
+    defaultValue: "pepperoni.pizza",
     placeholder: "pepperoni.pizza",
   },
   play: async ({ canvas, userEvent }) => {
     const input = canvas.getByRole("textbox", { name: "Pizzeria Website URL" });
-    await userEvent.type(input, "pepperoni.pizza");
     await userEvent.click(canvas.getByRole("button", { name: "https://" }));
     await expect(input).toHaveValue("pepperoni.pizza");
   },
@@ -416,67 +419,69 @@ export const OutsideSlotsAfter: Story = {
   args: {
     label: "VIP Pizza Club Code",
     after: <Button usage="text-input-after">Apply</Button>,
+    defaultValue: "PIZZACLUB",
     placeholder: "PIZZACLUB",
   },
   play: async ({ canvas, userEvent }) => {
     const input = canvas.getByRole("textbox", { name: "VIP Pizza Club Code" });
-    await userEvent.type(input, "PIZZACLUB");
     await userEvent.click(canvas.getByRole("button", { name: "Apply" }));
     await expect(input).toHaveValue("PIZZACLUB");
   },
 };
 
+const AlignRightNumbersStory = () => {
+  const [amounts, setAmounts] = useState<Record<"s" | "m" | "l", string>>({
+    s: "18.50",
+    m: "24.50",
+    l: "32.00",
+  });
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "var(--space-500)",
+        width: "320px",
+        maxWidth: "100%",
+      }}
+    >
+      {(["s", "m", "l"] as const).map((size) => (
+        <TextInput
+          key={size}
+          size={size}
+          label={`Pizza Subtotal — ${size}`}
+          align="end"
+          type="text"
+          inputMode="decimal"
+          value={amounts[size]}
+          onChange={(event) => {
+            const value = sanitizeAmount(event.target.value);
+            setAmounts((current) => ({ ...current, [size]: value }));
+          }}
+          insideBefore={
+            <TextInput.InsideSlot density="text">
+              <Text size="l" variant="default">
+                $
+              </Text>
+            </TextInput.InsideSlot>
+          }
+          insideAfter={
+            <TextInput.InsideSlot density="text">
+              <Text size="s" variant="positive">
+                AUD
+              </Text>
+            </TextInput.InsideSlot>
+          }
+        />
+      ))}
+    </div>
+  );
+};
+
 export const AlignRightNumbers: Story = {
   ...getStoryMetaFromManifest("TextInput", "align-right-numbers"),
-  render: () => {
-    const [amounts, setAmounts] = useState<Record<"s" | "m" | "l", string>>({
-      s: "",
-      m: "24.50",
-      l: "24.50",
-    });
-
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "var(--space-500)",
-          width: "320px",
-          maxWidth: "100%",
-        }}
-      >
-        {(["s", "m", "l"] as const).map((size) => (
-          <TextInput
-            key={size}
-            size={size}
-            label={`Pizza Subtotal — ${size}`}
-            align="end"
-            type="text"
-            inputMode="decimal"
-            value={amounts[size]}
-            onChange={(event) => {
-              const value = sanitizeAmount(event.target.value);
-              setAmounts((current) => ({ ...current, [size]: value }));
-            }}
-            insideBefore={
-              <TextInput.InsideSlot density="text">
-                <Text size="l" variant="default">
-                  $
-                </Text>
-              </TextInput.InsideSlot>
-            }
-            insideAfter={
-              <TextInput.InsideSlot density="text">
-                <Text size="s" variant="positive">
-                  AUD
-                </Text>
-              </TextInput.InsideSlot>
-            }
-          />
-        ))}
-      </div>
-    );
-  },
+  render: () => <AlignRightNumbersStory />,
   play: async ({ canvas, userEvent }) => {
     const input = canvas.getByRole("textbox", { name: "Pizza Subtotal — s" });
     await userEvent.click(input);
@@ -489,89 +494,94 @@ export const AlignRightNumbers: Story = {
   },
 };
 
-export const InputMode: Story = {
-  ...getStoryMetaFromManifest("TextInput", "input-mode"),
-  render: () => {
-    const [amount, setAmount] = useState("");
+const InputModeStory = () => {
+  const [amount, setAmount] = useState("15.25");
 
-    return (
-      <Box
-        flex
-        direction="column"
-        gap="300"
-        style={{ width: "320px", maxWidth: "100%" }}
-      >
-        <TextInput
-          label="Pizza Total Price"
-          type="text"
-          inputMode="decimal"
-          align="end"
-          value={amount}
-          onChange={(event) => setAmount(sanitizeAmount(event.target.value))}
-          placeholder="0.00"
-        />
+  return (
+    <Box
+      flex
+      direction="column"
+      gap="300"
+      style={{ width: "320px", maxWidth: "100%" }}
+    >
       <TextInput
-        label="Order pickup PIN"
+        label="Pizza Total Price"
+        type="text"
+        inputMode="decimal"
+        align="end"
+        value={amount}
+        onChange={(event) => setAmount(sanitizeAmount(event.target.value))}
+        placeholder="0.00"
+      />
+      <TextInput
+        label="Pizza Pickup PIN"
         type="text"
         inputMode="numeric"
         autoComplete="one-time-code"
+        defaultValue="849201"
         placeholder="6-digit PIN"
       />
       <TextInput
-        label="Receipt email"
+        label="Customer Order Email"
         type="email"
         inputMode="email"
         autoComplete="email"
-        placeholder="name@example.com"
+        defaultValue="chef@pepperoni.pizza"
+        placeholder="chef@pepperoni.pizza"
       />
       <TextInput
-        label="Courier telephone number"
+        label="Pizza Courier Mobile"
         type="tel"
         inputMode="tel"
         autoComplete="tel"
+        defaultValue="0400 123 456"
         placeholder="0400 000 000"
       />
-      </Box>
-    );
-  },
-  play: async ({ canvas, userEvent }) => {
+    </Box>
+  );
+};
+
+export const InputMode: Story = {
+  ...getStoryMetaFromManifest("TextInput", "input-mode"),
+  render: () => <InputModeStory />,
+  play: async ({ canvas }) => {
     const amount = canvas.getByRole("textbox", { name: "Pizza Total Price" });
-    const code = canvas.getByRole("textbox", { name: "Order pickup PIN" });
-    const email = canvas.getByRole("textbox", { name: "Receipt email" });
-    const telephone = canvas.getByRole("textbox", { name: "Courier telephone number" });
+    const code = canvas.getByRole("textbox", { name: "Pizza Pickup PIN" });
+    const email = canvas.getByRole("textbox", { name: "Customer Order Email" });
+    const telephone = canvas.getByRole("textbox", { name: "Pizza Courier Mobile" });
 
     await expect(amount).toHaveAttribute("inputmode", "decimal");
     await expect(amount).toHaveAttribute("type", "text");
     await expect(amount).toHaveStyle({ textAlign: "end" });
+    await expect(amount).toHaveValue("15.25");
     await expect(code).toHaveAttribute("inputmode", "numeric");
     await expect(code).toHaveAttribute("autocomplete", "one-time-code");
+    await expect(code).toHaveValue("849201");
     await expect(email).toHaveAttribute("type", "email");
     await expect(email).toHaveAttribute("autocomplete", "email");
+    await expect(email).toHaveValue("chef@pepperoni.pizza");
     await expect(telephone).toHaveAttribute("type", "tel");
     await expect(telephone).toHaveAttribute("autocomplete", "tel");
-    await userEvent.type(amount, "15nope.25");
-    await expect(amount).toHaveValue("15.25");
+    await expect(telephone).toHaveValue("0400 123 456");
   },
 };
 
-export const TableCellEmbedding: Story = {
-  ...getStoryMetaFromManifest("TextInput", "table-cell-embedding"),
-  render: () => {
-    const [amounts, setAmounts] = useState<Record<"s" | "m" | "l", string>>({
-      s: "24.50",
-      m: "24.50",
-      l: "24.50",
-    });
+const TableCellEmbeddingStory = () => {
+  const [amounts, setAmounts] = useState<Record<"s" | "m" | "l", string>>({
+    s: "12.50",
+    m: "24.50",
+    l: "32.00",
+  });
 
-    return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "var(--space-500)",
-        }}
-      >
-        {(["s", "m", "l"] as const).map((size) => (
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "var(--space-500)",
+      }}
+    >
+      {(["s", "m", "l"] as const).map((size) => (
         <Table
           key={size}
           variant="grid"
@@ -626,16 +636,21 @@ export const TableCellEmbedding: Story = {
                       <Text variant="secondary">$</Text>
                     </TextInput.InsideSlot>
                   }
+                  placeholder="0.00"
                 />
               </Table.Cell>
             </tr>
           </tbody>
         </Table>
-        ))}
-      </div>
-    );
-  },
-  play: async ({ canvas, userEvent }) => {
+      ))}
+    </div>
+  );
+};
+
+export const TableCellEmbedding: Story = {
+  ...getStoryMetaFromManifest("TextInput", "table-cell-embedding"),
+  render: () => <TableCellEmbeddingStory />,
+  play: async ({ canvas }) => {
     await expect(canvas.getAllByRole("textbox")).toHaveLength(9);
     await expect(
       canvas
@@ -655,18 +670,17 @@ export const TableCellEmbedding: Story = {
     await expect(
       canvas.getByRole("textbox", { name: "m pizza description" }),
     ).toHaveValue("Pepperoni Feast");
+    await expect(canvas.getByRole("textbox", { name: "s amount" })).toHaveValue(
+      "12.50",
+    );
     await expect(canvas.getByRole("textbox", { name: "l amount" })).toHaveValue(
-      "24.50",
+      "32.00",
     );
     await expect(canvas.getByRole("textbox", { name: "l amount" })).toHaveStyle(
       {
         textAlign: "end",
       },
     );
-    const smallAmount = canvas.getByRole("textbox", { name: "s amount" });
-    await userEvent.clear(smallAmount);
-    await userEvent.type(smallAmount, "12abc.50");
-    await expect(smallAmount).toHaveValue("12.50");
-    await expect(smallAmount).toHaveAttribute("inputmode", "decimal");
+    await expect(canvas.getByRole("textbox", { name: "s amount" })).toHaveAttribute("inputmode", "decimal");
   },
 };
