@@ -1,11 +1,31 @@
 import * as sx from "@stylexjs/stylex";
 
 export const styles = sx.create({
+  wrapper: {
+    backgroundColor: "var(--surface)",
+    boxSizing: "border-box",
+    minHeight: "100vh",
+    width: "100%",
+  },
   root: {
     boxSizing: "border-box",
     color: "var(--text-color)",
-    padding: "24px",
+    fontFamily: "var(--font-family)",
+    marginInline: "auto",
+    maxWidth: "1120px",
+    padding: {
+      default: "var(--space-600) var(--space-800) var(--space-800)",
+      "@media (max-width: 1024px)": "var(--space-600) var(--space-600) var(--space-600)",
+      "@media (max-width: 768px)": "var(--space-500) var(--space-400) var(--space-500)",
+      "@media (max-width: 480px)": "var(--space-400) var(--space-300) var(--space-400)",
+    },
     width: "100%",
+  },
+  sectionHeader: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--space-200)",
+    maxWidth: "72ch",
   },
   header: {
     borderBottom: "var(--stroke-100) solid var(--border-color)",
@@ -13,10 +33,21 @@ export const styles = sx.create({
     paddingBottom: "var(--space-200)",
   },
   headerStack: {
-    display: "grid",
-    gridTemplateColumns: "1fr auto",
-    gap: "var(--space-500)",
-    alignItems: "start",
+    alignItems: {
+      default: "center",
+      "@media (max-width: 600px)": "stretch",
+    },
+    display: "flex",
+    flexDirection: {
+      default: "row",
+      "@media (max-width: 600px)": "column",
+    },
+    gap: "var(--space-400)",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  headerAction: {
+    flexShrink: 0,
   },
   title: { marginBottom: "var(--space-100)" },
   description: {},

@@ -21,6 +21,15 @@
   background-color: var(--surface-100) !important;
 }
 
-.docs-story:has([data-card-doc]) {
+.docs-story:has([data-card-doc]),
+.docs-story:has([data-pepperoni-home]),
+.docs-story:has([data-tokens-doc]),
+.sb-main-fullscreen:has([data-pepperoni-home]),
+.sb-main-fullscreen:has([data-tokens-doc]),
+#storybook-root:has([data-pepperoni-home]),
+#storybook-root:has([data-tokens-doc]),
+body:has([data-pepperoni-home]),
+body:has([data-tokens-doc]) {
   background-color: var(--surface) !important;
 }
+

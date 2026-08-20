@@ -937,6 +937,12 @@
               "title": "Attention",
               "description": "High-emphasis destructive or critical action.",
               "image": ""
+            },
+            {
+              "key": "link",
+              "title": "Link",
+              "description": "Inline navigational action rendered with underline styling.",
+              "image": ""
             }
           ]
         },
@@ -961,6 +967,17 @@
               "key": "attention",
               "title": "Attention",
               "description": "Shows the destructive or critical attention Button treatment."
+            },
+            {
+              "key": "link",
+              "title": "Link",
+              "description": "Shows the inline navigational link Button treatment with href support."
+            },
+            {
+              "key": "variants",
+              "title": "Variants",
+              "description": "Displays all Button variants (Primary, Secondary, Tertiary, Attention, Link) side by side.",
+              "source": "<Box flex gap=\"300\" align=\"center\" wrap=\"wrap\">\n  <Button variant=\"primary\">Order Pizza</Button>\n  <Button variant=\"secondary\">Add Extra Cheese</Button>\n  <Button variant=\"tertiary\">Customize Toppings</Button>\n  <Button variant=\"attention\">Cancel Order</Button>\n  <Button variant=\"link\" href=\"https://pepperoni.pizza\" target=\"_blank\">View Full Menu</Button>\n</Box>"
             },
             {
               "key": "icon-only",

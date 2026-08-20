@@ -1,12 +1,31 @@
 import * as sx from "@stylexjs/stylex";
 
 export const styles = sx.create({
+  wrapper: {
+    backgroundColor: "var(--surface)",
+    boxSizing: "border-box",
+    minHeight: "100vh",
+    width: "100%",
+  },
   root: {
     boxSizing: "border-box",
     color: "var(--text-color)",
     fontFamily: "var(--font-family)",
-    padding: "24px",
+    marginInline: "auto",
+    maxWidth: "1120px",
+    padding: {
+      default: "var(--space-600) var(--space-800) var(--space-800)",
+      "@media (max-width: 1024px)": "var(--space-600) var(--space-600) var(--space-600)",
+      "@media (max-width: 768px)": "var(--space-500) var(--space-400) var(--space-500)",
+      "@media (max-width: 480px)": "var(--space-400) var(--space-300) var(--space-400)",
+    },
     width: "100%",
+  },
+  sectionHeader: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "var(--space-200)",
+    maxWidth: "72ch",
   },
   h1: { marginBottom: "var(--space-100)" },
   h2: { marginBottom: "var(--space-300)" },
@@ -34,7 +53,6 @@ export const styles = sx.create({
   },
   downloadButton: { marginLeft: "auto" },
   code: {
-    backgroundColor: "var(--surface-200)",
     borderRadius: "8px",
     color: "var(--text-color)",
     fontFamily: "monospace",
@@ -42,7 +60,7 @@ export const styles = sx.create({
     lineHeight: "var(--line-height-50)",
     margin: 0,
     overflowX: "auto",
-    padding: "16px",
+    padding: "var(--space-000)",
   },
   colorGrid: {
     display: "grid",
@@ -118,14 +136,6 @@ export const styles = sx.create({
     gap: "16px",
     gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
   },
-  radiusCard: {
-    borderColor: "var(--border-color)",
-    borderRadius: "var(--radius-300)",
-    borderStyle: "solid",
-    borderWidth: "var(--stroke-100)",
-    padding: "12px",
-    textAlign: "center",
-  },
   radiusPreview: {
     backgroundColor: "var(--surface-200)",
     borderColor: "var(--grey-300)",
@@ -143,25 +153,6 @@ export const styles = sx.create({
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
   },
-  strokeList: { display: "flex", flexDirection: "column", gap: "16px" },
-  strokeRow: {
-    alignItems: "center",
-    backgroundColor: "var(--surface-100)",
-    borderColor: "var(--border-color)",
-    borderRadius: "var(--radius-300)",
-    borderStyle: "solid",
-    borderWidth: "var(--stroke-100)",
-    display: "flex",
-    gap: "16px",
-    paddingBlock: "12px",
-    paddingInline: "16px",
-  },
-  strokeName: { fontSize: "14px", fontWeight: 600, width: "130px" },
-  strokeValue: {
-    color: "var(--text-color-secondary)",
-    fontSize: "13px",
-    width: "60px",
-  },
   strokeBar: {
     backgroundColor: "var(--grey-900)",
     borderRadius: "var(--radius-100)",
@@ -171,14 +162,6 @@ export const styles = sx.create({
     display: "grid",
     gap: "16px",
     gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-  },
-  speedCard: {
-    backgroundColor: "var(--surface-100)",
-    borderColor: "var(--border-color)",
-    borderRadius: "var(--radius-300)",
-    borderStyle: "solid",
-    borderWidth: "var(--stroke-100)",
-    padding: "16px",
   },
   speedName: { fontSize: "14px", fontWeight: 600, marginBottom: "4px" },
   speedValue: {

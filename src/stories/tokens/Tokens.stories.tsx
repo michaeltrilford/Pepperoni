@@ -6,6 +6,7 @@ const meta: Meta<typeof BrandDoc> = {
   title: "Design Tokens",
   component: BrandDoc,
   parameters: {
+    layout: "fullscreen",
     docs: {
       description: {
         component: "Visual documentation of base and theme-aware semantic design tokens. Semantic values resolve dynamically for the active Light or Dark Storybook theme."

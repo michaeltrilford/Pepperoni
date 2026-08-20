@@ -3,6 +3,7 @@ import { expect, fn } from "storybook/test";
 import { Button } from ".";
 import { Icon } from "../Icon";
 import { TextInput } from "../TextInput";
+import { Box } from "../Box";
 import {
   getManifestArgTypes,
   getManifestComponentDescription,
@@ -124,18 +125,41 @@ export const IconOnly: Story = {
 };
 
 export const Link: Story = {
+  ...getStoryMetaFromManifest("Button", "link"),
   args: {
-    children: "View pizza menu",
-    href: "https://example.com",
+    children: "View Full Menu",
+    href: "https://pepperoni.pizza",
     target: "_blank",
     rel: "noreferrer",
-    variant: "secondary",
+    variant: "link",
   },
   play: async ({ canvas }) => {
-    const link = canvas.getByRole("link", { name: "View pizza menu" });
+    const link = canvas.getByRole("link", { name: "View Full Menu" });
 
-    await expect(link).toHaveAttribute("href", "https://example.com");
+    await expect(link).toHaveAttribute("href", "https://pepperoni.pizza");
     await expect(link).toHaveAttribute("target", "_blank");
+  },
+};
+
+export const Variants: Story = {
+  ...getStoryMetaFromManifest("Button", "variants"),
+  render: () => (
+    <Box flex gap="300" align="center" wrap="wrap">
+      <Button variant="primary">Order Pizza</Button>
+      <Button variant="secondary">Add Extra Cheese</Button>
+      <Button variant="tertiary">Customize Toppings</Button>
+      <Button variant="attention">Cancel Order</Button>
+      <Button variant="link" href="https://pepperoni.pizza" target="_blank">
+        View Full Menu
+      </Button>
+    </Box>
+  ),
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole("button", { name: "Order Pizza" })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: "Add Extra Cheese" })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: "Customize Toppings" })).toBeVisible();
+    await expect(canvas.getByRole("button", { name: "Cancel Order" })).toBeVisible();
+    await expect(canvas.getByRole("link", { name: "View Full Menu" })).toBeVisible();
   },
 };
 

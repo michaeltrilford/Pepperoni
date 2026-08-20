@@ -21,14 +21,7 @@ for (const match of tokensCss.matchAll(declarationPattern)) {
   runtimeTokenValues.set(name, values);
 }
 
-const componentPrefixes = [
-  "--form-",
-  "--button-",
-  "--icon-",
-  "--badge-",
-  "--table-",
-  "--card-",
-];
+const componentPrefixes = ["--form-", "--button-", "--icon-", "--badge-", "--table-", "--card-"];
 const humanizeTokenName = (name: string) =>
   name
     .replace(/^--/, "")
@@ -38,18 +31,12 @@ const humanizeTokenName = (name: string) =>
 
 const describeToken = (name: string) => {
   const label = humanizeTokenName(name);
-  if (name.startsWith("--form-"))
-    return `${label.replace("Form ", "")} used by form controls.`;
-  if (name.startsWith("--button-"))
-    return `${label.replace("Button ", "")} used by Button.`;
-  if (name.startsWith("--icon-"))
-    return `${label.replace("Icon ", "")} used by Icon.`;
-  if (name.startsWith("--badge-"))
-    return `${label.replace("Badge ", "")} used by Badge.`;
-  if (name.startsWith("--table-"))
-    return `${label.replace("Table ", "")} used by Table.`;
-  if (name.startsWith("--card-"))
-    return `${label.replace("Card ", "")} used by Card.`;
+  if (name.startsWith("--form-")) return `${label.replace("Form ", "")} used by form controls.`;
+  if (name.startsWith("--button-")) return `${label.replace("Button ", "")} used by Button.`;
+  if (name.startsWith("--icon-")) return `${label.replace("Icon ", "")} used by Icon.`;
+  if (name.startsWith("--badge-")) return `${label.replace("Badge ", "")} used by Badge.`;
+  if (name.startsWith("--table-")) return `${label.replace("Table ", "")} used by Table.`;
+  if (name.startsWith("--card-")) return `${label.replace("Card ", "")} used by Card.`;
   return `${label} semantic token.`;
 };
 
@@ -64,12 +51,8 @@ interface SemanticDocProps {
   kind?: "semantic" | "component";
 }
 
-export const SemanticDoc: React.FC<SemanticDocProps> = ({
-  kind = "semantic",
-}) => {
-  const [resolvedValues, setResolvedValues] = useState<Record<string, string>>(
-    {},
-  );
+export const SemanticDoc: React.FC<SemanticDocProps> = ({ kind = "semantic" }) => {
+  const [resolvedValues, setResolvedValues] = useState<Record<string, string>>({});
   const [valueMode, setValueMode] = useState<"mapping" | "resolved">("mapping");
   const displayedTokens = tokens.filter(({ name }) =>
     kind === "component"
@@ -87,12 +70,7 @@ export const SemanticDoc: React.FC<SemanticDocProps> = ({
     const resolveValues = () => {
       const computedStyles = getComputedStyle(root);
       setResolvedValues(
-        Object.fromEntries(
-          tokens.map(({ name }) => [
-            name,
-            computedStyles.getPropertyValue(name).trim(),
-          ]),
-        ),
+        Object.fromEntries(tokens.map(({ name }) => [name, computedStyles.getPropertyValue(name).trim()])),
       );
     };
 
@@ -106,142 +84,114 @@ export const SemanticDoc: React.FC<SemanticDocProps> = ({
   }, []);
 
   return (
-    <div {...sx.props(styles.root)}>
-      <header {...sx.props(styles.header)}>
-        <div {...sx.props(styles.headerStack)}>
-          <div>
-            <Heading size="h2" level="h1" weight={700}>
-              {title}
-            </Heading>
-            <Text size="l" variant="secondary">
-              {description}
-            </Text>
-          </div>
+    <div {...sx.props(styles.wrapper)} data-tokens-doc="">
+      <div {...sx.props(styles.root)}>
+        <header {...sx.props(styles.header)}>
+          <div {...sx.props(styles.headerStack)}>
+            <div {...sx.props(styles.sectionHeader)}>
+              <Heading size="h1" level="h1">
+                {title}
+              </Heading>
+              <Text size="l" variant="secondary">
+                {description}
+              </Text>
+            </div>
 
-          <Button
-            href="./tokens/tokens.css"
-            download="tokens.css"
-            onClick={() => {}}
-            rel="noreferrer"
-            target="_blank"
-            variant="secondary"
-            size="s"
-          >
-            tokens.css
-          </Button>
-        </div>
-      </header>
-
-      <Card size="m" surface="100" surfaceDirection="lift" padding={false}>
-        <Table
-          variant="rows"
-          usage="card"
-          size="m"
-          aria-label={`${title} token mappings`}
-          layout="fixed"
-          minWidth="70rem"
-          overflow="auto"
-          columns={[{ width: "30rem" }, { ratio: 1 }, { ratio: 1 }]}
-        >
-          <thead>
-            <tr>
-              <Table.HeaderCell>Token</Table.HeaderCell>
-              <Table.HeaderCell
-                onAction={() =>
-                  setValueMode(valueMode === "mapping" ? "resolved" : "mapping")
-                }
-                actionLabel={
-                  valueMode === "mapping"
-                    ? "Show computed values"
-                    : "Show token names"
-                }
+            <div {...sx.props(styles.headerAction)}>
+              <Button
+                href="./tokens/tokens.css"
+                download="tokens.css"
+                onClick={() => {}}
+                rel="noreferrer"
+                target="_blank"
+                variant="secondary"
+                size="m"
               >
-                {valueMode === "mapping" ? "Token Name" : "Computed Value"}
-                <Icon name="counter-clockwise-triangle-circle" />
-              </Table.HeaderCell>
-              <Table.HeaderCell>Description</Table.HeaderCell>
-            </tr>
-          </thead>
-          <tbody>
-            {displayedTokens.map((token) => (
-              <tr key={token.name}>
-                <Table.Cell ellipsis title={token.name}>
-                  <Text size="s" weight={600} {...sx.props(styles.tokenName)}>
-                    {token.name}
-                  </Text>
-                </Table.Cell>
-                {valueMode === "mapping" ? (
-                  <Table.Cell ellipsis title={String(token.$value)}>
-                    <Text
-                      size="s"
-                      variant="secondary"
-                      {...sx.props(styles.secondaryCell)}
-                    >
-                      {String(token.$value)}
-                    </Text>
-                  </Table.Cell>
-                ) : (
-                  <Table.Cell
-                    ellipsis
-                    title={resolvedValues[token.name]}
-                    {...sx.props(styles.resolvedCell)}
-                  >
-                    <Text size="s" {...sx.props(styles.resolvedValue)}>
-                      {token.$type === "color" && (
-                        <span
-                          aria-hidden="true"
-                          {...sx.props(styles.colorSwatch)}
-                          style={{ backgroundColor: `var(${token.name})` }}
-                        />
-                      )}
-                      <span {...sx.props(styles.truncatedValue)}>
-                        {resolvedValues[token.name]}
-                      </span>
-                    </Text>
-                  </Table.Cell>
-                )}
-                <Table.Cell clamp={2}>
-                  <Text
-                    size="s"
-                    variant="secondary"
-                    {...sx.props(styles.secondaryCell)}
-                  >
-                    {token.$description}
-                  </Text>
-                </Table.Cell>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Card>
-
-      {kind === "semantic" && (
-        <section
-          {...sx.props(styles.surface)}
-          aria-labelledby="surface-effects-title"
-        >
-          <Heading
-            id="surface-effects-title"
-            size="h4"
-            level="h2"
-            weight={700}
-            {...sx.props(styles.surfaceTitle)}
-          >
-            Surface Effects
-          </Heading>
-
-          <div {...sx.props(styles.visualGrid)}>
-            {surfaceVisuals.map((visual) => (
-              <article key={visual.mode} {...sx.props(styles.visualCard)}>
-                <SurfaceRing
-                  visual={visual}
-                  showEffects={visual.mode !== "FLAT"}
-                />
-              </article>
-            ))}
+                Download Tokens
+              </Button>
+            </div>
           </div>
-        </section>
-      )}
+        </header>
+
+        <Card size="m" surface="100" surfaceDirection="lift" padding={false}>
+          <Table
+            variant="rows"
+            usage="card"
+            size="m"
+            aria-label={`${title} token mappings`}
+            layout="fixed"
+            minWidth="70rem"
+            overflow="auto"
+            columns={[{ width: "30rem" }, { ratio: 1 }, { ratio: 1 }]}
+          >
+            <thead>
+              <tr>
+                <Table.HeaderCell>Token</Table.HeaderCell>
+                <Table.HeaderCell
+                  onAction={() => setValueMode(valueMode === "mapping" ? "resolved" : "mapping")}
+                  actionLabel={valueMode === "mapping" ? "Show computed values" : "Show token names"}
+                >
+                  {valueMode === "mapping" ? "Token Name" : "Computed Value"}
+                  <Icon name="counter-clockwise-triangle-circle" />
+                </Table.HeaderCell>
+                <Table.HeaderCell>Description</Table.HeaderCell>
+              </tr>
+            </thead>
+            <tbody>
+              {displayedTokens.map((token) => (
+                <tr key={token.name}>
+                  <Table.Cell ellipsis title={token.name}>
+                    <Text size="s" weight={600} {...sx.props(styles.tokenName)}>
+                      {token.name}
+                    </Text>
+                  </Table.Cell>
+                  {valueMode === "mapping" ? (
+                    <Table.Cell ellipsis title={String(token.$value)}>
+                      <Text size="s" variant="secondary" {...sx.props(styles.secondaryCell)}>
+                        {String(token.$value)}
+                      </Text>
+                    </Table.Cell>
+                  ) : (
+                    <Table.Cell ellipsis title={resolvedValues[token.name]} {...sx.props(styles.resolvedCell)}>
+                      <Text size="s" {...sx.props(styles.resolvedValue)}>
+                        {token.$type === "color" && (
+                          <span
+                            aria-hidden="true"
+                            {...sx.props(styles.colorSwatch)}
+                            style={{ backgroundColor: `var(${token.name})` }}
+                          />
+                        )}
+                        <span {...sx.props(styles.truncatedValue)}>{resolvedValues[token.name]}</span>
+                      </Text>
+                    </Table.Cell>
+                  )}
+                  <Table.Cell clamp={2}>
+                    <Text size="s" variant="secondary" {...sx.props(styles.secondaryCell)}>
+                      {token.$description}
+                    </Text>
+                  </Table.Cell>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Card>
+
+        {kind === "semantic" && (
+          <section {...sx.props(styles.surface)} aria-labelledby="surface-effects-title">
+            <Heading id="surface-effects-title" size="h4" level="h2" weight={700} {...sx.props(styles.surfaceTitle)}>
+              Surface Effects
+            </Heading>
+
+            <div {...sx.props(styles.visualGrid)}>
+              {surfaceVisuals.map((visual) => (
+                <article key={visual.mode} {...sx.props(styles.visualCard)}>
+                  <SurfaceRing visual={visual} showEffects={visual.mode !== "FLAT"} />
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
     </div>
   );
 };

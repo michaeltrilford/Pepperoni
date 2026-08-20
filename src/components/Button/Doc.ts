@@ -66,6 +66,12 @@ export const muiDocs: MuiDocs = {
           description: "High-emphasis destructive or critical action.",
           image: "",
         },
+        {
+          key: "link",
+          title: "Link",
+          description: "Inline navigational action rendered with underline styling.",
+          image: "",
+        },
       ],
     },
     stories: {
@@ -89,6 +95,23 @@ export const muiDocs: MuiDocs = {
           key: "attention",
           title: "Attention",
           description: "Shows the destructive or critical attention Button treatment.",
+        },
+        {
+          key: "link",
+          title: "Link",
+          description: "Shows the inline navigational link Button treatment with href support.",
+        },
+        {
+          key: "variants",
+          title: "Variants",
+          description: "Displays all Button variants (Primary, Secondary, Tertiary, Attention, Link) side by side.",
+          source: `<Box flex gap="300" align="center" wrap="wrap">
+  <Button variant="primary">Order Pizza</Button>
+  <Button variant="secondary">Add Extra Cheese</Button>
+  <Button variant="tertiary">Customize Toppings</Button>
+  <Button variant="attention">Cancel Order</Button>
+  <Button variant="link" href="https://pepperoni.pizza" target="_blank">View Full Menu</Button>
+</Box>`,
         },
         {
           key: "icon-only",
