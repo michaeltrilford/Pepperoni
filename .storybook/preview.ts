@@ -59,7 +59,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ["Pepperoni", "Design Tokens", "Components"]
+        order: ["Pepperoni", "Knowledge", "Design Tokens", "Components"]
       }
     },
     controls: {

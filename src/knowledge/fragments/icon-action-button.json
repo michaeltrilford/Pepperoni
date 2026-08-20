@@ -1,0 +1,49 @@
+{
+  "id": "icon-action-button",
+  "title": "Icon and text action group",
+  "description": "Compose visual actions and list item triggers using Icon, Button, and Box. The Icon provides semantic visual cues while preserving accessible text labels.",
+  "useWhen": "Creating toolbar actions, kitchen ticketing controls, order modifiers, or navigation items with icon embellishments.",
+  "components": [
+    "Icon",
+    "Button",
+    "Box",
+    "Text"
+  ],
+  "rules": [
+    "Use Icon name to specify standard iconography (e.g., 'cart', 'chef', 'pizza', 'check', 'arrow-right').",
+    "Use Box flex direction='row' align='center' to align Icons with text labels.",
+    "Pair visual icons with explicit text labels or provide aria-label when rendering standalone icon buttons for screen readers.",
+    "Choose Button size ('s' | 'm' | 'l') and variant ('primary' | 'secondary' | 'attention' | 'link') based on visual hierarchy."
+  ],
+  "example": {
+    "type": "Box",
+    "props": {
+      "flex": true,
+      "direction": "row",
+      "gap": "300",
+      "align": "center"
+    },
+    "children": [
+      {
+        "type": "Button",
+        "props": {
+          "variant": "secondary",
+          "size": "s"
+        },
+        "children": [
+          "Add Extra Mozzarella"
+        ]
+      },
+      {
+        "type": "Button",
+        "props": {
+          "variant": "primary",
+          "size": "s"
+        },
+        "children": [
+          "Send to Kitchen"
+        ]
+      }
+    ]
+  }
+}

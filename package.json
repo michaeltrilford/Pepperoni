@@ -1,6 +1,7 @@
 {
   "name": "pepperoni-ui",
   "version": "0.1.0",
+  "homepage": "https://pepperoni.fit",
   "type": "module",
   "engines": {
     "node": ">=20.19.5"

@@ -28,6 +28,116 @@ Compose Pepperoni interfaces from established use cases while preserving compone
 
 ## Component API Reference
 
+### Badge
+
+span extending HTMLAttributes<HTMLSpanElement>.
+
+- `size`: Controls badge height, typography, padding, and radius. Type: `S | M | L`; default: `m`
+- `variant`: Semantic status styling for common badge states. Type: `neutral | positive | caution | attention`; default: `neutral`
+- `color`: Applies a brand color ramp or custom CSS color string. Type: `grey | pepperoni | green | orange | red | string`
+- `role`: Adds semantics such as status when the badge meaning needs to be exposed beyond its text. Type: `AriaRole`
+- `aria-label`: Provides an accessible name when the visible badge text is incomplete. Type: `string`
+- `aria-live`: Announces changing badge content; omit for static badges. Type: `off | polite | assertive`
+
+### Box
+
+div extending HTMLAttributes<HTMLDivElement>.
+
+- `flex`: Enables flex layout. Type: `boolean`; default: `false`
+- `direction`: Controls the main-axis direction when flex is enabled. Type: `row | column`; default: `row`
+- `gap`: Applies a spacing token between flex items. Type: `000 | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800`
+- `align`: Aligns flex items on the cross axis. Type: `start | center | end | stretch | baseline`
+- `justify`: Distributes flex items on the main axis. Type: `start | center | end | between | around | evenly`
+- `wrap`: Controls whether flex items wrap onto additional lines. Type: `nowrap | wrap | reverse`; default: `nowrap`
+
+### Button
+
+button extending ButtonHTMLAttributes<HTMLButtonElement>.
+
+- `variant`: Controls the visual emphasis of the action. Type: `primary | secondary | tertiary | attention | link`; default: `primary`
+- `size`: Controls the button height, spacing, and typography. Type: `xs | s | m | l`; default: `m`
+- `iconOnly`: Makes an icon-only action square. Provide an accessible name with aria-label. Type: `boolean`; default: `false`
+- `usage`: Attaches Button to the corresponding TextInput outside slot, inherits its height and typography, and applies the secondary treatment with joined edges. Type: `text-input-before | text-input-after`
+- `type`: Controls the native button action; use submit or reset deliberately inside forms. Type: `button | submit | reset`; default: `button`
+- `href`: Renders the action as an anchor when provided. Type: `string`
+- `target`: Sets the anchor target when href is provided. Type: `_self | _blank | _parent | _top`
+- `rel`: Sets the anchor relationship when href is provided. Type: `string`
+- `download`: Sets the download behaviour when href is provided. Type: `string | boolean`
+- `disabled`: Disables a native button. For linked actions it removes href and keyboard focus, prevents activation, and exposes aria-disabled. Type: `boolean`; default: `false`
+- `aria-label`: Provides an accessible name, required when the button has no visible text. Type: `string`
+- `aria-pressed`: Exposes pressed state for toggle buttons. Type: `boolean`
+- `aria-expanded`: Exposes expanded state for disclosure controls. Type: `boolean`
+- `aria-controls`: Identifies the controlled element for a disclosure or toggle action. Type: `string`
+
+### Card
+
+div extending HTMLAttributes<HTMLDivElement>.
+
+- `size`: Controls the card radius and padding scale. Type: `s | m | l`; default: `m`
+- `padding`: Removes the card's internal padding when false. For a full-bleed rows Table, pair this with Table usage='card'. Type: `boolean`; default: `true`
+- `surface`: Selects the semantic surface tone used by the card. Type: `100 | 200 | 300`; default: `100`
+- `surfaceDirection`: Identifies the shadow and border treatment direction. Type: `lift | depth`; default: `lift`
+- `role`: Adds an ARIA role when the card has a specific semantic purpose. Type: `AriaRole`
+
+### Code
+
+code extending HTMLAttributes<HTMLElement>.
+
+- `variant`: Controls whether the code renders as an inline chip or a preformatted block. Type: `inline | block`; default: `inline`
+- `size`: Sizing scale for font-size. 'inherit' dynamically scales relative to parent typography (0.85em). Type: `inherit | s | m | l`; default: `inherit`
+- `children`: Content to display inside the code element. Type: `ReactNode`
+
+### Field
+
+div extending HTMLAttributes<HTMLDivElement>.
+
+- `size`: Controls Field spacing and the scale passed to its label and message. Type: `S | M | L`; default: `m`
+- `variant`: Maps the supporting message to its semantic feedback colour. Type: `default | success | warning | error`; default: `default`
+- `label`: Provides the shared visible or visually hidden Field label. Type: `ReactNode`
+- `hideLabel`: Visually hides the Field label while retaining accessible text. Type: `boolean`; default: `false`
+- `optional`: Displays the optional indicator beside the Field label. Type: `boolean`; default: `false`
+- `required`: Displays a visual required indicator beside the Field label; set required on the child control for native validation. Type: `boolean`; default: `false`
+- `message`: Renders helper or validation text below the Field content. Type: `ReactNode`
+- `messageId`: Customises the generated message id used by TextInput context and render-function ARIA relationship props. Type: `string`
+- `children`: Provides content or a render function. TextInput consumes Field context automatically; use the render function to pass ARIA props to other controls. Type: `ReactNode`
+
+### Heading
+
+h1–h6 | div extending HTMLAttributes<HTMLElement>.
+
+- `size`: Controls the visual font-size and line-height token pairing. Type: `h1 | h2 | h3 | h4 | h5 | h6`; default: `h2`
+- `level`: Controls the document heading level; use none when the text is not a structural heading. Type: `h1 | h2 | h3 | h4 | h5 | h6 | none`; default: `h2`
+- `weight`: Applies a font weight from the brand token scale. Type: `400 | 500 | 600 | 700`; default: `700`
+
+### Icon
+
+span extending HTMLAttributes<HTMLSpanElement>.
+
+- `name`: Selects an icon from the Pepperoni icon set. Type: `search | counter-clockwise-triangle-circle`
+- `size`: Controls the rendered icon dimensions. Type: `S | M | L`; default: `m`
+- `label`: Provides an accessible name for a meaningful standalone icon; omit for decorative icons. Type: `string`
+
+### Label
+
+label extending LabelHTMLAttributes<HTMLLabelElement>.
+
+- `size`: Controls label font size and line height. Type: `S | M | L`; default: `m`
+- `label`: Provides the visible or visually hidden label content. Type: `ReactNode`
+- `htmlFor`: Associates the label with a form control whose id matches exactly. Type: `string`
+- `id`: Provides an identifier for the label when referenced by aria-labelledby. Type: `string`
+- `hideLabel`: Visually hides the label while retaining its accessible association. Type: `boolean`; default: `false`
+- `optional`: Displays the optional indicator beside the label unless required is also true. Type: `boolean`; default: `false`
+- `required`: Displays a visual required indicator and takes precedence over optional; does not set the associated control's native required state. Type: `boolean`; default: `false`
+
+### List
+
+ul extending HTMLAttributes<HTMLOListElement | HTMLUListElement>.
+
+- `type`: Specifies whether to render an ordered (`<ol>`) or unordered (`<ul>`) list. Type: `unordered | ordered`; default: `unordered`
+- `size`: Controls typography size and line height for list items. Type: `S | M | L`; default: `m`
+- `gap`: Vertical gap between list items. Type: `100 | 200 | 300 | 400 | 500`; default: `100`
+- `children`: Content of the list, typically List.Item elements. Type: `ReactNode`
+
 ### Table
 
 table extending TableHTMLAttributes<HTMLTableElement>.
@@ -49,6 +159,17 @@ table extending TableHTMLAttributes<HTMLTableElement>.
 - `aria-label`: Names the table when no visible caption is provided. Type: `string`
 - `aria-labelledby`: References visible text that names the table. Type: `string`
 - `aria-describedby`: References supplementary text that describes the table. Type: `string`
+
+### Text
+
+p extending HTMLAttributes<HTMLParagraphElement>.
+
+- `size`: Controls body-copy font size and line height. Type: `S | M | L`; default: `m`
+- `variant`: Applies the corresponding semantic text colour. Type: `default | secondary | positive | warning | attention`; default: `default`
+- `weight`: Applies a font weight from the brand token scale. Type: `400 | 500 | 600 | 700`; default: `400`
+- `id`: Provides an identifier for referencing this text from a control or relationship. Type: `string`
+- `role`: Adds semantic behaviour such as status or alert when the text is dynamic. Type: `AriaRole`
+- `aria-live`: Controls announcement timing for dynamic text. Type: `off | polite | assertive`
 
 ### TextInput
 
@@ -77,6 +198,95 @@ input extending InputHTMLAttributes<HTMLInputElement>.
 - `noBorder`: Removes the input border for embedded composition. Type: `boolean`; default: `false`
 
 ## Composition Fragments
+
+### Card with summary and action
+
+Compose an interactive or informational summary card using Card, Box, Heading, Text, Badge, and Button. The Card owns surface elevation and container padding; Box handles directional flow and gap spacing; Button provides the call to action.
+
+**Use when:** Displaying product items, order tickets, metric cards, or workflow highlights with a clear title, status badge, description, and primary or secondary action.
+
+**Rules**
+
+- Use Card size='s' or size='m' to control corner radius and internal padding scale.
+- Use Box flex direction='column' with gap tokens to maintain uniform spacing between headers, content, and actions.
+- Place Badge in an alignSelf='flex-start' or row Box above or beside the Heading for status indication.
+- Push actions to the bottom using marginTop='auto' or Box justify='between' when cards appear in multi-column grids with varying content heights.
+- Use Button variant='primary', 'secondary', or 'link' depending on hierarchy, and set href when the action navigates to another URL.
+- Ensure headings use semantic level ('h2' | 'h3' | 'h4') appropriate to document hierarchy while selecting size independently.
+
+**JSON composition**
+
+```json
+{
+  "type": "Card",
+  "props": {
+    "size": "m",
+    "surface": "100",
+    "surfaceDirection": "lift"
+  },
+  "children": [
+    {
+      "type": "Box",
+      "props": {
+        "flex": true,
+        "direction": "column",
+        "gap": "400"
+      },
+      "children": [
+        {
+          "type": "Box",
+          "props": {
+            "flex": true,
+            "direction": "column",
+            "gap": "200"
+          },
+          "children": [
+            {
+              "type": "Badge",
+              "props": {
+                "color": "pepperoni"
+              },
+              "children": [
+                "Baking"
+              ]
+            },
+            {
+              "type": "Heading",
+              "props": {
+                "level": "h3",
+                "size": "h4"
+              },
+              "children": [
+                "Order #1042 - Margherita Extra"
+              ]
+            },
+            {
+              "type": "Text",
+              "props": {
+                "size": "m",
+                "variant": "secondary"
+              },
+              "children": [
+                "Fresh basil, San Marzano tomato sauce, and double mozzarella. Oven 2 at 450°C."
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Button",
+          "props": {
+            "variant": "primary",
+            "size": "s"
+          },
+          "children": [
+            "Mark Ready"
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
 
 ### Editable payment table
 
@@ -210,6 +420,335 @@ Compose TextInput controls inside a grid Table for inline editing of a payment l
                     "defaultValue": "1,250.00"
                   },
                   "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Form field with accessible label and validation
+
+Compose accessible inputs using Field, Label, and TextInput. Field manages aria-describedby and error associations; TextInput handles input capture; Label connects the accessible name.
+
+**Use when:** Building forms for checkout, customer addresses, table reservations, or login flows where validation states and helper descriptions are needed.
+
+**Rules**
+
+- Wrap related controls in Field to automatically propagate accessible name and description relationships.
+- Place Label inside Field before the TextInput control.
+- Use Field helper prop to provide context or hint formatting; use error prop to display validation errors.
+- TextInput inside Field automatically connects to label and helper text without requiring explicit id matching.
+- Provide clear call-to-action with Button variant='primary' or 'secondary'.
+
+**JSON composition**
+
+```json
+{
+  "type": "Field",
+  "props": {
+    "helper": "Enter street name, house number, or delivery notes"
+  },
+  "children": [
+    {
+      "type": "Label",
+      "props": {
+        "required": true
+      },
+      "children": [
+        "Delivery Address"
+      ]
+    },
+    {
+      "type": "TextInput",
+      "props": {
+        "placeholder": "e.g. 42 Wallaby Way",
+        "required": true
+      },
+      "children": []
+    }
+  ]
+}
+```
+
+### Icon and text action group
+
+Compose visual actions and list item triggers using Icon, Button, and Box. The Icon provides semantic visual cues while preserving accessible text labels.
+
+**Use when:** Creating toolbar actions, kitchen ticketing controls, order modifiers, or navigation items with icon embellishments.
+
+**Rules**
+
+- Use Icon name to specify standard iconography (e.g., 'cart', 'chef', 'pizza', 'check', 'arrow-right').
+- Use Box flex direction='row' align='center' to align Icons with text labels.
+- Pair visual icons with explicit text labels or provide aria-label when rendering standalone icon buttons for screen readers.
+- Choose Button size ('s' | 'm' | 'l') and variant ('primary' | 'secondary' | 'attention' | 'link') based on visual hierarchy.
+
+**JSON composition**
+
+```json
+{
+  "type": "Box",
+  "props": {
+    "flex": true,
+    "direction": "row",
+    "gap": "300",
+    "align": "center"
+  },
+  "children": [
+    {
+      "type": "Button",
+      "props": {
+        "variant": "secondary",
+        "size": "s"
+      },
+      "children": [
+        "Add Extra Mozzarella"
+      ]
+    },
+    {
+      "type": "Button",
+      "props": {
+        "variant": "primary",
+        "size": "s"
+      },
+      "children": [
+        "Send to Kitchen"
+      ]
+    }
+  ]
+}
+```
+
+### Structured instruction list with code references
+
+Compose sequential procedural steps or technical setup instructions using Card, Heading, List, and Code. The Card frames the container; List manages ordered numbering and item spacing; Code highlights inline commands and keywords.
+
+**Use when:** Presenting step-by-step installation guides, developer workflows, recipes, or onboarding checklists containing inline code references.
+
+**Rules**
+
+- Set type='ordered' on List when step sequence or chronological order is required; use type='unordered' for non-sequential items.
+- Use List.Item children to structure each bullet or numbered step cleanly.
+- Embed inline Code components inside List.Item or Text; inline code dynamically scales with the parent's font size.
+- Frame lists inside a recessed Card surface='200' surfaceDirection='depth' when visual grouping is needed.
+
+**JSON composition**
+
+```json
+{
+  "type": "Card",
+  "props": {
+    "size": "m",
+    "surface": "100",
+    "surfaceDirection": "lift"
+  },
+  "children": [
+    {
+      "type": "Heading",
+      "props": {
+        "level": "h3",
+        "size": "h4"
+      },
+      "children": [
+        "Getting Started"
+      ]
+    },
+    {
+      "type": "List",
+      "props": {
+        "type": "ordered",
+        "size": "m",
+        "gap": "200"
+      },
+      "children": [
+        {
+          "type": "List.Item",
+          "props": {},
+          "children": [
+            "Install repository dependencies using ",
+            {
+              "type": "Code",
+              "props": {},
+              "children": [
+                "npm install"
+              ]
+            },
+            "."
+          ]
+        },
+        {
+          "type": "List.Item",
+          "props": {},
+          "children": [
+            "Generate the component manifest with ",
+            {
+              "type": "Code",
+              "props": {},
+              "children": [
+                "npm run build:manifest"
+              ]
+            },
+            "."
+          ]
+        },
+        {
+          "type": "List.Item",
+          "props": {},
+          "children": [
+            "Start the Storybook dev server by running ",
+            {
+              "type": "Code",
+              "props": {},
+              "children": [
+                "npm run storybook"
+              ]
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Table in card container
+
+Embed a full-bleed Table inside a Card with padding turned off and table card usage active. The Card provides container framing and elevation; Table provides structured data rows with seamless edge-to-edge alignment.
+
+**Use when:** Presenting tabular datasets, order inventories, ingredient stock levels, or transaction records inside a distinct dashboard surface card.
+
+**Rules**
+
+- Set padding={false} on Card to allow Table cells to touch the container perimeter.
+- Set usage='card' on Table variant='rows' to remove the final divider line for seamless bottom card alignment.
+- Choose Card surface ('100' | '200' | '300') and surfaceDirection ('lift' | 'depth') to define elevation hierarchy.
+- Keep columns structured with explicit widths or fractional ratios for predictable desktop rendering.
+- Provide clear aria-label or visible caption for screen reader accessibility.
+
+**JSON composition**
+
+```json
+{
+  "type": "Card",
+  "props": {
+    "surface": "100",
+    "surfaceDirection": "lift",
+    "padding": false
+  },
+  "children": [
+    {
+      "type": "Table",
+      "props": {
+        "variant": "rows",
+        "usage": "card",
+        "size": "m",
+        "aria-label": "Daily pizza sales",
+        "columns": [
+          {
+            "ratio": 2
+          },
+          {
+            "ratio": 1
+          },
+          {
+            "ratio": 1
+          }
+        ]
+      },
+      "children": [
+        {
+          "type": "thead",
+          "props": {},
+          "children": [
+            {
+              "type": "tr",
+              "props": {},
+              "children": [
+                {
+                  "type": "th",
+                  "props": {},
+                  "children": [
+                    "Pizza Recipe"
+                  ]
+                },
+                {
+                  "type": "th",
+                  "props": {},
+                  "children": [
+                    "Quantity Sold"
+                  ]
+                },
+                {
+                  "type": "th",
+                  "props": {},
+                  "children": [
+                    "Revenue"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tbody",
+          "props": {},
+          "children": [
+            {
+              "type": "tr",
+              "props": {},
+              "children": [
+                {
+                  "type": "td",
+                  "props": {},
+                  "children": [
+                    {
+                      "type": "Text",
+                      "props": {
+                        "size": "s",
+                        "weight": 600
+                      },
+                      "children": [
+                        "Pepperoni Classico"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "td",
+                  "props": {},
+                  "children": [
+                    {
+                      "type": "Text",
+                      "props": {
+                        "size": "s",
+                        "variant": "secondary"
+                      },
+                      "children": [
+                        "142"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "td",
+                  "props": {},
+                  "children": [
+                    {
+                      "type": "Text",
+                      "props": {
+                        "size": "s"
+                      },
+                      "children": [
+                        "$3,124.00"
+                      ]
+                    }
+                  ]
                 }
               ]
             }

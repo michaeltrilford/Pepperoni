@@ -24,12 +24,33 @@
 .docs-story:has([data-card-doc]),
 .docs-story:has([data-pepperoni-home]),
 .docs-story:has([data-tokens-doc]),
+.docs-story:has([data-knowledge-doc]),
 .sb-main-fullscreen:has([data-pepperoni-home]),
 .sb-main-fullscreen:has([data-tokens-doc]),
+.sb-main-fullscreen:has([data-knowledge-doc]),
 #storybook-root:has([data-pepperoni-home]),
 #storybook-root:has([data-tokens-doc]),
+#storybook-root:has([data-knowledge-doc]),
 body:has([data-pepperoni-home]),
-body:has([data-tokens-doc]) {
+body:has([data-tokens-doc]),
+body:has([data-knowledge-doc]) {
   background-color: var(--surface) !important;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.85em;
+  padding: 0.04em 0.4em;
+  border-radius: var(--radius-100);
+  background-color: var(--surface-200);
+  border: var(--stroke-100) solid var(--border-color);
+  color: var(--text-color);
+}
+
+pre code {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
 }
 

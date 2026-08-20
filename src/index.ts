@@ -29,6 +29,10 @@ export { Text } from "./components/Text";
 export type { TextProps, TextSize, TextVariant, TextWeight } from "./components/Text";
 export { Heading } from "./components/Heading";
 export type { HeadingProps, HeadingSize, HeadingLevel, HeadingWeight } from "./components/Heading";
+export { List } from "./components/List";
+export type { ListProps, ListItemProps, ListType, ListSize, ListGap } from "./components/List";
+export { Code } from "./components/Code";
+export type { CodeProps, CodeBlockProps, CodeVariant, CodeSize } from "./components/Code";
 
 export type {
   MuiDocs,

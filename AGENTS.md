@@ -37,7 +37,7 @@ Do not edit the generated manifest directly. Update the component, `Api.ts`, or 
 `src/knowledge` is the canonical knowledge directory. Manifest generation publishes its generated consumer artifacts to:
 
 - `public/knowledge` for Storybook, local static access, and direct downloads such as `/knowledge/component-manifest.json`.
-- `dist/knowledge` for the published npm package, available through the `pepperoni-ui/knowledge/*` export.
+- `dist/knowledge` for distribution artifacts and bundle consumption.
 
 Place future distributable agent skills and supporting knowledge files under `src/knowledge`. Do not author separate public or package copies; the build replaces those mirrors so they cannot drift from the source knowledge.
 

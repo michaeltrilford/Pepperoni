@@ -1,0 +1,91 @@
+{
+  "id": "card-summary-action",
+  "title": "Card with summary and action",
+  "description": "Compose an interactive or informational summary card using Card, Box, Heading, Text, Badge, and Button. The Card owns surface elevation and container padding; Box handles directional flow and gap spacing; Button provides the call to action.",
+  "useWhen": "Displaying product items, order tickets, metric cards, or workflow highlights with a clear title, status badge, description, and primary or secondary action.",
+  "components": [
+    "Card",
+    "Box",
+    "Heading",
+    "Text",
+    "Badge",
+    "Button"
+  ],
+  "rules": [
+    "Use Card size='s' or size='m' to control corner radius and internal padding scale.",
+    "Use Box flex direction='column' with gap tokens to maintain uniform spacing between headers, content, and actions.",
+    "Place Badge in an alignSelf='flex-start' or row Box above or beside the Heading for status indication.",
+    "Push actions to the bottom using marginTop='auto' or Box justify='between' when cards appear in multi-column grids with varying content heights.",
+    "Use Button variant='primary', 'secondary', or 'link' depending on hierarchy, and set href when the action navigates to another URL.",
+    "Ensure headings use semantic level ('h2' | 'h3' | 'h4') appropriate to document hierarchy while selecting size independently."
+  ],
+  "example": {
+    "type": "Card",
+    "props": {
+      "size": "m",
+      "surface": "100",
+      "surfaceDirection": "lift"
+    },
+    "children": [
+      {
+        "type": "Box",
+        "props": {
+          "flex": true,
+          "direction": "column",
+          "gap": "400"
+        },
+        "children": [
+          {
+            "type": "Box",
+            "props": {
+              "flex": true,
+              "direction": "column",
+              "gap": "200"
+            },
+            "children": [
+              {
+                "type": "Badge",
+                "props": {
+                  "color": "pepperoni"
+                },
+                "children": [
+                  "Baking"
+                ]
+              },
+              {
+                "type": "Heading",
+                "props": {
+                  "level": "h3",
+                  "size": "h4"
+                },
+                "children": [
+                  "Order #1042 - Margherita Extra"
+                ]
+              },
+              {
+                "type": "Text",
+                "props": {
+                  "size": "m",
+                  "variant": "secondary"
+                },
+                "children": [
+                  "Fresh basil, San Marzano tomato sauce, and double mozzarella. Oven 2 at 450°C."
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "variant": "primary",
+              "size": "s"
+            },
+            "children": [
+              "Mark Ready"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

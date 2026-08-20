@@ -1473,6 +1473,234 @@
     },
     {
       "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Code/Code.tsx",
+      "description": "Code typography component for inline code chips and preformatted code blocks.",
+      "displayName": "Code",
+      "methods": [],
+      "props": {
+        "variant": {
+          "defaultValue": null,
+          "description": "Controls whether the code renders as an inline chip or a preformatted block.",
+          "name": "variant",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Code/Code.types.ts",
+            "name": "CodeProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Code/Code.types.ts",
+              "name": "CodeProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "CodeVariant",
+            "value": [
+              {
+                "value": "\"inline\""
+              },
+              {
+                "value": "\"block\""
+              }
+            ]
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "inherit"
+          },
+          "description": "Sizing scale for font-size. \"inherit\" dynamically respects the parent font size (0.85em).",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Code/Code.types.ts",
+            "name": "CodeProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Code/Code.types.ts",
+              "name": "CodeProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "CodeSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              },
+              {
+                "value": "\"inherit\""
+              }
+            ]
+          }
+        },
+        "children": {
+          "defaultValue": null,
+          "description": "Content to display inside the code element.",
+          "name": "children",
+          "parent": {
+            "fileName": "Pepperoni/src/components/Code/Code.types.ts",
+            "name": "CodeProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/Code/Code.types.ts",
+              "name": "CodeProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "Code",
+        "description": "Code renders monospace text as inline chips or preformatted multiline blocks, with automatic contextual sizing.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use Code for file paths, variable names, inline code snippets, and commands.",
+            "Use variant='block' or Code.Block for multiline preformatted code blocks.",
+            "Leave size='inherit' (default) for inline code to scale seamlessly with parent Text, Heading, or List components."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Ensure inline code background and borders maintain clear contrast against card surfaces."
+          ],
+          "engineerList": [
+            "Code renders semantic `<code>` for inline snippets and `<pre><code>` for multiline blocks.",
+            "Provide appropriate aria-labels or descriptions for complex code samples when needed."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Inline: `<code>` element styled with theme-aware background, border, and monospace typography.",
+            "Block: `<pre>` container encasing a transparent `<code>` element with horizontal scroll support."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "inline",
+              "title": "Inline",
+              "description": "Inline chip styled relative to surrounding text.",
+              "image": ""
+            },
+            {
+              "key": "block",
+              "title": "Block",
+              "description": "Multiline preformatted code block with horizontal scroll.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "inline",
+              "title": "Inline",
+              "description": "Renders an inline code chip inside body copy.",
+              "source": "<Text>Run <Code>npm run build:manifest</Code> to regenerate the component manifest.</Text>"
+            },
+            {
+              "key": "block",
+              "title": "Block",
+              "description": "Renders a multiline preformatted block.",
+              "source": "<Code.Block>{`// Example component API configuration:\nexport const api = {\n  name: \"Button\",\n  element: \"button\",\n  props: {\n    variant: { type: \"primary | secondary\" }\n  }\n};`}</Code.Block>"
+            },
+            {
+              "key": "contextualSizing",
+              "title": "Contextual Sizing",
+              "description": "Demonstrates how inline code automatically scales with parent typography.",
+              "source": "<div style={{ display: \"flex\", flexDirection: \"column\", gap: \"var(--space-400)\" }}>\n  <Text size=\"s\">Small text: <Code>npm test</Code> inherits small scale.</Text>\n  <Text size=\"m\">Medium text: <Code>npm test</Code> inherits medium scale.</Text>\n  <Text size=\"l\">Large text: <Code>npm test</Code> inherits large scale.</Text>\n</div>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "Code is used inside Text, List.Item, and framed inside Card components.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Text",
+              "link": ""
+            },
+            {
+              "name": "List",
+              "link": ""
+            },
+            {
+              "name": "Card",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Inline code dynamically inherits and scales with parent font size."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Format command line instructions and property keys in Code."
+          ]
+        }
+      },
+      "api": {
+        "name": "Code",
+        "element": "code",
+        "inherits": "HTMLAttributes<HTMLElement>",
+        "props": {
+          "variant": {
+            "type": "inline | block",
+            "values": [
+              "inline",
+              "block"
+            ],
+            "defaultValue": "inline",
+            "control": "select",
+            "description": "Controls whether the code renders as an inline chip or a preformatted block."
+          },
+          "size": {
+            "type": "inherit | s | m | l",
+            "values": [
+              "inherit",
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "inherit",
+            "control": "select",
+            "description": "Sizing scale for font-size. 'inherit' dynamically scales relative to parent typography (0.85em)."
+          },
+          "children": {
+            "type": "ReactNode",
+            "control": "text",
+            "description": "Content to display inside the code element."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
       "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/Field/Field.tsx",
       "description": "Field wrapper molecule that composes Label, form controls (children), and validation message text.",
       "displayName": "Field",
@@ -2719,6 +2947,275 @@
             "defaultValue": false,
             "control": "boolean",
             "description": "Displays a visual required indicator and takes precedence over optional; does not set the associated control's native required state."
+          }
+        }
+      }
+    },
+    {
+      "tags": {},
+      "filePath": "/Users/michaeltrilford/Github/Pepperoni/src/components/List/List.tsx",
+      "description": "Structured list component supporting ordered and unordered variants with token-based gaps and sizing.",
+      "displayName": "List",
+      "methods": [],
+      "props": {
+        "type": {
+          "defaultValue": null,
+          "description": "Specifies whether to render an ordered (`<ol>`) or unordered (`<ul>`) list.",
+          "name": "type",
+          "parent": {
+            "fileName": "Pepperoni/src/components/List/List.types.ts",
+            "name": "ListProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/List/List.types.ts",
+              "name": "ListProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "ListType",
+            "value": [
+              {
+                "value": "\"unordered\""
+              },
+              {
+                "value": "\"ordered\""
+              }
+            ]
+          }
+        },
+        "size": {
+          "defaultValue": null,
+          "description": "Controls typography size and line height.",
+          "name": "size",
+          "parent": {
+            "fileName": "Pepperoni/src/components/List/List.types.ts",
+            "name": "ListProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/List/List.types.ts",
+              "name": "ListProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "ListSize",
+            "value": [
+              {
+                "value": "\"s\""
+              },
+              {
+                "value": "\"m\""
+              },
+              {
+                "value": "\"l\""
+              }
+            ]
+          }
+        },
+        "gap": {
+          "defaultValue": null,
+          "description": "Vertical gap between list items.",
+          "name": "gap",
+          "parent": {
+            "fileName": "Pepperoni/src/components/List/List.types.ts",
+            "name": "ListProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/List/List.types.ts",
+              "name": "ListProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "enum",
+            "raw": "ListGap",
+            "value": [
+              {
+                "value": "\"100\""
+              },
+              {
+                "value": "\"200\""
+              },
+              {
+                "value": "\"300\""
+              },
+              {
+                "value": "\"400\""
+              },
+              {
+                "value": "\"500\""
+              }
+            ]
+          }
+        },
+        "children": {
+          "defaultValue": null,
+          "description": "Content of the list, typically List.Item elements.",
+          "name": "children",
+          "parent": {
+            "fileName": "Pepperoni/src/components/List/List.types.ts",
+            "name": "ListProps"
+          },
+          "declarations": [
+            {
+              "fileName": "Pepperoni/src/components/List/List.types.ts",
+              "name": "ListProps"
+            }
+          ],
+          "required": false,
+          "type": {
+            "name": "ReactNode"
+          }
+        }
+      },
+      "guidelines": {
+        "title": "List",
+        "description": "List renders structured ordered or unordered items with token-based spacing, sizing, and compound List.Item elements.",
+        "hero": [],
+        "figma": [],
+        "storybook": [],
+        "github": [],
+        "website": [],
+        "guides": [],
+        "usage": {
+          "list": [
+            "Use List for structured bulleted (unordered) or numbered (ordered) content.",
+            "Use List.Item for individual list items.",
+            "Use appropriate gap and size tokens to match surrounding typography."
+          ]
+        },
+        "accessibility": {
+          "designerList": [
+            "Use ordered lists when item sequence or step order matters.",
+            "Use unordered lists for collections where sequence is arbitrary."
+          ],
+          "engineerList": [
+            "List automatically renders semantic `<ol>` or `<ul>` elements.",
+            "Ensure direct children are List.Item (`<li>`) elements for valid HTML structure."
+          ]
+        },
+        "anatomy": {
+          "image": "",
+          "list": [
+            "Container: Semantic `<ul>` or `<ol>` element.",
+            "Items: List.Item (`<li>`) child elements."
+          ]
+        },
+        "variants": {
+          "items": [
+            {
+              "key": "unordered",
+              "title": "Unordered",
+              "description": "Bullet list for non-sequential items.",
+              "image": ""
+            },
+            {
+              "key": "ordered",
+              "title": "Ordered",
+              "description": "Numbered list for sequential or prioritized steps.",
+              "image": ""
+            }
+          ]
+        },
+        "stories": {
+          "items": [
+            {
+              "key": "unordered",
+              "title": "Unordered",
+              "description": "Renders a standard bulleted list.",
+              "source": "<List style={{ maxWidth: \"75ch\" }}>\n  <List.Item>San Marzano Tomatoes</List.Item>\n  <List.Item>Buffalo Mozzarella</List.Item>\n  <List.Item>Fresh Basil Leaves</List.Item>\n</List>"
+            },
+            {
+              "key": "ordered",
+              "title": "Ordered",
+              "description": "Renders a numbered list.",
+              "source": "<List type=\"ordered\" gap=\"200\" style={{ maxWidth: \"75ch\" }}>\n  <List.Item>Proof pizza dough for 24 hours.</List.Item>\n  <List.Item>Stretch and shape the crust.</List.Item>\n  <List.Item>Bake at 450°C for 90 seconds.</List.Item>\n</List>"
+            },
+            {
+              "key": "sizes",
+              "title": "Sizes",
+              "description": "Compares Small, Medium, and Large list sizes.",
+              "source": "<div style={{ display: \"flex\", flexDirection: \"column\", gap: \"var(--space-400)\", maxWidth: \"75ch\" }}>\n  <List size=\"s\">\n    <List.Item>Small list item</List.Item>\n  </List>\n  <List size=\"m\">\n    <List.Item>Medium standard item</List.Item>\n  </List>\n  <List size=\"l\">\n    <List.Item>Large list item</List.Item>\n  </List>\n</div>"
+            }
+          ]
+        },
+        "compositions": {
+          "description": "List can be framed inside Cards or used with Code chips.",
+          "items": []
+        },
+        "related": {
+          "items": [
+            {
+              "name": "Text",
+              "link": ""
+            },
+            {
+              "name": "Card",
+              "link": ""
+            }
+          ]
+        },
+        "rules": [],
+        "behaviour": {
+          "list": [
+            "Text color and spacing respond dynamically to design tokens."
+          ]
+        },
+        "writing": {
+          "list": [
+            "Keep list items parallel in phrasing and punctuation."
+          ]
+        }
+      },
+      "api": {
+        "name": "List",
+        "element": "ul",
+        "inherits": "HTMLAttributes<HTMLOListElement | HTMLUListElement>",
+        "props": {
+          "type": {
+            "type": "unordered | ordered",
+            "values": [
+              "unordered",
+              "ordered"
+            ],
+            "defaultValue": "unordered",
+            "control": "select",
+            "description": "Specifies whether to render an ordered (`<ol>`) or unordered (`<ul>`) list."
+          },
+          "size": {
+            "type": "S | M | L",
+            "values": [
+              "s",
+              "m",
+              "l"
+            ],
+            "defaultValue": "m",
+            "control": "select",
+            "description": "Controls typography size and line height for list items."
+          },
+          "gap": {
+            "type": "100 | 200 | 300 | 400 | 500",
+            "values": [
+              "100",
+              "200",
+              "300",
+              "400",
+              "500"
+            ],
+            "defaultValue": "100",
+            "control": "select",
+            "description": "Vertical gap between list items."
+          },
+          "children": {
+            "type": "ReactNode",
+            "control": "text",
+            "description": "Content of the list, typically List.Item elements."
           }
         }
       }
@@ -4442,6 +4939,97 @@
   ],
   "fragments": [
     {
+      "id": "card-summary-action",
+      "title": "Card with summary and action",
+      "description": "Compose an interactive or informational summary card using Card, Box, Heading, Text, Badge, and Button. The Card owns surface elevation and container padding; Box handles directional flow and gap spacing; Button provides the call to action.",
+      "useWhen": "Displaying product items, order tickets, metric cards, or workflow highlights with a clear title, status badge, description, and primary or secondary action.",
+      "components": [
+        "Card",
+        "Box",
+        "Heading",
+        "Text",
+        "Badge",
+        "Button"
+      ],
+      "rules": [
+        "Use Card size='s' or size='m' to control corner radius and internal padding scale.",
+        "Use Box flex direction='column' with gap tokens to maintain uniform spacing between headers, content, and actions.",
+        "Place Badge in an alignSelf='flex-start' or row Box above or beside the Heading for status indication.",
+        "Push actions to the bottom using marginTop='auto' or Box justify='between' when cards appear in multi-column grids with varying content heights.",
+        "Use Button variant='primary', 'secondary', or 'link' depending on hierarchy, and set href when the action navigates to another URL.",
+        "Ensure headings use semantic level ('h2' | 'h3' | 'h4') appropriate to document hierarchy while selecting size independently."
+      ],
+      "example": {
+        "type": "Card",
+        "props": {
+          "size": "m",
+          "surface": "100",
+          "surfaceDirection": "lift"
+        },
+        "children": [
+          {
+            "type": "Box",
+            "props": {
+              "flex": true,
+              "direction": "column",
+              "gap": "400"
+            },
+            "children": [
+              {
+                "type": "Box",
+                "props": {
+                  "flex": true,
+                  "direction": "column",
+                  "gap": "200"
+                },
+                "children": [
+                  {
+                    "type": "Badge",
+                    "props": {
+                      "color": "pepperoni"
+                    },
+                    "children": [
+                      "Baking"
+                    ]
+                  },
+                  {
+                    "type": "Heading",
+                    "props": {
+                      "level": "h3",
+                      "size": "h4"
+                    },
+                    "children": [
+                      "Order #1042 - Margherita Extra"
+                    ]
+                  },
+                  {
+                    "type": "Text",
+                    "props": {
+                      "size": "m",
+                      "variant": "secondary"
+                    },
+                    "children": [
+                      "Fresh basil, San Marzano tomato sauce, and double mozzarella. Oven 2 at 450°C."
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Button",
+                "props": {
+                  "variant": "primary",
+                  "size": "s"
+                },
+                "children": [
+                  "Mark Ready"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "editable-payment-table",
       "title": "Editable payment table",
       "description": "Compose TextInput controls inside a grid Table for inline editing of a payment line item. The table owns cell layout and density; each input owns its value, accessible name, focus, and interaction.",
@@ -4572,6 +5160,334 @@
                           "defaultValue": "1,250.00"
                         },
                         "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-field-group",
+      "title": "Form field with accessible label and validation",
+      "description": "Compose accessible inputs using Field, Label, and TextInput. Field manages aria-describedby and error associations; TextInput handles input capture; Label connects the accessible name.",
+      "useWhen": "Building forms for checkout, customer addresses, table reservations, or login flows where validation states and helper descriptions are needed.",
+      "components": [
+        "Field",
+        "Label",
+        "TextInput",
+        "Button"
+      ],
+      "rules": [
+        "Wrap related controls in Field to automatically propagate accessible name and description relationships.",
+        "Place Label inside Field before the TextInput control.",
+        "Use Field helper prop to provide context or hint formatting; use error prop to display validation errors.",
+        "TextInput inside Field automatically connects to label and helper text without requiring explicit id matching.",
+        "Provide clear call-to-action with Button variant='primary' or 'secondary'."
+      ],
+      "example": {
+        "type": "Field",
+        "props": {
+          "helper": "Enter street name, house number, or delivery notes"
+        },
+        "children": [
+          {
+            "type": "Label",
+            "props": {
+              "required": true
+            },
+            "children": [
+              "Delivery Address"
+            ]
+          },
+          {
+            "type": "TextInput",
+            "props": {
+              "placeholder": "e.g. 42 Wallaby Way",
+              "required": true
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "icon-action-button",
+      "title": "Icon and text action group",
+      "description": "Compose visual actions and list item triggers using Icon, Button, and Box. The Icon provides semantic visual cues while preserving accessible text labels.",
+      "useWhen": "Creating toolbar actions, kitchen ticketing controls, order modifiers, or navigation items with icon embellishments.",
+      "components": [
+        "Icon",
+        "Button",
+        "Box",
+        "Text"
+      ],
+      "rules": [
+        "Use Icon name to specify standard iconography (e.g., 'cart', 'chef', 'pizza', 'check', 'arrow-right').",
+        "Use Box flex direction='row' align='center' to align Icons with text labels.",
+        "Pair visual icons with explicit text labels or provide aria-label when rendering standalone icon buttons for screen readers.",
+        "Choose Button size ('s' | 'm' | 'l') and variant ('primary' | 'secondary' | 'attention' | 'link') based on visual hierarchy."
+      ],
+      "example": {
+        "type": "Box",
+        "props": {
+          "flex": true,
+          "direction": "row",
+          "gap": "300",
+          "align": "center"
+        },
+        "children": [
+          {
+            "type": "Button",
+            "props": {
+              "variant": "secondary",
+              "size": "s"
+            },
+            "children": [
+              "Add Extra Mozzarella"
+            ]
+          },
+          {
+            "type": "Button",
+            "props": {
+              "variant": "primary",
+              "size": "s"
+            },
+            "children": [
+              "Send to Kitchen"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "structured-instruction-list",
+      "title": "Structured instruction list with code references",
+      "description": "Compose sequential procedural steps or technical setup instructions using Card, Heading, List, and Code. The Card frames the container; List manages ordered numbering and item spacing; Code highlights inline commands and keywords.",
+      "useWhen": "Presenting step-by-step installation guides, developer workflows, recipes, or onboarding checklists containing inline code references.",
+      "components": [
+        "Card",
+        "Heading",
+        "List",
+        "Code"
+      ],
+      "rules": [
+        "Set type='ordered' on List when step sequence or chronological order is required; use type='unordered' for non-sequential items.",
+        "Use List.Item children to structure each bullet or numbered step cleanly.",
+        "Embed inline Code components inside List.Item or Text; inline code dynamically scales with the parent's font size.",
+        "Frame lists inside a recessed Card surface='200' surfaceDirection='depth' when visual grouping is needed."
+      ],
+      "example": {
+        "type": "Card",
+        "props": {
+          "size": "m",
+          "surface": "100",
+          "surfaceDirection": "lift"
+        },
+        "children": [
+          {
+            "type": "Heading",
+            "props": {
+              "level": "h3",
+              "size": "h4"
+            },
+            "children": [
+              "Getting Started"
+            ]
+          },
+          {
+            "type": "List",
+            "props": {
+              "type": "ordered",
+              "size": "m",
+              "gap": "200"
+            },
+            "children": [
+              {
+                "type": "List.Item",
+                "props": {},
+                "children": [
+                  "Install repository dependencies using ",
+                  {
+                    "type": "Code",
+                    "props": {},
+                    "children": [
+                      "npm install"
+                    ]
+                  },
+                  "."
+                ]
+              },
+              {
+                "type": "List.Item",
+                "props": {},
+                "children": [
+                  "Generate the component manifest with ",
+                  {
+                    "type": "Code",
+                    "props": {},
+                    "children": [
+                      "npm run build:manifest"
+                    ]
+                  },
+                  "."
+                ]
+              },
+              {
+                "type": "List.Item",
+                "props": {},
+                "children": [
+                  "Start the Storybook dev server by running ",
+                  {
+                    "type": "Code",
+                    "props": {},
+                    "children": [
+                      "npm run storybook"
+                    ]
+                  },
+                  "."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "table-card-container",
+      "title": "Table in card container",
+      "description": "Embed a full-bleed Table inside a Card with padding turned off and table card usage active. The Card provides container framing and elevation; Table provides structured data rows with seamless edge-to-edge alignment.",
+      "useWhen": "Presenting tabular datasets, order inventories, ingredient stock levels, or transaction records inside a distinct dashboard surface card.",
+      "components": [
+        "Card",
+        "Table",
+        "Text"
+      ],
+      "rules": [
+        "Set padding={false} on Card to allow Table cells to touch the container perimeter.",
+        "Set usage='card' on Table variant='rows' to remove the final divider line for seamless bottom card alignment.",
+        "Choose Card surface ('100' | '200' | '300') and surfaceDirection ('lift' | 'depth') to define elevation hierarchy.",
+        "Keep columns structured with explicit widths or fractional ratios for predictable desktop rendering.",
+        "Provide clear aria-label or visible caption for screen reader accessibility."
+      ],
+      "example": {
+        "type": "Card",
+        "props": {
+          "surface": "100",
+          "surfaceDirection": "lift",
+          "padding": false
+        },
+        "children": [
+          {
+            "type": "Table",
+            "props": {
+              "variant": "rows",
+              "usage": "card",
+              "size": "m",
+              "aria-label": "Daily pizza sales",
+              "columns": [
+                {
+                  "ratio": 2
+                },
+                {
+                  "ratio": 1
+                },
+                {
+                  "ratio": 1
+                }
+              ]
+            },
+            "children": [
+              {
+                "type": "thead",
+                "props": {},
+                "children": [
+                  {
+                    "type": "tr",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "th",
+                        "props": {},
+                        "children": [
+                          "Pizza Recipe"
+                        ]
+                      },
+                      {
+                        "type": "th",
+                        "props": {},
+                        "children": [
+                          "Quantity Sold"
+                        ]
+                      },
+                      {
+                        "type": "th",
+                        "props": {},
+                        "children": [
+                          "Revenue"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "tbody",
+                "props": {},
+                "children": [
+                  {
+                    "type": "tr",
+                    "props": {},
+                    "children": [
+                      {
+                        "type": "td",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "Text",
+                            "props": {
+                              "size": "s",
+                              "weight": 600
+                            },
+                            "children": [
+                              "Pepperoni Classico"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "td",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "Text",
+                            "props": {
+                              "size": "s",
+                              "variant": "secondary"
+                            },
+                            "children": [
+                              "142"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "type": "td",
+                        "props": {},
+                        "children": [
+                          {
+                            "type": "Text",
+                            "props": {
+                              "size": "s"
+                            },
+                            "children": [
+                              "$3,124.00"
+                            ]
+                          }
+                        ]
                       }
                     ]
                   }

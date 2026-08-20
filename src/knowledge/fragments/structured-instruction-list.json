@@ -1,0 +1,93 @@
+{
+  "id": "structured-instruction-list",
+  "title": "Structured instruction list with code references",
+  "description": "Compose sequential procedural steps or technical setup instructions using Card, Heading, List, and Code. The Card frames the container; List manages ordered numbering and item spacing; Code highlights inline commands and keywords.",
+  "useWhen": "Presenting step-by-step installation guides, developer workflows, recipes, or onboarding checklists containing inline code references.",
+  "components": [
+    "Card",
+    "Heading",
+    "List",
+    "Code"
+  ],
+  "rules": [
+    "Set type='ordered' on List when step sequence or chronological order is required; use type='unordered' for non-sequential items.",
+    "Use List.Item children to structure each bullet or numbered step cleanly.",
+    "Embed inline Code components inside List.Item or Text; inline code dynamically scales with the parent's font size.",
+    "Frame lists inside a recessed Card surface='200' surfaceDirection='depth' when visual grouping is needed."
+  ],
+  "example": {
+    "type": "Card",
+    "props": {
+      "size": "m",
+      "surface": "100",
+      "surfaceDirection": "lift"
+    },
+    "children": [
+      {
+        "type": "Heading",
+        "props": {
+          "level": "h3",
+          "size": "h4"
+        },
+        "children": [
+          "Getting Started"
+        ]
+      },
+      {
+        "type": "List",
+        "props": {
+          "type": "ordered",
+          "size": "m",
+          "gap": "200"
+        },
+        "children": [
+          {
+            "type": "List.Item",
+            "props": {},
+            "children": [
+              "Install repository dependencies using ",
+              {
+                "type": "Code",
+                "props": {},
+                "children": [
+                  "npm install"
+                ]
+              },
+              "."
+            ]
+          },
+          {
+            "type": "List.Item",
+            "props": {},
+            "children": [
+              "Generate the component manifest with ",
+              {
+                "type": "Code",
+                "props": {},
+                "children": [
+                  "npm run build:manifest"
+                ]
+              },
+              "."
+            ]
+          },
+          {
+            "type": "List.Item",
+            "props": {},
+            "children": [
+              "Start the Storybook dev server by running ",
+              {
+                "type": "Code",
+                "props": {},
+                "children": [
+                  "npm run storybook"
+                ]
+              },
+              "."
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

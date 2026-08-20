@@ -81,9 +81,7 @@ function loadFragments() {
 }
 
 function buildKnowledgeSkill(manifest) {
-  const componentNames = new Set(manifest.fragments.flatMap((fragment) => fragment.components));
   const componentReference = manifest.components
-    .filter((component) => componentNames.has(component.displayName))
     .map((component) => {
       const props = Object.entries(component.api.props)
         .map(([name, prop]) => `- \`${name}\`: ${prop.description} Type: \`${prop.type}\`${prop.defaultValue === undefined ? "" : `; default: \`${prop.defaultValue}\``}`)

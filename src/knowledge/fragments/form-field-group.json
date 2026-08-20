@@ -1,0 +1,44 @@
+{
+  "id": "form-field-group",
+  "title": "Form field with accessible label and validation",
+  "description": "Compose accessible inputs using Field, Label, and TextInput. Field manages aria-describedby and error associations; TextInput handles input capture; Label connects the accessible name.",
+  "useWhen": "Building forms for checkout, customer addresses, table reservations, or login flows where validation states and helper descriptions are needed.",
+  "components": [
+    "Field",
+    "Label",
+    "TextInput",
+    "Button"
+  ],
+  "rules": [
+    "Wrap related controls in Field to automatically propagate accessible name and description relationships.",
+    "Place Label inside Field before the TextInput control.",
+    "Use Field helper prop to provide context or hint formatting; use error prop to display validation errors.",
+    "TextInput inside Field automatically connects to label and helper text without requiring explicit id matching.",
+    "Provide clear call-to-action with Button variant='primary' or 'secondary'."
+  ],
+  "example": {
+    "type": "Field",
+    "props": {
+      "helper": "Enter street name, house number, or delivery notes"
+    },
+    "children": [
+      {
+        "type": "Label",
+        "props": {
+          "required": true
+        },
+        "children": [
+          "Delivery Address"
+        ]
+      },
+      {
+        "type": "TextInput",
+        "props": {
+          "placeholder": "e.g. 42 Wallaby Way",
+          "required": true
+        },
+        "children": []
+      }
+    ]
+  }
+}

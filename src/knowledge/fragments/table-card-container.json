@@ -1,0 +1,74 @@
+{
+  "id": "table-card-container",
+  "title": "Table in card container",
+  "description": "Embed a full-bleed Table inside a Card with padding turned off and table card usage active. The Card provides container framing and elevation; Table provides structured data rows with seamless edge-to-edge alignment.",
+  "useWhen": "Presenting tabular datasets, order inventories, ingredient stock levels, or transaction records inside a distinct dashboard surface card.",
+  "components": [
+    "Card",
+    "Table",
+    "Text"
+  ],
+  "rules": [
+    "Set padding={false} on Card to allow Table cells to touch the container perimeter.",
+    "Set usage='card' on Table variant='rows' to remove the final divider line for seamless bottom card alignment.",
+    "Choose Card surface ('100' | '200' | '300') and surfaceDirection ('lift' | 'depth') to define elevation hierarchy.",
+    "Keep columns structured with explicit widths or fractional ratios for predictable desktop rendering.",
+    "Provide clear aria-label or visible caption for screen reader accessibility."
+  ],
+  "example": {
+    "type": "Card",
+    "props": {
+      "surface": "100",
+      "surfaceDirection": "lift",
+      "padding": false
+    },
+    "children": [
+      {
+        "type": "Table",
+        "props": {
+          "variant": "rows",
+          "usage": "card",
+          "size": "m",
+          "aria-label": "Daily pizza sales",
+          "columns": [
+            { "ratio": 2 },
+            { "ratio": 1 },
+            { "ratio": 1 }
+          ]
+        },
+        "children": [
+          {
+            "type": "thead",
+            "props": {},
+            "children": [
+              {
+                "type": "tr",
+                "props": {},
+                "children": [
+                  { "type": "th", "props": {}, "children": ["Pizza Recipe"] },
+                  { "type": "th", "props": {}, "children": ["Quantity Sold"] },
+                  { "type": "th", "props": {}, "children": ["Revenue"] }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tbody",
+            "props": {},
+            "children": [
+              {
+                "type": "tr",
+                "props": {},
+                "children": [
+                  { "type": "td", "props": {}, "children": [{ "type": "Text", "props": { "size": "s", "weight": 600 }, "children": ["Pepperoni Classico"] }] },
+                  { "type": "td", "props": {}, "children": [{ "type": "Text", "props": { "size": "s", "variant": "secondary" }, "children": ["142"] }] },
+                  { "type": "td", "props": {}, "children": [{ "type": "Text", "props": { "size": "s" }, "children": ["$3,124.00"] }] }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
