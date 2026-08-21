@@ -5,7 +5,7 @@ import { styles } from "./Code.styles";
 import type { CodeBlockProps, CodeProps } from "./Code.types";
 
 const CodeBlock = forwardRef<HTMLPreElement, CodeBlockProps>(
-  ({ size = "inherit", className, style, children, ...props }, ref) => {
+  ({ size = "inherit", tabIndex = 0, className, style, children, ...props }, ref) => {
     const sizeStyle =
       size === "s"
         ? styles.sizeS
@@ -23,6 +23,7 @@ const CodeBlock = forwardRef<HTMLPreElement, CodeBlockProps>(
       <pre
         {...styleProps}
         ref={ref}
+        tabIndex={tabIndex}
         className={classes}
         data-code-variant="block"
         data-code-size={size}

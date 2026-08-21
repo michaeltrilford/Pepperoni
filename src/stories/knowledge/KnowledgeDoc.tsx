@@ -209,7 +209,7 @@ export const KnowledgeDoc = () => {
             <Card size="m" surface="100" surfaceDirection="lift">
               <Box flex direction="column" gap="500">
                 <Box flex direction="column" gap="100">
-                  <Heading size="h4" level="h3" weight={600}>
+                  <Heading size="h4" level="h2" weight={600}>
                     Distribution
                   </Heading>
                   <Text size="m" variant="secondary">

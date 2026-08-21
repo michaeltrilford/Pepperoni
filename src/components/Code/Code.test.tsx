@@ -22,6 +22,7 @@ describe("Code", () => {
     const pre = screen.getByTestId("block-code");
     expect(pre.tagName).toBe("PRE");
     expect(pre.getAttribute("data-code-variant")).toBe("block");
+    expect(pre.tabIndex).toBe(0);
     expect(pre.querySelector("code")).not.toBeNull();
   });
 
@@ -35,6 +36,7 @@ describe("Code", () => {
     const pre = screen.getByTestId("code-block");
     expect(pre.tagName).toBe("PRE");
     expect(pre.getAttribute("data-code-variant")).toBe("block");
+    expect(pre.tabIndex).toBe(0);
   });
 
   it("supports explicit size attributes", () => {

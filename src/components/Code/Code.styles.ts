@@ -25,6 +25,14 @@ export const styles = sx.create({
     padding: 0,
     width: "100%",
     boxSizing: "border-box",
+    borderRadius: "var(--radius-100)",
+    outline: "none",
+    ":focus-visible": {
+      outlineColor: "var(--form-focus-border)",
+      outlineOffset: "var(--stroke-100)",
+      outlineStyle: "solid",
+      outlineWidth: "var(--stroke-200)",
+    },
   },
   blockInner: {
     fontFamily: "inherit",

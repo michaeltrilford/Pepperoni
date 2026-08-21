@@ -40,7 +40,7 @@ export const HomeDoc = ({ actionVariant = "secondary" }: HomeDocProps) => {
                         <Badge color={item.badgeVariant ?? "neutral"}>{item.tag}</Badge>
                       </div>
                     )}
-                    <Heading level="h3" size="h4">
+                    <Heading level="h2" size="h4">
                       {item.heading}
                     </Heading>
                     <Text size="m" variant="secondary">
@@ -83,7 +83,7 @@ export const HomeDoc = ({ actionVariant = "secondary" }: HomeDocProps) => {
               <Card key={idx} size="s">
                 <Box flex direction="column" gap="400" justify="between" style={{ height: "100%" }}>
                   <Box flex direction="column" gap="200">
-                    <Heading level="h4" size="h5">
+                    <Heading level="h3" size="h5">
                       {item.heading}
                     </Heading>
                     <Text size="s" variant="secondary">
@@ -124,7 +124,7 @@ export const HomeDoc = ({ actionVariant = "secondary" }: HomeDocProps) => {
               <Card key={idx} size="s">
                 <Box flex direction="column" gap="400">
                   <Box flex direction="column" gap="200">
-                    <Heading level="h4" size="h5">
+                    <Heading level="h3" size="h5">
                       {item.heading}
                     </Heading>
                     <Text size="s" variant="secondary">
