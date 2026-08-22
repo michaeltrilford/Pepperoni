@@ -40,7 +40,9 @@ import { Button, Box, Heading, Text, Field, TextInput } from "./src";
 export function App() {
   return (
     <Box direction="column" gap="400" padding="400">
-      <Heading level="h1" size="h1">Pepperoni Pizzeria</Heading>
+      <Heading level="h1" size="h1">
+        Pepperoni Pizzeria
+      </Heading>
       <Text size="m" variant="secondary">
         A React design system foundation.
       </Text>
@@ -61,19 +63,19 @@ export function App() {
 
 ## Components
 
-| Component | Description |
-| :--- | :--- |
-| **`Badge`** | Status indicators and tags with various styles. |
-| **`Box`** | Layout container for flexbox-based direction, alignment, gap, and padding. |
-| **`Button`** | Action buttons with primary, secondary, subtle variants and usage contracts. |
-| **`Card`** | Container surface for grouping content with elevation and surface tokens. |
-| **`Field`** | Form control wrapper providing labels, hints, validation, and error messages. |
-| **`Heading`** | Semantic heading typography (h1–h6) with consistent scale. |
-| **`Icon`** | SVG icon system support. |
-| **`Label`** | Standalone label element for accessible inputs. |
-| **`Table`** | Dense and comfortable data tables with nested control contract support. |
-| **`Text`** | Typography body text with sizes, weights, and color variants. |
-| **`TextInput`** | Form text input supporting slots (leading/trailing icons) and table modes. |
+| Component       | Description                                                                   |
+| :-------------- | :---------------------------------------------------------------------------- |
+| **`Badge`**     | Status indicators and tags with various styles.                               |
+| **`Box`**       | Layout container for flexbox-based direction, alignment, gap, and padding.    |
+| **`Button`**    | Action buttons with primary, secondary, subtle variants and usage contracts.  |
+| **`Card`**      | Container surface for grouping content with elevation and surface tokens.     |
+| **`Field`**     | Form control wrapper providing labels, hints, validation, and error messages. |
+| **`Heading`**   | Semantic heading typography (h1–h6) with consistent scale.                    |
+| **`Icon`**      | SVG icon system support.                                                      |
+| **`Label`**     | Standalone label element for accessible inputs.                               |
+| **`Table`**     | Dense and comfortable data tables with nested control contract support.       |
+| **`Text`**      | Typography body text with sizes, weights, and color variants.                 |
+| **`TextInput`** | Form text input supporting slots (leading/trailing icons) and table modes.    |
 
 ---
 
@@ -159,13 +161,13 @@ The build publishes generated consumer artifacts to key distribution channels.
 
 Tokens are authored in `tokens/base.json` and transformed via [Style Dictionary](https://amzn.github.io/style-dictionary/) into runtime CSS and multi-platform artifacts served statically from `public/tokens/`:
 
-| Platform / Format | Public File Path | Description |
-| :--- | :--- | :--- |
-| **Web CSS** | `/tokens/tokens.css`, `/tokens/brand.css`, `/tokens/surfaces.css` | CSS custom properties with light/dark theme support |
-| **iOS** | `/tokens/Tokens.swift` | Swift `PepperoniTokens` struct for iOS applications |
-| **Android** | `/tokens/colors.xml` | XML color resources for Android native UI |
-| **Figma (CSS keys)** | `/tokens/figma-css.json` | Token values with `--kebab-case` keys for Figma token plugins |
-| **Figma (iOS keys)** | `/tokens/figma-ios.json` | Token values with `camelCase` keys for Figma iOS mapping |
+| Platform / Format    | Public File Path                                                  | Description                                                   |
+| :------------------- | :---------------------------------------------------------------- | :------------------------------------------------------------ |
+| **Web CSS**          | `/tokens/tokens.css`, `/tokens/brand.css`, `/tokens/surfaces.css` | CSS custom properties with light/dark theme support           |
+| **iOS**              | `/tokens/Tokens.swift`                                            | Swift `PepperoniTokens` struct for iOS applications           |
+| **Android**          | `/tokens/colors.xml`                                              | XML color resources for Android native UI                     |
+| **Figma (CSS keys)** | `/tokens/figma-css.json`                                          | Token values with `--kebab-case` keys for Figma token plugins |
+| **Figma (iOS keys)** | `/tokens/figma-ios.json`                                          | Token values with `camelCase` keys for Figma iOS mapping      |
 
 To recompile tokens across platforms:
 
@@ -193,7 +195,7 @@ LIGHTNESS SPECTRUM (100% ──────────────────�
    └──────────────────────── EVEN DISTRIBUTION ────────────────────────────┘
    (Purpose: Text contrast, borders, icons, form controls, disabled states)
 
-2. Surface Tonal Ramp (Inverted Bell Curve / Bimodal Distribution)
+2. Surface Tonal Ramp (Bell Curve / Bimodal Distribution)
    LIGHT SURFACES (High Density)                    DARK SURFACES (High Density)
    ██████████                                                        ██████████
    ████████                                                            ████████
@@ -202,9 +204,9 @@ LIGHTNESS SPECTRUM (100% ──────────────────�
    [100 ➔ 500]                                                     [600 ➔ 1100]
    100% ➔ 86%                MIDTONE VOID (85% - 25%)                 24% ➔ 4%
                             (No readable UI surfaces)
-   ▲                                                                       ▲
-   └─ Tight micro-steps for Canvas,                 Tight micro-steps for Dark ──┘
-      Cards, Modals, & Elevation                    Canvas, Panels, & Elevation
+   ▲                                                                          ▲
+   └─ Tight micro-steps for Canvas               Tight micro-steps for Dark ──┘
+      Cards, Modals, & Elevation                Canvas, Panels, & Elevation
 ```
 
 ### Why They Are Independent:
@@ -212,5 +214,3 @@ LIGHTNESS SPECTRUM (100% ──────────────────�
 1. **Inverted Bell Curve Concentration**: Surfaces only exist at the extreme light end (100%–86%) and dark end (24%–4%). Midtones (30%–70%) cannot serve as readable surface containers because text fails WCAG 4.5:1 contrast against them.
 2. **Granular Micro-Steps for Elevation**: UI elevation requires subtle 2%–4% lightness deltas to distinguish nested card layers, floating popovers, and sunken wells without harsh visual breaks.
 3. **Decoupled Theme Tuning**: Adjusting surface elevation depth or canvas contrast in `tokens/surface.json` never breaks typography or border contrast tokens in `tokens/base.json`.
-
-
